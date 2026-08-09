@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 2 — Décider et répéter — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Décider,<br>et répéter.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">Aujourd'hui, ton programme arrête d'exécuter bêtement : il choisit.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>02</b></div><div>Durée<b>3 h</b></div><div>Rappel<b>Variables, types</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">L'erreur du jour</div>
+  <div class="centre"><p class="geant">Notre dette de<br>la semaine dernière&nbsp;:<br><span class="souligne">ZeroDivisionError</span>.</p></div>
+  <div class="pied"><span>Séance 02 &middot; Décider et répéter</span><span class="rail"><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> On l'avait laissée exprès. À la fin du premier bloc, elle sera réglée en trois lignes.</div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 1</div>
+  <div class="centre">
+    <div class="numero">01</div>
+    <h1 style="color:#fff;margin-top:-8px">Décider</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Vrai ou faux, et rien d'autre.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Le booléen</div>
+  <div class="centre"><p class="geant">Il n'existe que<br><span class="souligne">deux</span> réponses&nbsp;:<br>True. False.</p></div>
+  <div class="pied"><span>Séance 02 &middot; Décider et répéter</span><span class="rail"><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> 12 > 5 n'affiche pas « oui ». Ça VAUT True. Toute condition se ramène à ces deux valeurs.</div>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">Le deuxième faux ami</div>
+  <h2 style="margin-bottom:28px">Un égal, ou deux ?</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>= (un seul)</h3><p class="legende mono" style="font-size:20px">age = 18</p><p class="legende pousse">Je range 18 dans la boîte.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>== (deux)</h3><p class="legende mono" style="font-size:20px">age == 18</p><p class="legende pousse">Est-ce que c'est pareil ?</p></div></div>
+  <div class="notes"><b>Notes</b> Deuxième erreur la plus fréquente du cursus. L'annoncer explicitement fait gagner une heure de dépannage.</div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M120 200 V132"/><path d="M120 132 L64 76"/><path d="M120 132 L176 76"/><circle cx="120" cy="132" r="12"/><circle cx="60" cy="60" r="18"/><circle cx="180" cy="60" r="18"/></svg></div>
+    <div><h2>Le <span class="mono">if</span>,<br>c'est un <span class="souligne">aiguillage</span>.</h2><p class="corps" style="margin-top:22px">Au panneau, le programme regarde la condition et prend une route. Une seule branche est empruntée. Jamais deux.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Ce n'est pas de la décoration</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">L'<span class="souligne">indentation</span><br>fait partie du code.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Quatre espaces disent : «&nbsp;cette ligne est à l'intérieur du if&nbsp;».</p>
+  </div>
+  <div class="notes"><b>Notes</b> Analogie : les paragraphes en retrait d'un contrat, qui appartiennent à l'article au-dessus. Montrer l'IndentationError.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">if / elif / else</div>
+  <pre class="code"><span class="k">if</span> jours_restants &lt; <span class="n">0</span>:
+    <span class="f">print</span>(<span class="s">"Deadline dépassée"</span>)
+<span class="k">elif</span> jours_restants &lt; <span class="n">7</span>:
+    <span class="f">print</span>(<span class="s">"URGENT"</span>)
+<span class="k">else</span>:
+    <span class="f">print</span>(<span class="s">"Tu as le temps"</span>)</pre>
+  <p class="legende" style="margin-top:22px">Lis-le à voix haute en français. La traduction littérale est la meilleure aide-mémoire.</p>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 2</div>
+  <div class="centre">
+    <div class="numero">02</div>
+    <h1 style="color:#fff;margin-top:-8px">Répéter</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Deux façons, deux usages.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">for ou while ?</div>
+  <h2 style="margin-bottom:28px">La question à se poser : est-ce que je sais combien de fois ?</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>for</h3><p class="legende mono" style="font-size:20px">je sais combien</p><p class="legende pousse">Distribuer 12 tracts : 12 tours.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>while</h3><p class="legende mono" style="font-size:20px">je ne sais pas</p><p class="legende pousse">Remplir un seau : tant qu'il n'est pas plein.</p></div></div>
+  <div class="notes"><b>Notes</b> Ne pas présenter while comme « plus avancé ». C'est un usage différent, pas un niveau supérieur.</div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">range(5)</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">Ça commence à <span class="souligne">0</span><br>et ça s'arrête <span class="souligne">avant</span> 5.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">0, 1, 2, 3, 4. Cinq tours.</p>
+  </div>
+  <div class="notes"><b>Notes</b> Le compter à voix haute avec le groupe, en levant les doigts. Ça évite trois semaines de confusion.</div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Le motif à connaître par cœur</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M74 96 a52 52 0 1 1 -14 44"/><path d="M60 96 h28 M60 96 V68"/><circle cx="150" cy="120" r="8"/></svg></div>
+    <div><h2>L'<span class="souligne">accumulateur</span>&nbsp;:<br>une boîte qui grossit.</h2><p class="corps" style="margin-top:22px"><span class='mono'>total = total + prix</span> &mdash; à chaque tour, on ajoute. On le reverra jusqu'à la séance 11.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Le danger du while</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">Quelque chose doit<br><span class="souligne">changer</span> à l'intérieur.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Sinon la boucle tourne pour l'éternité.</p>
+  </div>
+  <div class="notes"><b>Notes</b> Écrire une boucle infinie en direct, la laisser tourner, demander au groupe de trouver pourquoi. Puis montrer le bouton stop.</div>
+</section>
+
+<section class="diapo" data-type="exercice" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Exercice</div>
+  <h1 style="color:#fff;font-size:66px;margin-bottom:26px">Le nombre mystère</h1>
+  <ul class="liste" style="color:rgba(255,255,255,.9)"><li>L'ordinateur choisit un nombre entre 1 et 100</li><li>Le joueur propose&nbsp;: «&nbsp;trop grand&nbsp;» ou «&nbsp;trop petit&nbsp;»</li><li>Compter les essais et féliciter</li><li>Bonus&nbsp;: limiter à 7 essais</li></ul>
+  <div class="notes"><b>Notes</b> Faire lire « while not trouve » à voix haute : « tant que ce n'est pas trouvé ». Demander pourquoi le else final est forcément l'égalité.</div>
+</section>
+
+<section class="diapo" data-type="formule" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div><div class="surtitre">Palier bonus</div>
+  <h2 style="margin-bottom:26px">Pourquoi 7 essais suffisent toujours</h2>
+  <div class="formule">$$\lceil \log_{2}(100) \rceil = 7$$</div>
+  <p class="legende" style="margin-top:24px;text-align:center">Chaque proposition bien choisie divise les possibilités par deux.</p>
+  <div class="notes"><b>Notes</b> Faire d'abord jouer le groupe contre la machine. La surprise vient avant l'explication, jamais l'inverse.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Le fil rouge &mdash; OpportuniTrack v0.2</div>
+  <pre class="code"><span class="c"># « Je candidate si le niveau correspond ET s'il reste 3 jours. »</span>
+<span class="k">if</span> niveau_requis == mon_niveau <span class="k">and</span> jours &gt;= <span class="n">3</span>:
+    <span class="f">print</span>(<span class="s">"À CANDIDATER"</span>)
+<span class="k">elif</span> jours &lt;= <span class="n">0</span>:
+    <span class="f">print</span>(<span class="s">"Trop tard"</span>)</pre>
+  <p class="legende" style="margin-top:22px">Écris la règle <b>en français</b> au tableau avant de coder. La traduction est le vrai apprentissage.</p>
+</section>
+
+<section class="diapo" data-type="regle">
+  <div class="surtitre">À retenir</div>
+  <div class="centre"><p class="regle">Écris la règle en français.<br>Puis <span class="souligne">traduis-la</span>.</p></div>
+  <div class="pied"><span>Séance 02 &middot; Décider et répéter</span><span class="rail"><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">La semaine prochaine : gérer des centaines d'informations, pas une seule.</p>
+  </div>
+  <div class="pied"><span>Séance 02 &middot; Décider et répéter</span><span class="rail"><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>

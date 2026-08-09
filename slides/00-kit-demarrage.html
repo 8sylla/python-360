@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 0 — Kit de démarrage — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Avant de<br>commencer.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">Quinze minutes, une fois. Ensuite, on ne parle plus jamais d'installation.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>00</b></div><div>Durée<b>45 min</b></div><div>Où<b>Chez toi</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La promesse</div>
+  <div class="centre"><p class="geant">En 11 séances&nbsp;:<br>de «&nbsp;je n'ai jamais codé&nbsp;»<br>à «&nbsp;j'ai <span class="souligne">déployé</span> une API&nbsp;».</p></div>
+  <div class="notes"><b>Notes</b> Le kit existe pour une seule raison : la séance 1 doit être une séance de code, pas une séance de dépannage.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Ce dont tu as besoin</div>
+  <div class="centre"><p class="geant">Un navigateur.<br>Un compte Google.<br><span class="souligne">C'est tout.</span></p></div>
+  <div class="notes"><b>Notes</b> Pour les trois premières séances, rien à installer. L'installation locale n'arrive qu'en séance 4.</div>
+</section>
+
+<section class="diapo" data-type="etapes">
+  <div class="surtitre">Google Colab</div>
+  <h2 style="margin-bottom:18px">Trois clics, et tu codes.</h2>
+  <div class="etapes"><div class="etape"><span class="rang">01</span><div class="barre"></div><h3>colab.research.google.com</h3><p class="legende">Nouveau notebook.</p></div><div class="etape"><span class="rang">02</span><div class="barre"></div><h3>print("Bonjour")</h3><p class="legende">Tape ça dans la cellule.</p></div><div class="etape"><span class="rang">03</span><div class="barre"></div><h3>Maj + Entrée</h3><p class="legende">Si ça s'affiche, tu es prêt·e.</p></div></div>
+</section>
+
+<section class="diapo" data-type="liste">
+  <div class="surtitre">Pour prendre de l'avance</div>
+  <h2 style="margin-bottom:30px">L'installation locale (séance 4)</h2>
+  <ul class="liste centre"><li>Python 3.14 &mdash; <span class='mono'>python.org/downloads</span></li><li><b>Windows&nbsp;: cocher «&nbsp;Add python.exe to PATH&nbsp;»</b></li><li>VS Code + l'extension Python de Microsoft</li><li>Un compte GitHub</li></ul>
+  <div class="notes"><b>Notes</b> Le PATH non coché est la cause n°1 des blocages Windows. Le répéter deux fois.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La règle de la maison</div>
+  <div class="centre"><p class="geant">L'erreur n'est pas un échec.<br>C'est un <span class="souligne">message</span>.</p></div>
+  <div class="notes"><b>Notes</b> À poser dès le kit. Tout le dispositif pédagogique repose sur cette phrase.</div>
+</section>
+
+<section class="diapo" data-type="liste">
+  <div class="surtitre">Où demander de l'aide</div>
+  <h2 style="margin-bottom:30px">Le salon #sos-erreurs</h2>
+  <ul class="liste centre"><li>Colle ton message d'erreur <b>en texte</b>, jamais en photo</li><li>La dernière ligne dit toujours ce qui ne va pas</li><li>Aucune question n'est bête. Aucune.</li></ul>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">Le questionnaire de positionnement prend 2 minutes. Il sert à composer les binômes.</p>
+  </div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   FORMATION PYTHON 360° — ASEGUIM
+   Thème unique partagé par tous les decks. NE PAS MODIFIER par séance :
+   changer une valeur ici la change dans les 12 decks à la fois.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root{
+  /* --- Couleurs, relevées sur le logo ASEGUIM ------------------------- */
+  --rouge:        #D81B27;   /* accent principal — le mot important, le danger */
+  --rouge-vif:    #F0323E;   /* variante lumineuse, uniquement sur fond sombre */
+  --bordeaux:     #6E0A12;   /* profondeur : fonds pleins, dégradés */
+  --or:           #FDC911;   /* progression, jalons. Jamais pour du texte      */
+  --vert:         #185609;   /* la bonne pratique, le validé (vert du sigle)   */
+  --vert-clair:   #2C8A1A;
+
+  /* --- Neutres, chauds ------------------------------------------------ */
+  --papier:       #FBF8F7;
+  --blanc:        #FFFFFF;
+  --craie:        #F5EAE9;
+  --trait:        #E6D8D6;
+  --cendre:       #8B7B78;
+  --encre:        #1A0C0A;
+
+  /* --- Typographie ---------------------------------------------------- */
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --texte:   "Inter Tight", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono:    "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  --t-geant: 128px; --t-titre: 84px; --t-sous: 50px;
+  --t-lead: 31px;   --t-corps: 24px; --t-petit: 19px; --t-micro: 15px;
+
+  --marge: 88px;
+  --duree: .45s;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#0D0605;font-family:var(--texte);color:var(--encre);
+     overflow:hidden;-webkit-font-smoothing:antialiased}
+.scene{position:fixed;inset:0;display:grid;place-items:center}
+
+/* --- La diapo : toujours 1280x720, mise à l'échelle ------------------- */
+.diapo{position:absolute;width:1280px;height:720px;padding:var(--marge);
+       background:var(--papier);display:none;flex-direction:column;overflow:hidden;
+       transform:scale(var(--k,1));box-shadow:0 40px 120px rgba(0,0,0,.55)}
+.diapo.active{display:flex}
+.diapo.active > *{animation:entree var(--duree) cubic-bezier(.2,.7,.2,1) both}
+.diapo.active > *:nth-child(2){animation-delay:.06s}
+.diapo.active > *:nth-child(3){animation-delay:.12s}
+.diapo.active > *:nth-child(4){animation-delay:.18s}
+@keyframes entree{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.diapo.active > *{animation:none}}
+
+.diapo[data-fond="rouge"]{
+  background:radial-gradient(120% 90% at 78% 6%, #A11420 0%, transparent 58%),
+             linear-gradient(155deg, #97121E 0%, #5C070E 100%);
+  color:var(--blanc)}
+.diapo[data-fond="vert"]{
+  background:radial-gradient(120% 90% at 78% 6%, #1F6B0C 0%, transparent 58%),
+             linear-gradient(155deg, #185609 0%, #0C2F05 100%);
+  color:var(--blanc)}
+.diapo[data-fond] .cendre,.diapo[data-fond] .legende{color:rgba(255,255,255,.64)}
+.diapo[data-fond] .filet{background:rgba(255,255,255,.22)}
+
+/* --- Signature : le prompt >>> de Python ------------------------------ */
+.surtitre{font-family:var(--mono);font-size:var(--t-micro);letter-spacing:.22em;
+          text-transform:uppercase;color:var(--rouge);display:flex;align-items:center;
+          gap:14px;margin-bottom:30px}
+.surtitre::before{content:">>>";opacity:.5;letter-spacing:0}
+.diapo[data-fond] .surtitre{color:rgba(255,255,255,.88)}
+
+.filigrane{position:absolute;right:-46px;bottom:-138px;font-family:var(--mono);
+           font-size:400px;line-height:1;color:rgba(255,255,255,.07);
+           pointer-events:none;user-select:none}
+.diapo:not([data-fond]) .filigrane{color:rgba(216,27,39,.055)}
+
+/* --- Typographie ------------------------------------------------------ */
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.03em;line-height:1.03}
+h1{font-size:var(--t-titre)} h2{font-size:var(--t-sous)} h3{font-size:34px}
+.geant{font-family:var(--display);font-weight:700;font-size:var(--t-geant);
+       line-height:.95;letter-spacing:-.045em}
+.lead{font-size:var(--t-lead);line-height:1.35;color:var(--cendre);max-width:26ch}
+.corps{font-size:var(--t-corps);line-height:1.5;max-width:36ch}
+.legende{font-size:var(--t-petit);color:var(--cendre);line-height:1.45}
+.mono{font-family:var(--mono)}
+.centre{margin:auto 0}.pousse{margin-top:auto}
+.filet{height:1px;background:var(--trait);margin:26px 0}
+
+.souligne{color:var(--rouge);position:relative;white-space:nowrap}
+.souligne::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.09em;
+                 background:var(--rouge);opacity:.26;border-radius:2px}
+.diapo[data-fond] .souligne{color:#FFD7DA}
+.diapo[data-fond] .souligne::after{background:#FFD7DA}
+.diapo[data-fond="vert"] .souligne{color:var(--or)}
+.diapo[data-fond="vert"] .souligne::after{background:var(--or)}
+
+/* --- Gabarits --------------------------------------------------------- */
+.marque{display:flex;align-items:center;gap:18px;font-family:var(--mono);
+        font-size:var(--t-micro);letter-spacing:.26em;text-transform:uppercase;
+        color:rgba(255,255,255,.78)}
+.marque img{height:54px;width:auto;background:#fff;border-radius:50%;padding:3px}
+.diapo:not([data-fond]) .marque{color:var(--cendre)}
+
+.meta{display:flex;gap:52px;font-family:var(--mono);font-size:var(--t-petit);
+      color:rgba(255,255,255,.7)}
+.meta b{display:block;color:#fff;font-weight:500;font-size:var(--t-corps)}
+.diapo:not([data-fond]) .meta{color:var(--cendre)}
+.diapo:not([data-fond]) .meta b{color:var(--encre)}
+
+.numero{font-family:var(--display);font-weight:700;font-size:200px;line-height:.8;
+        letter-spacing:-.06em;color:rgba(255,255,255,.17)}
+.chiffre{font-family:var(--display);font-weight:700;font-size:230px;line-height:.88;
+         letter-spacing:-.05em;color:var(--rouge)}
+.diapo[data-fond] .chiffre{color:#fff}
+
+.duo{display:grid;grid-template-columns:360px 1fr;gap:70px;align-items:center;flex:1}
+.picto{display:grid;place-items:center}
+.picto svg{width:100%;height:auto;max-height:310px}
+
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:46px;flex:1;align-items:stretch}
+.volet{background:var(--blanc);border:1px solid var(--trait);border-radius:18px;
+       padding:34px 32px;display:flex;flex-direction:column;gap:14px}
+.volet[data-signe="non"]{border-color:rgba(216,27,39,.35);background:#FFF5F5}
+.volet[data-signe="oui"]{border-color:rgba(24,86,9,.3);background:#F4FAF1}
+.volet .marqueur{font-family:var(--mono);font-size:24px;width:48px;height:48px;
+                 border-radius:50%;display:grid;place-items:center;color:#fff}
+.volet[data-signe="non"] .marqueur{background:var(--rouge)}
+.volet[data-signe="oui"] .marqueur{background:var(--vert)}
+.diapo[data-fond] .volet{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);
+                         color:#fff}
+
+pre.code{font-family:var(--mono);font-size:26px;line-height:1.6;background:var(--encre);
+         color:#F6EEED;border-radius:18px;padding:34px 38px;overflow:hidden;
+         border-left:5px solid var(--rouge)}
+pre.code.petit{font-size:22px;line-height:1.55}
+pre.code .k{color:#FF8C93;font-weight:500}
+pre.code .f{color:#FFCBCE}
+pre.code .s{color:#E7B6B6}
+pre.code .n{color:#FFFFFF}
+pre.code .c{color:#9B8380;font-style:italic}
+pre.code mark{background:rgba(240,50,62,.3);color:#fff;border-radius:4px;padding:1px 4px}
+pre.code .ok{color:#8FD97A}
+
+.etapes{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:40px;flex:1;
+        align-items:center}
+.etape{display:flex;flex-direction:column;gap:16px}
+.etape .rang{font-family:var(--mono);font-size:var(--t-micro);letter-spacing:.2em;
+             color:var(--rouge)}
+.diapo[data-fond] .etape .rang{color:var(--or)}
+.etape .barre{height:4px;background:var(--trait);position:relative;border-radius:2px}
+.etape .barre::after{content:"";position:absolute;inset:0 auto 0 0;width:38%;
+                     background:var(--rouge);border-radius:2px}
+.diapo[data-fond] .etape .barre{background:rgba(255,255,255,.22)}
+.diapo[data-fond] .etape .barre::after{background:var(--or)}
+
+.signe{font-family:var(--display);font-weight:700;font-size:112px;line-height:1;color:#fff}
+
+.formule{background:var(--blanc);border:1px solid var(--trait);border-radius:20px;
+         padding:46px 50px;text-align:center;font-size:38px;
+         box-shadow:0 18px 50px rgba(110,10,18,.07)}
+.formule .katex{font-size:1.22em}
+.diapo[data-fond] .formule{background:rgba(255,255,255,.07);
+                           border-color:rgba(255,255,255,.2);color:#fff}
+
+.regle{font-family:var(--display);font-size:60px;font-weight:600;line-height:1.15;
+       letter-spacing:-.03em;border-left:6px solid var(--rouge);padding-left:40px;
+       max-width:27ch}
+.diapo[data-fond] .regle{border-color:var(--or)}
+
+.liste{display:flex;flex-direction:column;gap:22px;font-size:30px;line-height:1.3}
+.liste li{list-style:none;display:flex;gap:20px;align-items:baseline}
+.liste li::before{content:">";font-family:var(--mono);color:var(--rouge);font-size:24px}
+.diapo[data-fond] .liste li::before{color:var(--or)}
+
+.tuiles{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;flex:1;align-content:center}
+.tuile{background:var(--blanc);border:1px solid var(--trait);border-radius:16px;
+       padding:26px 28px}
+.tuile b{font-family:var(--mono);color:var(--rouge);font-size:var(--t-petit);
+         display:block;margin-bottom:8px;letter-spacing:.12em;text-transform:uppercase}
+.tuile span{font-size:26px;line-height:1.3}
+.diapo[data-fond] .tuile{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+.diapo[data-fond] .tuile b{color:var(--or)}
+
+/* --- Pied de diapo : le rail des 11 séances --------------------------- */
+.pied{position:absolute;left:var(--marge);right:var(--marge);bottom:34px;display:flex;
+      align-items:center;justify-content:space-between;font-family:var(--mono);
+      font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--cendre)}
+.diapo[data-fond] .pied{color:rgba(255,255,255,.55)}
+.rail{display:flex;gap:6px;align-items:center}
+.rail i{width:20px;height:3px;background:var(--trait);border-radius:2px;display:block}
+.rail i.faite{background:var(--or)}
+.rail i.ici{background:var(--rouge);width:32px}
+.diapo[data-fond] .rail i{background:rgba(255,255,255,.22)}
+.diapo[data-fond] .rail i.faite{background:var(--or);opacity:.8}
+.diapo[data-fond] .rail i.ici{background:#fff}
+
+/* --- Outils du présentateur (jamais projetés) ------------------------- */
+.notes{display:none}
+.panneau{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(13,6,5,.96);
+         color:#F3E9E8;border-top:1px solid rgba(255,255,255,.12);padding:18px 28px;
+         font-size:16px;line-height:1.5;max-height:34vh;overflow:auto;
+         transform:translateY(101%);transition:transform .28s ease}
+.panneau.ouvert{transform:none}
+.panneau b{color:var(--rouge-vif);font-family:var(--mono);font-size:12px;
+           letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:6px}
+.compteur{position:fixed;right:16px;bottom:14px;z-index:15;font-family:var(--mono);
+          font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.14em}
+.aide{position:fixed;left:16px;bottom:14px;z-index:15;font-family:var(--mono);
+      font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.1em}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:#fff;overflow:visible}
+  .scene{position:static;display:block}
+  .diapo{display:flex!important;position:relative;transform:none!important;
+         box-shadow:none;page-break-after:always;break-after:page}
+  .diapo > *{animation:none!important}
+  .panneau,.compteur,.aide{display:none}
+}

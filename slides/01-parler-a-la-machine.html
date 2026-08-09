@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 1 — Parler à la machine — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Parler à<br>la machine.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">Dans trois heures, tu auras écrit un programme qui te pose des questions et te répond.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>01</b></div><div>Durée<b>3 h</b></div><div>Prérequis<b>Aucun</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La règle de la maison</div>
+  <div class="centre"><p class="geant">L'erreur n'est pas un échec.<br>C'est un <span class="souligne">message</span>.</p></div>
+  <div class="pied"><span>Séance 01 &middot; Parler à la machine</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Trois engagements du formateur : je provoquerai des erreurs exprès, je ne dirai jamais « c'est faux », personne ne reste bloqué seul.</div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 1</div>
+  <div class="centre">
+    <div class="numero">01</div>
+    <h1 style="color:#fff;margin-top:-8px">C'est quoi, programmer&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Une recette, et un exécutant très rapide et très bête.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="58" y="36" width="124" height="168" rx="12"/><path d="M84 78 h72 M84 110 h72 M84 142 h48"/><circle cx="72" cy="78" r="4"/><circle cx="72" cy="110" r="4"/><circle cx="72" cy="142" r="4"/></svg></div>
+    <div><h2>Un programme,<br>c'est une <span class="souligne">recette</span>.</h2><p class="corps" style="margin-top:22px">Python la lit ligne par ligne, de haut en bas. Il ne devine jamais, il n'anticipe jamais.</p></div>
+  </div>
+  <div class="notes"><b>Notes</b> Atelier débranché : « écris la recette pour qu'un robot prépare un thé ». Le formateur joue le robot et exécute littéralement. L'ambiguïté saute aux yeux.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">L'ordinateur</div>
+  <div class="centre"><p class="geant">Il est <span class="souligne">obéissant</span>.<br>Il est <span class="souligne">rapide</span>.<br>Il est bête.</p></div>
+  <div class="pied"><span>Séance 01 &middot; Parler à la machine</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Si tu oublies « allumer le four », il sert la pâte crue sans se plaindre. C'est toute la difficulté du métier.</div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 2</div>
+  <div class="centre">
+    <div class="numero">02</div>
+    <h1 style="color:#fff;margin-top:-8px">Les variables</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Ranger une information pour la retrouver.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 88 L120 52 L200 88 L120 124 Z"/><path d="M40 88 V172 L120 208 V124"/><path d="M200 88 V172 L120 208"/><rect x="86" y="128" width="68" height="30" rx="6" opacity=".35"/><path d="M96 143 h48" stroke-dasharray="4 7"/></svg></div>
+    <div><h2>Une variable,<br>c'est une <span class="souligne">boîte</span> étiquetée.</h2><p class="corps" style="margin-top:22px"><span class='mono'>age = 25</span> &mdash; prends une boîte, colle l'étiquette «&nbsp;age&nbsp;», mets 25 dedans.</p></div>
+  </div>
+  <div class="notes"><b>Notes</b> Faire dire les 3 conséquences par le groupe : le = range, remettre efface, un bon nom est un cadeau qu'on se fait dans deux semaines.</div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Le premier faux ami</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">Le <span class="souligne">=</span> n'est pas<br>un égal mathématique.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Il veut dire : «&nbsp;range ceci dans cette boîte&nbsp;».</p>
+  </div>
+  <div class="notes"><b>Notes</b> D'où x = x + 1, absurde en maths, parfaitement normal ici. Le montrer au tableau.</div>
+</section>
+
+<section class="diapo" data-type="tuiles">
+  <div class="surtitre">Les 4 types de base</div>
+  <h2 style="margin-bottom:24px">On ne fait pas les mêmes gestes avec du texte et avec un nombre.</h2>
+  <div class="tuiles"><div class="tuile"><b>str</b><span>du texte &mdash; <span class='mono'>"Awa"</span></span></div><div class="tuile"><b>int</b><span>un entier &mdash; <span class='mono'>25</span></span></div><div class="tuile"><b>float</b><span>un décimal &mdash; <span class='mono'>1.68</span></span></div><div class="tuile"><b>bool</b><span>vrai ou faux &mdash; <span class='mono'>True</span></span></div></div>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">Le piège des types</div>
+  <h2 style="margin-bottom:28px">On n'additionne pas des mots et des nombres.</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>"5" + "3"</h3><p class="legende mono" style="font-size:20px">donne "53"</p><p class="legende pousse">Deux textes collés bout à bout.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>5 + 3</h3><p class="legende mono" style="font-size:20px">donne 8</p><p class="legende pousse">Deux nombres additionnés.</p></div></div>
+  <div class="notes"><b>Notes</b> Puis montrer "5" + 3 → TypeError. Python refuse de deviner : c'est une qualité, pas un défaut.</div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 3</div>
+  <div class="centre">
+    <div class="numero">03</div>
+    <h1 style="color:#fff;margin-top:-8px">Dialoguer</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Le programme pose une question et écoute la réponse.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Le piège n&deg;1 de la formation</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch"><span class="mono" style="font-size:.82em">input()</span> rend toujours<br>du <span class="souligne">texte</span>.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Même quand on tape 42.</p>
+  </div>
+  <div class="notes"><b>Notes</b> LE piège de tous les débutants. Le provoquer, obtenir le TypeError, corriger avec int(). Annoncer qu'il reviendra trois fois d'ici la séance 4.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Les f-strings</div>
+  <pre class="code"><span class="k">prenom</span> = <span class="f">input</span>(<span class="s">"Ton prénom : "</span>)
+<span class="k">age</span> = <span class="f">int</span>(<span class="f">input</span>(<span class="s">"Ton âge : "</span>))
+
+<span class="f">print</span>(<span class="s">f"Bonjour <mark>{prenom}</mark>, tu as <mark>{age}</mark> ans."</span>)</pre>
+  <p class="legende" style="margin-top:22px">Le <span class='mono'>f</span> collé au guillemet ouvrant. L'oublier affiche littéralement <span class='mono'>{prenom}</span>.</p>
+  <div class="notes"><b>Notes</b> L'oubli du f est l'erreur la plus fréquente de la séance. Le montrer une fois.</div>
+</section>
+
+<section class="diapo" data-type="exercice" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Exercice</div>
+  <h1 style="color:#fff;font-size:66px;margin-bottom:26px">Le calculateur de candidature</h1>
+  <ul class="liste" style="color:rgba(255,255,255,.9)"><li>Demande le prénom, les offres repérées, les candidatures envoyées</li><li>Affiche les offres restantes</li><li>Affiche le taux de candidature en pourcentage</li><li><span class='mono'>{taux:.1f}</span> pour n'avoir qu'une décimale</li></ul>
+  <div class="notes"><b>Notes</b> Si quelqu'un saisit 0 offre, le programme plante (ZeroDivisionError). NE PAS corriger aujourd'hui : le noter au tableau comme une dette. On la rembourse en séance 2 avec if. C'est l'accroche parfaite.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Le fil rouge &mdash; OpportuniTrack v0.1</div>
+  <pre class="code"><span class="f">print</span>(<span class="s">"="</span> * <span class="n">40</span>)
+<span class="f">print</span>(<span class="s">f"  {titre.upper()}"</span>)
+<span class="f">print</span>(<span class="s">f"  Organisme : {organisme}"</span>)
+<span class="f">print</span>(<span class="s">f"  Deadline  : {deadline}"</span>)
+<span class="f">print</span>(<span class="s">"="</span> * <span class="n">40</span>)</pre>
+  <p class="legende" style="margin-top:22px">La carte d'opportunité. En séance 2, elle décidera toute seule s'il faut candidater.</p>
+</section>
+
+<section class="diapo" data-type="regle">
+  <div class="surtitre">À retenir</div>
+  <div class="centre"><p class="regle">Un programme, c'est<br>une <span class="souligne">suite d'étapes</span><br>que la machine suit bêtement.</p></div>
+  <div class="pied"><span>Séance 01 &middot; Parler à la machine</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">Devoir : ajoute deux informations à ta fiche d'opportunité et poste une capture.</p>
+  </div>
+  <div class="pied"><span>Séance 01 &middot; Parler à la machine</span><span class="rail"><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>

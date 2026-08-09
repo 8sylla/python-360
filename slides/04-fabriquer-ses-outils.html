@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 4 — Fabriquer ses outils — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Fabriquer<br>ses outils.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">À la fin de la séance, tu as un vrai programme, dans un vrai fichier, qui garde tes données.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>04</b></div><div>Durée<b>3 h</b></div><div>Nouveau<b>VS Code</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Aujourd'hui</div>
+  <div class="centre"><p class="geant">On quitte<br>le navigateur.</p></div>
+  <div class="pied"><span>Séance 04 &middot; Fabriquer ses outils</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Vingt minutes de migration guidée. Ne passer à la suite que quand TOUT LE MONDE a vu un « Bonjour » dans le terminal.</div>
+</section>
+
+<section class="diapo" data-type="etapes">
+  <div class="surtitre">Migration</div>
+  <h2 style="margin-bottom:18px">VS Code en quatre gestes</h2>
+  <div class="etapes"><div class="etape"><span class="rang">01</span><div class="barre"></div><h3>Ouvrir un dossier</h3><p class="legende">Fichier &rsaquo; Ouvrir le dossier.</p></div><div class="etape"><span class="rang">02</span><div class="barre"></div><h3>Créer tracker.py</h3><p class="legende">L'extension .py, jamais .txt.</p></div><div class="etape"><span class="rang">03</span><div class="barre"></div><h3>Choisir l'interpréteur</h3><p class="legende">En bas à droite : Python 3.14.</p></div><div class="etape"><span class="rang">04</span><div class="barre"></div><h3>Exécuter</h3><p class="legende">La flèche, ou F5.</p></div></div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 1</div>
+  <div class="centre">
+    <div class="numero">01</div>
+    <h1 style="color:#fff;margin-top:-8px">La fonction</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Ne plus jamais copier-coller.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Le problème</div>
+  <div class="centre"><p class="geant">Le même bloc,<br>copié <span class="souligne">trois fois</span>.<br>Un bug à corriger trois fois.</p></div>
+  <div class="pied"><span>Séance 04 &middot; Fabriquer ses outils</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="56" y="52" width="128" height="96" rx="10"/><path d="M84 148 v20 a36 36 0 0 0 72 0 v-20"/><path d="M100 88 h40"/><path d="M120 108 v18"/><path d="M92 200 h96"/></svg></div>
+    <div><h2>Une fonction,<br>c'est une <span class="souligne">machine à café</span>.</h2><p class="corps" style="margin-top:22px">Tu mets quelque chose dedans, elle fait son travail, elle te rend quelque chose. Tu n'as pas besoin de savoir comment elle chauffe l'eau.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">La grande confusion</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch"><span class="mono" style="font-size:.8em">print</span> parle à l'humain.<br><span class="mono" style="font-size:.8em">return</span> parle au <span class="souligne">programme</span>.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Une fonction qui print est un cul-de-sac.</p>
+  </div>
+  <div class="notes"><b>Notes</b> Le faire vivre par l'échec : def double(n): print(n*2), puis resultat = double(5), puis resultat + 1 → TypeError. Trente secondes, effet garanti.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Anatomie d'une fonction</div>
+  <pre class="code"><span class="k">def</span> <span class="f">saluer</span>(prenom: <span class="k">str</span>) -&gt; <span class="k">str</span>:
+    <span class="s">"""Rend un message de salutation."""</span>
+    <span class="k">return</span> <span class="s">f"Bonjour {prenom} !"</span>
+
+message = <span class="f">saluer</span>(<span class="s">"Awa"</span>)</pre>
+  <p class="legende" style="margin-top:22px">La docstring documente. Essaie <span class='mono'>help(saluer)</span> : elle s'affiche.</p>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 2</div>
+  <div class="centre">
+    <div class="numero">02</div>
+    <h1 style="color:#fff;margin-top:-8px">La mémoire longue</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Ce qui survit à la fermeture.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="tuiles">
+  <div class="surtitre">Trois formats, trois usages</div>
+  <h2 style="margin-bottom:24px">Lequel choisir ?</h2>
+  <div class="tuiles"><div class="tuile"><b>txt</b><span>du texte brut, pour des notes</span></div><div class="tuile"><b>csv</b><span>un tableau, s'ouvre dans Excel</span></div><div class="tuile"><b>json</b><span>des données imbriquées &mdash; ta liste de dicts</span></div><div class="tuile"><b>&rarr; séance 10</b><span>le JSON est le format du web</span></div></div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Lire et écrire</div>
+  <pre class="code"><span class="k">with</span> FICHIER.<span class="f">open</span>(<span class="s">"w"</span>, encoding=<span class="s">"utf-8"</span>) <span class="k">as</span> f:
+    json.<span class="f">dump</span>(donnees, f, indent=<span class="n">2</span>, ensure_ascii=<span class="k">False</span>)</pre>
+  <p class="legende" style="margin-top:22px"><span class='mono'>with</span> referme le fichier <b>quoi qu'il arrive</b>. <span class='mono'>encoding="utf-8"</span> sauve tes accents.</p>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 48 C 96 120 128 156 188 176"/><rect x="86" y="140" width="56" height="34" rx="8" transform="rotate(-14 114 157)"/><path d="M60 196 h120"/></svg></div>
+    <div><h2><span class="mono">try / except</span>,<br>c'est la <span class="souligne">ceinture</span>.</h2><p class="corps" style="margin-top:22px">«&nbsp;Essaie ceci&nbsp;; si ça casse pour telle raison, fais plutôt cela.&nbsp;»</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Règle professionnelle</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">Jamais d'<span class="mono" style="font-size:.82em">except</span> <span class="souligne">nu</span>.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">On nomme l'erreur qu'on attend&nbsp;: <span class='mono'>except ValueError:</span></p>
+  </div>
+  <div class="notes"><b>Notes</b> Un except nu masque aussi le Ctrl+C et les vrais bugs. C'est une règle de métier, pas une préférence de style.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">match / case &mdash; Python 3.10+</div>
+  <pre class="code"><span class="k">match</span> choix:
+    <span class="k">case</span> <span class="s">"1"</span>: <span class="f">ajouter</span>()
+    <span class="k">case</span> <span class="s">"2"</span>: <span class="f">afficher</span>()
+    <span class="k">case</span> <span class="s">"3"</span>: <span class="f">quitter</span>()
+    <span class="k">case</span> _:   <span class="f">print</span>(<span class="s">"Choix invalide"</span>)</pre>
+  <p class="legende" style="margin-top:22px">Plus lisible qu'une cascade de <span class='mono'>elif</span> quand on compare une variable à des valeurs fixes.</p>
+</section>
+
+<section class="diapo" data-type="exercice" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fil rouge v1</div>
+  <h1 style="color:#fff;font-size:66px;margin-bottom:26px">OpportuniTrack en ligne de commande</h1>
+  <ul class="liste" style="color:rgba(255,255,255,.9)"><li>Deux fichiers&nbsp;: <span class='mono'>stockage.py</span> et <span class='mono'>tracker.py</span></li><li>Un menu&nbsp;: ajouter, afficher, filtrer, quitter</li><li>Les données survivent à la fermeture</li><li>Le corrigé est sur le dépôt &mdash; <b>après</b> avoir essayé</li></ul>
+  <div class="notes"><b>Notes</b> Revue de code en 3 points : les noms sont-ils compréhensibles ? Vois-tu deux blocs presque identiques ? Cette fonction fait-elle une seule chose ?</div>
+</section>
+
+<section class="diapo" data-type="regle">
+  <div class="surtitre">Fin de la rampe de lancement</div>
+  <div class="centre"><p class="regle">Tu as écrit ~250 lignes.<br>Tu as une application<br>qui <span class="souligne">marche</span>.</p></div>
+  <div class="pied"><span>Séance 04 &middot; Fabriquer ses outils</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Marquer solennellement la fin de l'Arc 1. Prévenir que le rythme monte : à partir de la S5, le palier bonus devient le socle.</div>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">À partir de la semaine prochaine : on n'apprend plus des instructions, on apprend à structurer.</p>
+  </div>
+  <div class="pied"><span>Séance 04 &middot; Fabriquer ses outils</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>

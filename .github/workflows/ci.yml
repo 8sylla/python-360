@@ -1,0 +1,27 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  qualite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Installer les dépendances
+        run: uv sync
+
+      - name: Analyser le code
+        run: uv run ruff check .
+
+      - name: Vérifier la mise en forme
+        run: uv run ruff format --check .
+
+      - name: Lancer les tests
+        run: uv run pytest -q
+
+      - name: Vérifier que les notebooks s'ouvrent
+        run: uv run python -c "import json,glob;[json.load(open(f,encoding='utf-8')) for f in glob.glob('seances/**/*.ipynb',recursive=True)];print('notebooks OK')"

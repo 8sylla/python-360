@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 11 — Qualité, tests, production — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Rendre<br>livrable.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">Le code qui marche sur ta machine ne vaut rien. Aujourd'hui, il marche partout.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>11</b></div><div>Durée<b>3 h</b></div><div>Final<b>Demo Day</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La phrase interdite</div>
+  <div class="centre"><p class="geant">«&nbsp;Ça marche<br>sur <span class="souligne">ma</span> machine.&nbsp;»</p></div>
+  <div class="pied"><span>Séance 11 &middot; Qualité et production</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 1</div>
+  <div class="centre">
+    <div class="numero">01</div>
+    <h1 style="color:#fff;margin-top:-8px">L'environnement</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Un seul outil à la place de cinq.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+
+<section class="diapo" data-type="chiffre">
+  <div class="surtitre">uv</div>
+  <div class="centre" style="display:flex;align-items:baseline;gap:40px">
+    <div class="chiffre">5&rarr;1</div>
+    <div><h2 style="max-width:13ch">outils remplacés</h2>
+      <p class="legende" style="margin-top:16px">pip, virtualenv, pyenv, pipx, poetry.</p></div>
+  </div>
+  <div class="pied"><span></span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+  <div class="notes"><b>Notes</b> Le montrer : supprimer .venv, lancer uv sync, l'environnement se reconstruit en quelques secondes. L'effet est plus convaincant que le discours.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Les cinq commandes</div>
+  <pre class="code"><span class="f">uv</span> init opportunitrack    <span class="c"># le squelette</span>
+<span class="f">uv</span> add fastapi uvicorn    <span class="c"># ajoute ET installe</span>
+<span class="f">uv</span> add --dev pytest ruff  <span class="c"># outils de dev</span>
+<span class="f">uv</span> run pytest             <span class="c"># sans activer quoi que ce soit</span>
+<span class="f">uv</span> sync                   <span class="c"># reconstruit à l'identique</span></pre>
+  <p class="legende" style="margin-top:22px"><span class='mono'>uv.lock</span> fige les versions exactes. «&nbsp;Ça marche partout&nbsp;», et c'est vérifiable.</p>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">Ruff</div>
+  <h2 style="margin-bottom:28px">Un seul outil, en quelques millisecondes.</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>Avant</h3><p class="legende mono" style="font-size:20px">black + flake8 + isort + pylint</p><p class="legende pousse">Quatre outils, quatre configurations.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>ruff</h3><p class="legende mono" style="font-size:20px">format . / check . --fix</p><p class="legende pousse">Le débat sur les espaces est clos.</p></div></div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 2</div>
+  <div class="centre">
+    <div class="numero">02</div>
+    <h1 style="color:#fff;margin-top:-8px">Tester</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Ce qui rapporte, et ce qui ne rapporte rien.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+
+<section class="diapo" data-type="liste">
+  <div class="surtitre">Que tester en priorité ?</div>
+  <h2 style="margin-bottom:30px">Dans cet ordre, pas un autre</h2>
+  <ul class="liste centre"><li>La <b>logique métier</b> &mdash; rentabilité maximale</li><li>Les <b>cas limites</b> &mdash; liste vide, valeur nulle, date passée</li><li>Les <b>bugs déjà rencontrés</b> &mdash; sinon ils reviendront</li><li>Les <b>routes d'API</b> en surface</li></ul>
+  <div class="notes"><b>Notes</b> Ne pas tester : les bibliothèques des autres, les getters triviaux, la mise en forme. Les débutants veulent tout tester ou rien.</div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">La fixture</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M48 92 h84 l-10 96 a12 12 0 0 1 -12 10 h-40 a12 12 0 0 1 -12 -10 Z"/><path d="M156 108 h44 l-6 80 h-32 Z"/><path d="M44 92 h92" /><path d="M152 108 h52"/></svg></div>
+    <div><h2>C'est le<br><span class="souligne">décor</span> de théâtre.</h2><p class="corps" style="margin-top:22px">Elle prépare l'environnement du test et le range ensuite, sans dupliquer ce code partout.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">parametrize</div>
+  <pre class="code"><span class="f">@pytest.mark.parametrize</span>(<span class="s">"jours, attendu"</span>, [
+    (<span class="n">-1</span>, <span class="k">False</span>),  <span class="c"># déjà passée</span>
+    (<span class="n">0</span>,  <span class="k">True</span>),
+    (<span class="n">6</span>,  <span class="k">True</span>),   <span class="c"># limite haute</span>
+    (<span class="n">7</span>,  <span class="k">False</span>),  <span class="c"># juste au-delà</span>
+])</pre>
+  <p class="legende" style="margin-top:22px">Un seul test, cinq cas. Et on teste les <b>bornes</b> (6 et 7), jamais des valeurs confortables.</p>
+</section>
+
+<section class="diapo" data-type="formule">
+  <div class="surtitre">La couverture</div>
+  <h2 style="margin-bottom:26px">Un indicateur, pas un objectif</h2>
+  <div class="formule">$$\text{couverture}=\frac{\text{lignes exécutées}}{\text{lignes totales}}$$</div>
+  <p class="legende" style="margin-top:24px;text-align:center">60&nbsp;% bien ciblés valent mieux que 100&nbsp;% d'assertions creuses.</p>
+  <div class="notes"><b>Notes</b> Le dire explicitement évite une course au chiffre, qui produit des tests inutiles et un faux sentiment de sécurité.</div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 3</div>
+  <div class="centre">
+    <div class="numero">03</div>
+    <h1 style="color:#fff;margin-top:-8px">Livrer</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Secrets, conteneur, automatisation.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">En quelques minutes</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">Une clé publiée sur GitHub<br>est <span class="souligne">exploitée</span>.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Et supprimer le fichier ne suffit pas&nbsp;: l'historique conserve tout.</p>
+  </div>
+  <div class="notes"><b>Notes</b> Des robots scrutent GitHub en continu. La bonne pratique : .env dans .gitignore, .env.example versionné sans valeurs.</div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Docker</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M44 92 h152 v104 a10 10 0 0 1 -10 10 H54 a10 10 0 0 1 -10 -10 Z"/><path d="M36 60 h168 v32 H36 Z"/><path d="M104 60 v32 M136 60 v32"/><path d="M104 130 h32"/></svg></div>
+    <div><h2>C'est un <span class="souligne">carton</span><br>de déménagement.</h2><p class="corps" style="margin-top:22px">On emballe l'application <i>avec</i> son environnement. Le carton s'ouvre à l'identique sur n'importe quelle machine.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">L'intégration continue</div>
+  <div class="centre"><p class="geant">Le collègue qui vérifie<br>à ta place, à chaque<br><span class="souligne">envoi</span>.</p></div>
+  <div class="pied"><span>Séance 11 &middot; Qualité et production</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+  <div class="notes"><b>Notes</b> Le badge vert sur le dépôt est un moteur de motivation puissant. Le montrer comme tel.</div>
+</section>
+
+<section class="diapo" data-type="liste" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div><div class="surtitre">La checklist du livrable</div>
+  <h2 style="margin-bottom:30px">À cocher avant le Demo Day</h2>
+  <ul class="liste centre"><li>README avec installation et captures</li><li><span class='mono'>ruff check</span> et <span class='mono'>ruff format --check</span> sans erreur</li><li>Au moins 5 tests qui passent, dont un test d'API</li><li><span class='mono'>.env</span> jamais versionné</li><li>CI au vert &middot; Dockerfile fonctionnel</li></ul>
+</section>
+
+<section class="diapo" data-type="section" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 12</div>
+  <div class="centre">
+    <div class="numero">12</div>
+    <h1 style="color:#fff;margin-top:-8px">Demo Day</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Cinq minutes chacun.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+
+<section class="diapo" data-type="liste">
+  <div class="surtitre">La trame imposée</div>
+  <h2 style="margin-bottom:30px">Dans cet ordre</h2>
+  <ul class="liste centre"><li>Ce que fait mon projet &mdash; 30 s, <b>sans jargon</b></li><li>Démonstration en direct &mdash; 2 min</li><li><b>La difficulté rencontrée, et comment je l'ai résolue &mdash; 1 min 30</b></li><li>Ce que j'ajouterais avec une semaine de plus &mdash; 1 min</li></ul>
+  <div class="notes"><b>Notes</b> La partie 3 est le cœur de l'exercice et celle qu'on escamote par pudeur. Insister : raconter un bug qui a pris trois heures est plus utile au groupe qu'une démo parfaite.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Onze séances plus tard</div>
+  <div class="centre"><p class="geant">De «&nbsp;je n'ai jamais codé&nbsp;»<br>à «&nbsp;j'ai <span class="souligne">déployé</span><br>une API&nbsp;».</p></div>
+  <div class="pied"><span>Séance 11 &middot; Qualité et production</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+
+<section class="diapo" data-type="tuiles">
+  <div class="surtitre">Et après ?</div>
+  <h2 style="margin-bottom:24px">Quatre chemins, une porte d'entrée chacun.</h2>
+  <div class="tuiles"><div class="tuile"><b>Data / IA</b><span>scikit-learn, puis Kaggle Learn</span></div><div class="tuile"><b>Backend</b><span>bases de données, la suite du tuto FastAPI</span></div><div class="tuile"><b>Automatisation</b><span>Automate the Boring Stuff</span></div><div class="tuile"><b>Applications</b><span>Streamlit : un notebook devient une appli</span></div></div>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">Merci. Le dépôt reste ouvert, et le salon aussi.</p>
+  </div>
+  <div class="pied"><span>ASEGUIM &middot; Formation Python 360&deg;</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i></span></div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>

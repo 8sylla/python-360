@@ -1,0 +1,14 @@
+# Pour les apprenants qui préfèrent pip (ou pour Google Colab).
+# Les versions sont bornées : ne pas les desserrer sans prévenir le groupe.
+pandas>=3.0,<3.1
+numpy>=2.5,<3
+matplotlib>=3.10
+seaborn>=0.13
+requests>=2.32
+beautifulsoup4>=4.13
+fastapi>=0.136
+uvicorn[standard]>=0.34
+pydantic>=2.13
+pydantic-settings>=2.0
+pytest>=8.0
+ruff>=0.9

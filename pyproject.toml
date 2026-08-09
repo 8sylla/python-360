@@ -1,0 +1,58 @@
+[project]
+name = "opportunitrack-formation"
+version = "1.0.0"
+description = "Formation Python 360 degres - dépôt pédagogique et fil rouge OpportuniTrack"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "pandas>=3.0,<3.1",
+    "numpy>=2.5,<3",
+    "matplotlib>=3.10",
+    "seaborn>=0.13",
+    "requests>=2.32",
+    "beautifulsoup4>=4.13",
+    "fastapi>=0.136",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.13",
+    "pydantic-settings>=2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=6.0",
+    "ruff>=0.9",
+    "httpx>=0.28",        # requis par fastapi.testclient
+    "jupyter>=1.1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+# Les notebooks contiennent volontairement des cellules à trous (...), des
+# imports non utilisés et du code redéfini : ce sont des supports pédagogiques,
+# pas du code de production. On ne les analyse pas.
+# Les notebooks, les slides et les guides contiennent volontairement du code
+# à trous, tronqué ou pédagogiquement dénormalisé : ce n'est pas du code de
+# production, on ne l'analyse pas.
+extend-exclude = ["*.ipynb", "slides/", "docs/"]
+
+[tool.ruff.lint]
+# E/F = erreurs et pyflakes · I = imports triés · UP = syntaxe modernisée
+# B = pièges courants · SIM = simplifications
+select = ["E", "F", "I", "UP", "B", "SIM"]
+# En formation, on tolère les lignes longues dans les notebooks de démonstration.
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"seances/**" = ["F821", "E402"]     # les corrigés importent parfois hors du haut de fichier
+
+[tool.ruff.lint.flake8-bugbear]
+# Depends() et Query() dans les valeurs par défaut : c'est L'idiome FastAPI,
+# pas un piège. On le déclare comme tel plutôt que d'ignorer la règle partout.
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
+
+[tool.pytest.ini_options]
+testpaths = ["fil-rouge"]
+pythonpath = ["fil-rouge/v2-poo", "fil-rouge/v7-api"]

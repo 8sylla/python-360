@@ -1,0 +1,37 @@
+Formation Python 360° — ASEGUIM
+
+Ce dépôt contient deux natures de travaux, sous deux licences distinctes.
+
+────────────────────────────────────────────────────────────────────────
+1. LE CODE  —  licence MIT
+   Concerné : fil-rouge/, data/, seances/**/corrige/, slides/source/,
+              slides/moteur.js, slides/theme.css
+
+Copyright (c) 2026 ASEGUIM
+
+L'autorisation est accordée, gratuitement, à toute personne obtenant une
+copie de ce logiciel et des fichiers de documentation associés, de
+l'utiliser sans restriction, y compris les droits d'utiliser, copier,
+modifier, fusionner, publier, distribuer, sous-licencier et/ou vendre des
+copies, sous réserve que l'avis de copyright ci-dessus et le présent avis
+figurent dans toutes les copies.
+
+LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE.
+
+────────────────────────────────────────────────────────────────────────
+2. LE CONTENU PÉDAGOGIQUE  —  CC BY-SA 4.0
+   Concerné : docs/, slides/*.html, seances/**/reprise.ipynb, README.md
+
+Vous êtes libre de partager et d'adapter ce contenu, y compris à des fins
+commerciales, aux conditions suivantes :
+  · Attribution — créditer ASEGUIM et indiquer les modifications.
+  · Partage dans les mêmes conditions — diffuser vos adaptations sous la
+    même licence.
+
+Texte complet : https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+
+────────────────────────────────────────────────────────────────────────
+3. LE LOGO ASEGUIM  —  tous droits réservés
+   slides/assets/logo-aseguim.jpg n'est couvert par aucune des licences
+   ci-dessus. Il reste la propriété de l'association. Toute réutilisation
+   de ce dépôt hors ASEGUIM doit le remplacer.

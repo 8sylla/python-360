@@ -1,0 +1,34 @@
+# Environnements
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Secrets — NE JAMAIS VERSIONNER (cf. séance 11)
+.env
+*.key
+secrets.json
+
+# Données produites par les exercices
+*.db
+*.sqlite3
+donnees.json
+api_donnees.json
+opportunites_propres.csv
+catalogue.csv
+dashboard.png
+demo.json
+
+# Outils
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Systèmes
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/settings.json

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 5 — Programmation orientée objet — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Structurer<br>avec les objets.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">Ton programme marche. Aujourd'hui, on le rend maintenable par quelqu'un d'autre que toi.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>05</b></div><div>Durée<b>3 h</b></div><div>Arc<b>2 sur 2</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Le signal</div>
+  <div class="centre"><p class="geant">La même liste,<br>passée à <span class="souligne">six fonctions</span>.</p></div>
+  <div class="pied"><span>Séance 05 &middot; Programmation orientée objet</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Projeter le tracker de la S4 avec « opportunites » surligné dans les six signatures. Laisser le groupe nommer le problème.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La règle</div>
+  <div class="centre"><p class="geant">Quand les mêmes données<br>circulent partout,<br>un <span class="souligne">objet</span> veut naître.</p></div>
+  <div class="pied"><span>Séance 05 &middot; Programmation orientée objet</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M48 92 h84 l-10 96 a12 12 0 0 1 -12 10 h-40 a12 12 0 0 1 -12 -10 Z"/><path d="M156 108 h44 l-6 80 h-32 Z"/><path d="M44 92 h92" /><path d="M152 108 h52"/></svg></div>
+    <div><h2>La classe est le <span class="souligne">moule</span>.<br>L'objet est le gâteau.</h2><p class="corps" style="margin-top:22px">Un moule ne se mange pas. Il sert à fabriquer autant de gâteaux qu'on veut, tous de la même forme, avec des parfums différents.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Une classe</div>
+  <pre class="code"><span class="k">class</span> <span class="f">Opportunite</span>:
+    <span class="k">def</span> <span class="f">__init__</span>(<span class="k">self</span>, titre, pays, jours):
+        <span class="k">self</span>.titre = titre
+        <span class="k">self</span>.pays  = pays
+
+bourse = <span class="f">Opportunite</span>(<span class="s">"Smarts-Up"</span>, <span class="s">"France"</span>, <span class="n">12</span>)</pre>
+  <p class="legende" style="margin-top:22px"><span class='mono'>self</span>, c'est «&nbsp;moi-même&nbsp;». <span class='mono'>self.titre</span> se lit «&nbsp;mon titre&nbsp;».</p>
+</section>
+
+<section class="diapo" data-type="chiffre">
+  <div class="surtitre">Le raccourci moderne</div>
+  <div class="centre" style="display:flex;align-items:baseline;gap:40px">
+    <div class="chiffre">15&rarr;6</div>
+    <div><h2 style="max-width:13ch">lignes, avec @dataclass</h2>
+      <p class="legende" style="margin-top:16px">Et l'affichage lisible et la comparaison sont offerts.</p></div>
+  </div>
+  <div class="pied"><span></span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Règle simple : si ta classe est surtout des attributs, prends une dataclass. Si elle est surtout du comportement, écris une classe normale.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">@dataclass</div>
+  <pre class="code"><span class="k">from</span> dataclasses <span class="k">import</span> dataclass, field
+
+<span class="f">@dataclass</span>
+<span class="k">class</span> <span class="f">Opportunite</span>:
+    titre: <span class="k">str</span>
+    pays: <span class="k">str</span>
+    tags: <span class="k">list</span>[<span class="k">str</span>] = <span class="f">field</span>(default_factory=<span class="k">list</span>)</pre>
+  <p class="legende" style="margin-top:22px"><mark>default_factory=list</mark> et jamais <span class='mono'>= []</span>&nbsp;: une liste par défaut serait partagée par tous les objets.</p>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Le piège n&deg;1 des dataclasses</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">Jamais <span class="mono" style="font-size:.8em">= []</span><br>comme valeur par défaut.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Toutes les instances partageraient la même liste.</p>
+  </div>
+  <div class="notes"><b>Notes</b> Le démontrer en direct : créer deux objets, ajouter un tag à l'un, constater qu'il apparaît chez l'autre. Stupéfaction garantie.</div>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">Les chaînes magiques</div>
+  <h2 style="margin-bottom:28px">Une faute de frappe doit devenir une erreur, pas un bug silencieux.</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>statut = "en cour"</h3><p class="legende mono" style="font-size:20px">aucune erreur</p><p class="legende pousse">Le filtrage casse en silence.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>Statut.EN_COURS</h3><p class="legende mono" style="font-size:20px">erreur immédiate</p><p class="legende pousse">Et l'éditeur complète tout seul.</p></div></div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">@property</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 88 L120 52 L200 88 L120 124 Z"/><path d="M40 88 V172 L120 208 V124"/><path d="M200 88 V172 L120 208"/><rect x="86" y="128" width="68" height="30" rx="6" opacity=".35"/><path d="M96 143 h48" stroke-dasharray="4 7"/></svg></div>
+    <div><h2>L'attribut qui<br>se <span class="souligne">calcule</span> tout seul.</h2><p class="corps" style="margin-top:22px"><span class='mono'>opp.jours_restants</span> &mdash; sans parenthèses, recalculé à chaque lecture. Stocker ce nombre serait faux dès demain.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">Héritage ou composition ?</div>
+  <h2 style="margin-bottom:28px">Une seule question à se poser.</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>est un</h3><p class="legende mono" style="font-size:20px">StageEtudiant est une Opportunite</p><p class="legende pousse">Héritage. Rare, à manier avec prudence.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>a des</h3><p class="legende mono" style="font-size:20px">Carnet a des Opportunite</p><p class="legende pousse">Composition. C'est le cas dans 80 % des situations.</p></div></div>
+  <div class="notes"><b>Notes</b> Dire honnêtement : l'héritage est enseigné en premier et surutilisé en pratique. On l'apprend pour savoir le lire, pas pour en mettre partout.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La vérité sur l'encapsulation</div>
+  <div class="centre"><p class="geant">Python n'a pas<br>de <span class="souligne">private</span>.</p></div>
+  <div class="pied"><span>Séance 05 &middot; Programmation orientée objet</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> _attribut est un panneau, pas un mur. Le dire franchement évite une confusion durable à ceux qui viennent de Java.</div>
+</section>
+
+<section class="diapo" data-type="exercice" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fil rouge v2</div>
+  <h1 style="color:#fff;font-size:66px;margin-bottom:26px">Refactoriser en deux classes</h1>
+  <ul class="liste" style="color:rgba(255,255,255,.9)"><li><span class='mono'>Opportunite</span> &mdash; une opportunité</li><li><span class='mono'>Carnet</span> &mdash; la collection et la persistance</li><li><b>Le comportement visible ne change pas</b></li><li>C'est ça, refactoriser</li></ul>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">La récompense</div>
+  <pre class="code">carnet = <span class="f">Carnet</span>()
+carnet.<span class="f">charger</span>()
+
+<span class="k">for</span> opp <span class="k">in</span> carnet.<span class="f">triees_par_urgence</span>():
+    <span class="f">print</span>(opp.titre, opp.jours_restants)</pre>
+  <p class="legende" style="margin-top:22px">Le code principal se lit maintenant comme une phrase en français. C'est le seul argument qui convainc vraiment.</p>
+</section>
+
+<section class="diapo" data-type="regle">
+  <div class="surtitre">À retenir</div>
+  <div class="centre"><p class="regle">Une classe,<br>une <span class="souligne">responsabilité</span>.</p></div>
+  <div class="pied"><span>Séance 05 &middot; Programmation orientée objet</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">La semaine prochaine : on regarde ce que Python fait dans notre dos.</p>
+  </div>
+  <div class="pied"><span>Séance 05 &middot; Programmation orientée objet</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>

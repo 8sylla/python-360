@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séance 10 — API REST avec FastAPI — Formation Python 360° · ASEGUIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="scene">
+<section class="diapo active" data-type="couverture" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="marque"><img src="assets/logo-aseguim.jpg" alt="ASEGUIM">
+    <span>ASEGUIM &middot; Formation Python 360&deg;</span></div>
+  <div class="centre">
+    <h1 style="font-size:112px;color:#fff">Du script<br>au service.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:26px;max-width:32ch">Ton programme ne servira plus qu'à toi. À la fin, n'importe qui pourra l'utiliser depuis n'importe où.</p>
+  </div>
+  <div class="meta pousse"><div>Séance<b>10</b></div><div>Durée<b>3 h</b></div><div>Pile<b>FastAPI · Pydantic v2</b></div></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">La question de départ</div>
+  <div class="centre"><p class="geant">Comment ton collègue<br>utilise-t-il<br>ton <span class="souligne">programme</span>&nbsp;?</p></div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Laisser venir les mauvaises réponses : lui envoyer le fichier, partager l'écran, lui installer Python. Elles mènent toutes seules à la bonne.</div>
+</section>
+
+<section class="diapo" data-type="analogie">
+  <div class="surtitre">Analogie</div>
+  <div class="duo">
+    <div class="picto"><svg viewBox="0 0 240 240" fill="none" stroke="var(--rouge)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M36 60 v132 M204 60 v132"/><rect x="36" y="104" width="168" height="44" rx="8"/><path d="M96 126 h72"/><path d="M150 112 l18 14 -18 14"/></svg></div>
+    <div><h2>Une API,<br>c'est un <span class="souligne">passe-plat</span>.</h2><p class="corps" style="margin-top:22px">La cuisine et la salle ne se voient pas. Le passe-plat définit ce qui peut être demandé, et sous quelle forme.</p></div>
+  </div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 1</div>
+  <div class="centre">
+    <div class="numero">01</div>
+    <h1 style="color:#fff;margin-top:-8px">REST</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Une ressource, une adresse, un verbe.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="tuiles">
+  <div class="surtitre">Tu l'as déjà écrit en séance 5</div>
+  <h2 style="margin-bottom:24px">L'API n'ajoute pas de logique. Elle ajoute une porte.</h2>
+  <div class="tuiles"><div class="tuile"><b>GET /opportunites</b><span><span class='mono'>carnet.toutes()</span></span></div><div class="tuile"><b>GET /opportunites/12</b><span><span class='mono'>carnet[12]</span></span></div><div class="tuile"><b>POST /opportunites</b><span><span class='mono'>carnet.ajouter(...)</span></span></div><div class="tuile"><b>DELETE /opportunites/12</b><span><span class='mono'>carnet.supprimer(12)</span></span></div></div>
+  <div class="notes"><b>Notes</b> C'est l'argument qui rend la séance abordable même pour les profils non techniques. Insister : rien de nouveau côté logique.</div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Le JSON</div>
+  <div class="centre"><p class="geant">C'est ton dictionnaire<br>Python, écrit en <span class="souligne">texte</span>.</p></div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 2</div>
+  <div class="centre">
+    <div class="numero">02</div>
+    <h1 style="color:#fff;margin-top:-8px">Pydantic v2</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">Le videur à l'entrée.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Pydantic</div>
+  <div class="centre"><p class="geant">Il refuse les données<br><span class="souligne">avant</span> que ton code<br>ne s'exécute.</p></div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Conséquence directe : tu n'écris plus jamais de if not isinstance(...). Et le message d'erreur indique précisément quel champ pose problème.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Un modèle</div>
+  <pre class="code petit"><span class="k">class</span> <span class="f">Opportunite</span>(BaseModel):
+    titre: <span class="k">str</span> = <span class="f">Field</span>(min_length=<span class="n">3</span>, max_length=<span class="n">200</span>)
+    pays: <span class="k">str</span>
+    deadline: date
+
+    <span class="f">@field_validator</span>(<span class="s">"pays"</span>)
+    <span class="f">@classmethod</span>
+    <span class="k">def</span> <span class="f">normaliser</span>(cls, v): <span class="k">return</span> v.<span class="f">strip</span>().<span class="f">title</span>()</pre>
+  <p class="legende" style="margin-top:22px">La validation s'exécute avant le code métier. Le nettoyage de la séance 7 devient inutile pour tout ce qui passe par l'API.</p>
+</section>
+
+<section class="diapo" data-type="alerte" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Attention aux tutoriels</div>
+  <div class="centre">
+    <div class="signe">!</div>
+    <h1 style="color:#fff;margin-top:14px;max-width:22ch">FastAPI ne supporte<br><span class="souligne">plus</span> Pydantic&nbsp;v1.</h1>
+    <p class="lead" style="color:rgba(255,255,255,.76);margin-top:22px">Tout contenu antérieur à 2024 est périmé.</p>
+  </div>
+</section>
+
+<section class="diapo" data-type="tuiles">
+  <div class="surtitre">v1 &rarr; v2 : la table à connaître</div>
+  <h2 style="margin-bottom:24px">À gauche, ce qui n'existe plus.</h2>
+  <div class="tuiles"><div class="tuile"><b>@validator</b><span>&rarr; <span class='mono'>@field_validator</span></span></div><div class="tuile"><b>.dict()</b><span>&rarr; <span class='mono'>.model_dump()</span></span></div><div class="tuile"><b>parse_obj()</b><span>&rarr; <span class='mono'>model_validate()</span></span></div><div class="tuile"><b>class Config</b><span>&rarr; <span class='mono'>model_config = ConfigDict()</span></span></div></div>
+</section>
+
+<section class="diapo" data-type="duel">
+  <div class="surtitre">Entrée et sortie</div>
+  <h2 style="margin-bottom:28px">Deux modèles, jamais un seul.</h2>
+  <div class="duel"><div class="volet" data-signe="non"><span class="marqueur">&#10007;</span><h3>OpportuniteCreation</h3><p class="legende mono" style="font-size:20px">ce que le client envoie</p><p class="legende pousse">Pas d'identifiant : le serveur l'attribue.</p></div><div class="volet" data-signe="oui"><span class="marqueur">&#10003;</span><h3>OpportuniteLecture</h3><p class="legende mono" style="font-size:20px">ce que le serveur rend</p><p class="legende pousse">Identifiant + champs calculés.</p></div></div>
+  <div class="notes"><b>Notes</b> Confondre les deux, c'est laisser un client imposer un identifiant ou lire un champ interne.</div>
+</section>
+
+<section class="diapo" data-type="section" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Partie 3</div>
+  <div class="centre">
+    <div class="numero">03</div>
+    <h1 style="color:#fff;margin-top:-8px">Le moment waouh</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:20px">La documentation, gratuitement.</p>
+  </div>
+  <div class="pied"><span>Formation Python 360&deg; &middot; ASEGUIM</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Tu écris les types</div>
+  <div class="centre"><p class="geant">Tu obtiens la validation,<br>le JSON, et une doc<br><span class="souligne">testable</span>.</p></div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> Ouvrir /docs en direct et cliquer sur « Try it out ». Ne pas rater ce moment : il justifie à lui seul la séance.</div>
+</section>
+
+<section class="diapo" data-type="code">
+  <div class="surtitre">Gérer l'absence</div>
+  <pre class="code"><span class="k">if</span> opportunite <span class="k">is</span> <span class="k">None</span>:
+    <span class="k">raise</span> <span class="f">HTTPException</span>(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail=<span class="s">f"Aucune opportunité d'identifiant {opp_id}"</span>)</pre>
+  <p class="legende" style="margin-top:22px">Ne jamais rendre 200 avec un corps vide pour une ressource absente&nbsp;: c'est mentir au client.</p>
+</section>
+
+<section class="diapo" data-type="exercice" data-fond="vert">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fil rouge v7</div>
+  <h1 style="color:#fff;font-size:66px;margin-bottom:26px">L'API OpportuniTrack</h1>
+  <ul class="liste" style="color:rgba(255,255,255,.9)"><li><span class='mono'>GET /opportunites</span> avec filtres</li><li><span class='mono'>POST</span> qui rend <b>201</b>, <span class='mono'>DELETE</span> qui rend <b>204</b></li><li><span class='mono'>GET /statistiques</span> &mdash; le groupby de la S8, en JSON</li><li>Puis ouvre <span class='mono'>/docs</span> et clique sur «&nbsp;Try it out&nbsp;»</li></ul>
+</section>
+
+<section class="diapo" data-type="idee">
+  <div class="surtitre">Le test qui prouve tout</div>
+  <div class="centre"><p class="geant">Un titre de deux lettres<br>est refusé. Et tu n'as écrit<br><span class="souligne">aucune</span> validation.</p></div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+  <div class="notes"><b>Notes</b> C'est Pydantic qui travaille. Ça répond concrètement à la question « à quoi servent les types ? » posée depuis la séance 4.</div>
+</section>
+
+<section class="diapo" data-type="regle">
+  <div class="surtitre">À retenir</div>
+  <div class="centre"><p class="regle">Documenter son code,<br>c'est documenter<br>son <span class="souligne">API</span>.</p></div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+</section>
+
+<section class="diapo" data-type="fin" data-fond="rouge">
+  <div class="filigrane">&gt;&gt;&gt;</div>
+  <div class="surtitre">Fin de s&eacute;ance</div>
+  <div class="centre">
+    <h1 style="color:#fff;font-size:98px">Des questions&nbsp;?</h1>
+    <p class="lead" style="color:rgba(255,255,255,.74);margin-top:22px;max-width:34ch">La semaine prochaine : on verrouille, on teste, on livre. Et vous présentez.</p>
+  </div>
+  <div class="pied"><span>Séance 10 &middot; Exposer avec FastAPI</span><span class="rail"><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="faite"></i><i class="ici"></i><i class=""></i></span></div>
+</section>
+</div>
+<div class="aide">&#8592; &#8594; naviguer &middot; F plein &eacute;cran &middot; N notes</div>
+<div class="compteur"><span id="ici">1</span> / <span id="total">0</span></div>
+<div class="panneau" id="panneau"></div>
+<script src="moteur.js"></script>
+</body>
+</html>
