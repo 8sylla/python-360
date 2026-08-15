@@ -1,15 +1,21 @@
 # Séance 0 — Kit de démarrage
 
-> La séance 0 se fait **en autonomie**, avant la première séance. Il n'y a
-> donc pas de notebook : juste une checklist.
+**samedi 15 août 2026 · 2 h 30**
 
-## Les cinq cases, quinze minutes
+## Au programme
+
+- Pourquoi Python, et pas un autre langage
+- Le parcours complet : les huit séances et à quoi chacune sert
+- Prise en main de Colab : cellules de code et de texte, Markdown, raccourcis
+- L'ordre d'exécution des cellules — le piège du premier jour
+
+## Avant la séance 1
 
 - [ ] Ouvrir `colab.research.google.com` et exécuter un `print("Bonjour")`
 - [ ] Rejoindre le cours Classroom avec le code reçu par mail
 - [ ] Y dire bonjour dans le flux — ça vaut inscription
 - [ ] Tester son casque : micro et son, dans une réunion Meet à vide
-- [ ] Remplir le questionnaire de positionnement (2 minutes)
+- [ ] Remplir le questionnaire de positionnement
 
 ## Le piège du premier jour
 

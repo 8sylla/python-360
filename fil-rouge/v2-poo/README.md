@@ -1,5 +1,7 @@
-# `OpportuniTrack` v2-poo
+# `MonBudget` — v2-poo
 
-> Publié après la **Séance 5**. Ce dossier est vide d'ici là.
+**Séance 5 · La même application, en objets.**
 
-La même application, refaite en deux classes. Le comportement ne change pas — c'est la définition d'une refactorisation.
+Une classe `Depense` et une classe `Budget`. Le comportement visible ne change pas : c'est la définition même d'une refactorisation.
+
+> Publié après la séance 5. Ce dossier est vide d'ici là.

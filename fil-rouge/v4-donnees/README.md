@@ -1,5 +1,7 @@
-# `OpportuniTrack` v4-donnees
+# `MonBudget` — v4-donnees
 
-> Publié après la **Séance 7**. Ce dossier est vide d'ici là.
+**Séance 7 · Un vrai relevé, nettoyé.**
 
-Le jeu de 300 lignes réelles, nettoyé avec pandas.
+Trois cents lignes de relevé bancaire : montants en texte, dates dans trois formats, catégories mal orthographiées, doublons. Nettoyées avec pandas.
+
+> Publié après la séance 7. Ce dossier est vide d'ici là.

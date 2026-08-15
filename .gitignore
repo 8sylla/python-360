@@ -13,12 +13,9 @@ secrets.json
 # Données produites par les exercices
 *.db
 *.sqlite3
-donnees.json
-api_donnees.json
-opportunites_propres.csv
-catalogue.csv
+depenses.json
+depenses_propres.csv
 dashboard.png
-demo.json
 
 # Outils
 .pytest_cache/
@@ -32,3 +29,6 @@ htmlcov/
 Thumbs.db
 .idea/
 .vscode/settings.json
+
+# Guides du formateur — restent en local
+docs/

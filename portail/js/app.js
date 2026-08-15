@@ -55,17 +55,17 @@
     const li = document.createElement("li");
     li.className = "seance" + (passee ? " seance--passee" : "");
     li.innerHTML = `
-      <div class="seance__date">
-        <b>${j.getDate()} ${MOIS[j.getMonth()]}</b>
-        <span class="seance__jour">${JOURS[j.getDay()]}</span>
+      <div class="seance__tete">
+        <span class="seance__num">S${s.numero}</span>
+        <span class="seance__date">
+          <b>${j.getDate()} ${MOIS[j.getMonth()]}</b>
+          <span class="seance__jour">${JOURS[j.getDay()]}</span>
+        </span>
       </div>
-      <div class="seance__corps">
-        <div class="seance__tete">
-          <span class="seance__num">S${s.numero}</span>
-          <h3 class="seance__titre">${echappe(s.titre)}</h3>
-          <span class="seance__duree">${echappe(s.duree)}</span>
-        </div>
-        <p class="seance__sous">${echappe(s.sousTitre)}</p>
+      <h3 class="seance__titre">${echappe(s.titre)}</h3>
+      <p class="seance__sous">${echappe(s.sousTitre)}</p>
+      <div class="seance__pied">
+        <span class="seance__duree">${echappe(s.duree)}</span>
         ${liens
           ? `<div class="seance__liens">${liens}</div>`
           : `<p class="seance__attente">${

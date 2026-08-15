@@ -1,5 +1,7 @@
-# `OpportuniTrack` v5-dashboard
+# `MonBudget` — v5-dashboard
 
-> Publié après la **Séance 8**. Ce dossier est vide d'ici là.
+**Séance 8 · Le tableau de bord du mois.**
 
-Le tableau de bord à quatre graphiques, exporté en image.
+Quatre graphiques : la répartition par catégorie, l'évolution dans le mois, les plus grosses dépenses, et le comparatif au mois précédent.
+
+> Publié après la séance 8. Ce dossier est vide d'ici là.

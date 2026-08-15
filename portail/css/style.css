@@ -128,61 +128,80 @@ h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin-bottom: 10px; }
 .bloc { padding: clamp(52px, 7vw, 80px) 0; }
 .bloc--craie { background: var(--craie); border-block: 1px solid var(--trait); }
 
-/* ── le planning ────────────────────────────────────────────────────── */
-.planning { list-style: none; margin: 0; padding: 0; }
+/* ── le planning, en grille ─────────────────────────────────────────── */
+/*  Trois colonnes sur grand écran, deux sur tablette, une sur téléphone.
+    C'est `auto-fill` qui décide : aucune valeur de rupture à maintenir.   */
+.planning {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(286px, 1fr));
+  gap: 16px;
+}
 
 .seance {
-  display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
-  gap: 0 26px;
-  padding: 22px 0;
-  border-top: 1px solid var(--trait);
+  display: flex; flex-direction: column;
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  border-radius: 12px;
+  padding: 20px 20px 18px;
+  transition: border-color .16s, box-shadow .16s;
 }
-.planning > .seance:last-child { border-bottom: 1px solid var(--trait); }
+.seance:hover {
+  border-color: #D9C8C5;
+  box-shadow: 0 6px 20px rgba(26, 12, 10, .05);
+}
 
+.seance__tete {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 14px;
+}
+.seance__num {
+  font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+  color: var(--rouge); border: 1px solid currentColor;
+  border-radius: 5px; padding: 2px 7px; flex: none;
+}
 .seance__date {
-  font-family: var(--mono); font-size: 12px; color: var(--gris);
-  line-height: 1.45; padding-top: 4px; text-align: right;
+  font-family: var(--mono); font-size: 11.5px; color: var(--gris);
+  text-align: right; line-height: 1.35;
 }
-.seance__date b {
-  display: block; font-size: 21px; color: var(--encre); font-weight: 500;
-}
+.seance__date b { display: block; color: var(--encre); font-weight: 500; font-size: 13px; }
 .seance__jour { text-transform: lowercase; }
 
-.seance__corps { min-width: 0; }
-.seance__tete { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.seance__num {
-  font-family: var(--mono); font-size: 11.5px; color: var(--rouge);
-  border: 1px solid currentColor; border-radius: 4px;
-  padding: 1px 6px; flex: none;
-}
 .seance__titre {
-  font-family: var(--titre); font-weight: 700; font-size: 1.28rem;
-  margin: 0; letter-spacing: -.01em;
+  font-family: var(--titre); font-weight: 700; font-size: 1.22rem;
+  margin: 0 0 6px; letter-spacing: -.012em; line-height: 1.2;
+  text-wrap: balance;
 }
-.seance__sous { color: var(--gris); font-size: 14.5px; margin: 4px 0 0; }
-.seance__duree { font-family: var(--mono); font-size: 11.5px; color: var(--gris); }
+.seance__sous { color: var(--gris); font-size: 13.5px; margin: 0; line-height: 1.5; }
 
-.seance__liens { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+/* le pied de carte est collé en bas : les cartes d'une rangée s'alignent */
+.seance__pied {
+  margin-top: auto; padding-top: 16px;
+  border-top: 1px solid var(--trait);
+}
+.seance__duree {
+  display: block; font-family: var(--mono); font-size: 11px;
+  color: var(--gris); margin-bottom: 10px;
+}
+.seance__liens { display: flex; flex-wrap: wrap; gap: 7px; }
 .ressource {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 13px; font-weight: 500; text-decoration: none;
-  color: var(--encre); background: var(--blanc);
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-weight: 500; text-decoration: none;
+  color: var(--encre); background: var(--papier);
   border: 1px solid var(--trait); border-radius: 7px;
-  padding: 7px 13px;
+  padding: 6px 11px;
   transition: border-color .15s, color .15s;
 }
 .ressource:hover { border-color: var(--rouge); color: var(--rouge); }
-.ressource svg { width: 13px; height: 13px; flex: none; opacity: .7; }
+.ressource svg { width: 12px; height: 12px; flex: none; opacity: .65; }
 .ressource:hover svg { opacity: 1; }
 
-.seance__attente {
-  margin: 12px 0 0; font-size: 13px; color: var(--gris); font-style: italic;
-}
+.seance__attente { margin: 0; font-size: 12.5px; color: var(--gris); font-style: italic; }
 
-/* séance déjà passée : un point vert, discret */
+/* Séance déjà passée : la puce vire au vert. Rien à cliquer — c'est la
+   date qui décide, et elle seule. */
+.seance--passee { background: var(--papier); }
 .seance--passee .seance__num { color: var(--vert); }
-.seance--passee .seance__date b { color: var(--encre); }
 
 /* ── les outils ─────────────────────────────────────────────────────── */
 .outils {
