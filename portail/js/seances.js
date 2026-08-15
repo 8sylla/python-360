@@ -1,102 +1,107 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   LE SEUL FICHIER À MODIFIER POUR PUBLIER UNE SÉANCE
-   ═══════════════════════════════════════════════════════════════════════
+   LE SEUL FICHIER À MODIFIER
 
-   Chaque séance est un objet. Pour publier un lien, remplace `null` par
-   l'adresse du fichier ; le bouton s'allume tout seul. Laisse `null` tant
-   que la ressource n'existe pas : le bouton reste grisé, avec « à venir ».
+   Une séance = un objet. Pour publier une ressource, on ajoute son lien.
+   Une clé absente ou à `null` n'affiche simplement rien : les ressources
+   sont facultatives, et une séance sans vidéo reste une séance normale.
 
-   Les fichiers se déposent dans  portail/fichiers/  puis se citent en
-   chemin relatif :  "fichiers/00-kit-demarrage.pdf"
-
-   `date`  : ce qui s'affiche sur la carte. Format libre.
-   `arc`   : 1 ou 2 — sert au filtre.
+   Les fichiers se déposent dans  portail/fichiers/  et se citent en chemin
+   relatif :  "fichiers/00-kit-demarrage.pdf"
    ═══════════════════════════════════════════════════════════════════════ */
 
 const SEANCES = [
   {
     numero: 0,
     titre: "Kit de démarrage",
-    sousTitre: "Pourquoi Python, où l'on va, et comment on s'outille",
-    date: "En autonomie · 45 min",
-    arc: 1,
+    sousTitre: "Pourquoi Python, le parcours, et la prise en main de Colab",
+    date: "2026-08-15",
+    duree: "2 h 30",
     liens: {
-      slides:   null,   // ex. "fichiers/00-kit-demarrage.pdf"
-      notebook: null,
-      corrige:  null,
-      replay:   null,
+      slides: null,        // ex. "fichiers/00-kit-demarrage.pdf"
     },
   },
   {
     numero: 1,
     titre: "Parler à la machine",
     sousTitre: "Variables, types, entrées et sorties",
-    date: "Séance 1 · 3 h",
-    arc: 1,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    date: "2026-08-19",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 2,
     titre: "Décider et répéter",
     sousTitre: "Booléens, conditions, boucles, lecture d'erreurs",
-    date: "Séance 2 · 3 h",
-    arc: 1,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    date: "2026-08-22",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 3,
     titre: "Ranger l'information",
     sousTitre: "Listes, dictionnaires, tuples, ensembles",
-    date: "Séance 3 · 3 h",
-    arc: 1,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    date: "2026-08-26",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 4,
     titre: "Fabriquer ses outils",
-    sousTitre: "Fonctions, modules, fichiers — et passage à VS Code",
-    date: "Séance 4 · 3 h",
-    arc: 1,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    sousTitre: "Fonctions, modules, fichiers, erreurs",
+    date: "2026-08-29",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 5,
     titre: "Programmation orientée objet",
     sousTitre: "Classes, objets, dataclasses, composition",
-    date: "Séance 5 · 3 h",
-    arc: 2,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    date: "2026-09-02",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 6,
     titre: "Sous le capot",
-    sousTitre: "Dunders, générateurs, décorateurs, outillage qualité",
-    date: "Séance 6 · 3 h",
-    arc: 2,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    sousTitre: "Méthodes spéciales, générateurs, décorateurs",
+    date: "2026-09-05",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 7,
     titre: "NumPy & pandas",
     sousTitre: "Du tableau en mémoire au DataFrame",
-    date: "Séance 7 · 3 h",
-    arc: 2,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    date: "2026-09-09",
+    duree: "3 h",
+    liens: {},
   },
   {
     numero: 8,
     titre: "Faire parler les données",
     sousTitre: "Agrégation, jointures, Matplotlib, seaborn",
-    date: "Séance 8 · 3 h",
-    arc: 2,
-    liens: { slides: null, notebook: null, corrige: null, replay: null },
+    date: "2026-09-12",
+    duree: "3 h",
+    liens: {},
   },
 ];
 
-/* Les quatre types de ressource, dans l'ordre où ils s'affichent. */
+/* Les ressources possibles, dans l'ordre d'affichage.
+   Aucune n'est obligatoire : seules celles qui ont un lien apparaissent. */
 const RESSOURCES = [
-  { cle: "slides",   libelle: "Slides PDF", icone: "doc" },
-  { cle: "notebook", libelle: "Notebook",   icone: "code" },
-  { cle: "corrige",  libelle: "Corrigé",    icone: "check" },
-  { cle: "replay",   libelle: "Replay",     icone: "play" },
+  { cle: "slides", libelle: "Slides", icone: "doc" },
+  { cle: "notebook", libelle: "Notebook", icone: "code" },
+  { cle: "corrige", libelle: "Corrigé", icone: "check" },
+  { cle: "video", libelle: "Vidéo", icone: "play" },
+];
+
+/* Les outils de la formation. Les logos sont dans assets/logos/ :
+   rien n'est chargé depuis un service extérieur. */
+const OUTILS = [
+  { nom: "Python", fichier: "python.svg", detail: "le langage" },
+  { nom: "Google Colab", fichier: "colab.svg", detail: "écrire du code sans rien installer" },
+  { nom: "Google Classroom", fichier: "classroom.svg", detail: "les supports et les devoirs" },
+  { nom: "Google Meet", fichier: "meet.svg", detail: "la séance en direct" },
+  { nom: "VS Code", fichier: "vscode.svg", detail: "à partir de la séance 4" },
+  { nom: "GitHub", fichier: "github.svg", detail: "le code, versionné" },
 ];
