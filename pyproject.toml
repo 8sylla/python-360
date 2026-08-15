@@ -3,19 +3,13 @@ name = "opportunitrack-formation"
 version = "1.0.0"
 description = "Formation Python 360 degres - dépôt pédagogique et fil rouge OpportuniTrack"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"   # imposé par numpy 2.5
 
 dependencies = [
     "pandas>=3.0,<3.1",
     "numpy>=2.5,<3",
     "matplotlib>=3.10",
     "seaborn>=0.13",
-    "requests>=2.32",
-    "beautifulsoup4>=4.13",
-    "fastapi>=0.136",
-    "uvicorn[standard]>=0.34",
-    "pydantic>=2.13",
-    "pydantic-settings>=2.0",
 ]
 
 [dependency-groups]
@@ -23,7 +17,6 @@ dev = [
     "pytest>=8.0",
     "pytest-cov>=6.0",
     "ruff>=0.9",
-    "httpx>=0.28",        # requis par fastapi.testclient
     "jupyter>=1.1",
 ]
 
@@ -48,11 +41,6 @@ ignore = ["E501"]
 [tool.ruff.lint.per-file-ignores]
 "seances/**" = ["F821", "E402"]     # les corrigés importent parfois hors du haut de fichier
 
-[tool.ruff.lint.flake8-bugbear]
-# Depends() et Query() dans les valeurs par défaut : c'est L'idiome FastAPI,
-# pas un piège. On le déclare comme tel plutôt que d'ignorer la règle partout.
-extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
-
 [tool.pytest.ini_options]
 testpaths = ["fil-rouge"]
-pythonpath = ["fil-rouge/v2-poo", "fil-rouge/v7-api"]
+pythonpath = ["fil-rouge/v2-poo"]

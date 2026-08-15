@@ -1,5 +1,5 @@
 # Formation Python 360° — Guide du formateur
-## ARC 2, première partie : Séances 5 à 8
+## ARC 2 : Séances 5 à 8
 
 **Structurer, puis analyser.** L'Arc 1 a appris des instructions ; l'Arc 2 apprend à organiser du code et à faire parler des données.
 
@@ -370,12 +370,12 @@ match evenement:
     case _:
         ...
 ```
-Le vendre pour ce qu'il est : **du filtrage de forme**, pas un simple `switch`. C'est particulièrement utile pour traiter du JSON — ce qui prépare directement les séances 9 et 10.
+Le vendre pour ce qu'il est : **du filtrage de forme**, pas un simple `switch`. C'est particulièrement utile dès qu'on traite du JSON — donc dès qu'on touche à des données venues d'ailleurs.
 
 **`functools` et `itertools`, deux gestes utiles chacun :**
 - `@functools.cache` : mémorise les résultats d'une fonction coûteuse. Démonstration spectaculaire sur Fibonacci récursif.
 - `functools.partial` : fige un argument, utile pour les `key=`.
-- `itertools.groupby` (après tri !) et `itertools.batched` (3.12+) pour découper en lots — celui-là servira au scraping en S9.
+- `itertools.groupby` (après tri !) et `itertools.batched` (3.12+) pour découper en lots — utile dès qu'on traite un gros fichier par paquets.
 
 **Le pont vers la qualité.** Ne pas présenter `ruff` et `pytest` comme des contraintes administratives mais comme un **filet** :
 - `ruff format` : plus jamais de débat sur les espaces. La machine tranche.
@@ -478,7 +478,7 @@ charger_beaucoup(5_000_000)
 2. Retirer `@functools.wraps` → `charger_beaucoup.__name__` affiche `enveloppe`.
 
 ### Palier bonus
-1. `@reessayer(n=3, delai=1)` : un décorateur **paramétré** — trois niveaux d'imbrication. C'est l'exercice qui sépare ceux qui ont compris de ceux qui ont copié. Il servira tel quel en S9 pour les requêtes réseau.
+1. `@reessayer(n=3, delai=1)` : un décorateur **paramétré** — trois niveaux d'imbrication. C'est l'exercice qui sépare ceux qui ont compris de ceux qui ont copié. C'est aussi le motif exact qu'on écrit pour absorber une erreur réseau passagère.
 2. `@journalise` qui écrit dans un fichier avec le module `logging` plutôt que `print`.
 3. Réécrire `Carnet.urgentes()` en générateur et mesurer la différence sur 100 000 entrées.
 4. Implémenter `__enter__`/`__exit__` sur `Carnet` pour que `with Carnet() as c:` charge à l'entrée et sauvegarde à la sortie.
@@ -754,7 +754,7 @@ print(f"✅ {len(df)} lignes propres sur {avant} au départ")
 | 110–130 | **Théorie 4** : seaborn | Live coding | API classique (`barplot`, `histplot`, `boxplot`, `heatmap`) puis `seaborn.objects`. |
 | 130–145 | **Théorie 5** : dataviz honnête | Plénière | Les 5 règles, illustrées par des contre-exemples. |
 | 145–172 | **Pratique 2 — Fil rouge v5** | Binômes | Le tableau de bord en 4 graphiques. |
-| 172–180 | **Clôture** | Plénière | Teaser S9 : « d'où viennent les données ? On va les chercher nous-mêmes. » |
+| 172–180 | **Clôture de la formation** | Plénière | Le chemin parcouru, les quatre chemins pour continuer, remerciements. |
 
 ## Concepts clés — expliqués simplement
 
@@ -836,7 +836,9 @@ Position à tenir : **enseigner l'API classique comme socle**, montrer `objects`
 21. **Avant / après** — le même graphique mal fait puis bien fait.
 22. **Exporter proprement** — `dpi`, `bbox_inches="tight"`, PNG vs SVG.
 23. **Fil rouge v5 : le tableau de bord cible** — capture des 4 graphiques.
-24. **Bilan / teaser S9**.
+24. **Le chemin parcouru** — de « je n'ai jamais codé » à « je fais parler mes données ».
+25. **Quatre chemins pour continuer** — Data/IA, collecter, exposer, automatiser.
+26. **Merci** — le dépôt reste ouvert, et Classroom aussi.
 
 ## Exercice pratique / Fil rouge v5 — Le tableau de bord
 
@@ -925,11 +927,42 @@ plt.show()
 
 ---
 
-## Point d'étape après la S8
+## Clôture du cursus — à dire au groupe en fin de S8
 
-Chaque participant sait désormais : structurer du code en objets, lire du Python avancé, nettoyer un jeu de données réel et en tirer une figure publiable.
+Chaque participant sait désormais : structurer du code en objets, lire du Python avancé,
+nettoyer un jeu de données réel et en tirer une figure publiable. En huit séances, à partir
+de zéro.
 
-**Ce qui manque encore, et qui fera les trois dernières séances** : les données ne tombent pas du ciel (S9 — aller les chercher), un résultat qui vit dans un notebook ne sert qu'à son auteur (S10 — l'exposer en API), et du code sans tests ni environnement reproductible n'est pas livrable (S11 — la mise en production).
+**Ce qu'on n'a pas eu le temps de faire — et qui se tient debout tout seul.** Le dire
+franchement en dernière slide vaut mieux que de laisser croire que le sujet est clos :
 
----
-*Suite : Séances 9 à 11 — Web scraping, API REST avec FastAPI et Pydantic v2, qualité et déploiement.*
+1. **Aller chercher la donnée** — HTTP, APIs publiques, scraping. Jusqu'ici, quelqu'un a
+   toujours fourni le CSV.
+2. **Exposer son code** — une API REST avec FastAPI, pour qu'un résultat ne vive plus
+   seulement dans le notebook de son auteur.
+3. **Livrer** — tests, environnement verrouillé, conteneur, déploiement.
+
+Ce sont trois séances entières, déjà écrites et archivées dans `_archive-seances-9-11/`.
+Elles peuvent servir de suite, d'atelier ponctuel, ou d'auto-formation guidée pour ceux
+qui veulent continuer.
+
+**Les quatre chemins d'après-formation**, à présenter en dernière slide avec une ressource
+d'entrée pour chacun :
+
+1. **Data / IA** — scikit-learn, puis PyTorch. Entrée : le cours *Machine Learning* de Kaggle Learn.
+2. **Collecter ses propres données** — `requests`, les APIs publiques, BeautifulSoup.
+   Entrée : l'annuaire *public-apis* sur GitHub.
+3. **Exposer son code** — FastAPI et Pydantic v2. Entrée : le tutoriel officiel FastAPI,
+   qui existe en français.
+4. **Automatiser son travail** — *Automate the Boring Stuff*, chapitres tableurs, PDF et courriel.
+
+## Ce que le formateur devrait préparer avant le jour J
+
+- [ ] Le dépôt GitHub complet, avec un dossier par séance (énoncé, corrigé, slides, ressources)
+- [ ] Les notebooks « point de reprise » — un par séance, avec le code de départ déjà écrit
+- [ ] Le jeu de données sale de la S7, généré et testé
+- [ ] Les environnements testés sur Windows **et** macOS (les écarts se paient en séance)
+- [ ] Le cours Google Classroom créé, un thème par séance, lien Meet généré
+- [ ] Les slides à imprimer et afficher : arbre de décision des structures (S3), rituel des
+      5 commandes (S7), quel graphique pour quelle question (S8)
+- [ ] Un plan B pour les coupures d'internet : les corrigés distribués hors ligne

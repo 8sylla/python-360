@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formation Python 360° — ASEGUIM</title>
+<meta name="description" content="Huit séances de 3 h pour passer de « je n'ai jamais codé » à « je fais parler mes données ». Slides, notebooks et corrigés publiés chaque semaine.">
+
+<meta property="og:title" content="Formation Python 360° — ASEGUIM">
+<meta property="og:description" content="Huit séances de 3 h. Slides, notebooks et corrigés publiés chaque semaine, en accès libre.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🐍</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="saut" href="#programme">Aller au programme</a>
+
+<!-- ─────────────────────────────────────────────── barre de navigation -->
+<header class="barre" id="haut">
+  <div class="barre__in">
+    <a class="marque" href="#haut">
+      <span class="marque__sigle" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="20" cy="20" r="16"/>
+          <path d="M20 4v32M4 20h32" opacity=".45"/>
+          <circle cx="20" cy="20" r="6.5" fill="currentColor" stroke="none" opacity=".9"/>
+        </svg>
+      </span>
+      <span class="marque__mots">
+        <b>Python&nbsp;360°</b>
+        <small>Commission Scientifique nationale · ASEGUIM</small>
+      </span>
+    </a>
+
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#programme">Programme</a>
+      <a href="#parcours">Le parcours</a>
+      <a href="#outils">Les outils</a>
+      <a href="#rejoindre" class="nav__cta">Rejoindre</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ─────────────────────────────────────────────────────────────── hero -->
+<section class="hero">
+  <div class="hero__in">
+    <p class="surtitre">Commission Scientifique nationale · ASEGUIM</p>
+    <h1>Formation <span class="lueur">Python&nbsp;360°</span></h1>
+    <p class="hero__lede">
+      Huit séances de trois heures pour passer de « je n'ai jamais codé »
+      à « je fais <em>parler</em> mes données ».
+      Aucun prérequis. Tout est publié ici, chaque semaine.
+    </p>
+
+    <div class="jetons">
+      <span class="jeton"><b>8</b> séances de 3 h</span>
+      <span class="jeton"><b>100 %</b> en ligne</span>
+      <span class="jeton"><b>1</b> seul projet, du début à la fin</span>
+      <span class="jeton"><b>0</b> installation pour commencer</span>
+    </div>
+
+    <div class="hero__actions">
+      <a class="bouton bouton--plein" href="#programme">Voir le programme</a>
+      <a class="bouton" href="#rejoindre">Comment participer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────────── programme -->
+<main>
+<section class="bloc" id="programme">
+  <div class="bloc__in">
+    <header class="bloc__tete">
+      <div>
+        <p class="surtitre">Le programme</p>
+        <h2>Les supports, séance par séance</h2>
+        <p class="bloc__lede">
+          Slides, notebook et corrigé sont mis en ligne au fil des semaines.
+          Un bouton grisé veut dire « pas encore publié », pas « perdu ».
+        </p>
+      </div>
+      <div class="avancement" hidden>
+        <div class="avancement__barre"><i style="width:0%"></i></div>
+        <p class="avancement__txt">—</p>
+      </div>
+    </header>
+
+    <div class="filtres" role="group" aria-label="Filtrer les séances">
+      <button class="filtre est-actif" data-filtre="tous">Toutes</button>
+      <button class="filtre" data-filtre="arc1">Arc 1 · la rampe</button>
+      <button class="filtre" data-filtre="arc2">Arc 2 · structurer &amp; analyser</button>
+      <button class="filtre" data-filtre="publiees">Déjà publiées</button>
+    </div>
+
+    <div class="grille" id="grille">
+      <!-- les cartes sont rendues par js/app.js -->
+    </div>
+
+    <p class="vide" id="vide" hidden>Aucune séance ne correspond à ce filtre pour l'instant.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────── parcours -->
+<section class="bloc bloc--alt" id="parcours">
+  <div class="bloc__in">
+    <p class="surtitre">Le parcours</p>
+    <h2>Deux arcs. Le second se tient sur le premier.</h2>
+
+    <div class="duo">
+      <article class="arc">
+        <p class="arc__num">Arc 1</p>
+        <h3>La rampe de lancement</h3>
+        <p>Séances 1 à 4. On apprend des instructions : variables, conditions,
+           boucles, structures de données, fonctions et fichiers. Tout se passe
+           dans le navigateur, il n'y a rien à installer.</p>
+        <p class="arc__fin">Se termine par une vraie application en ligne de
+           commande, dont les données survivent à la fermeture.</p>
+      </article>
+
+      <article class="arc">
+        <p class="arc__num">Arc 2</p>
+        <h3>Structurer, puis analyser</h3>
+        <p>Séances 5 à 8. On cesse d'apprendre des instructions, on apprend à
+           organiser du code — puis à faire parler des données réelles avec
+           NumPy, pandas et Matplotlib.</p>
+        <p class="arc__fin">Se termine par un tableau de bord tiré de trois
+           cents lignes de vraies données.</p>
+      </article>
+    </div>
+
+    <div class="fil">
+      <p class="surtitre">Le fil rouge</p>
+      <h3><code>OpportuniTrack</code> — un seul projet, six versions</h3>
+      <p>Un suivi de bourses, stages et appels à candidature. Chaque version
+         <em>manque</em> de quelque chose — et ce manque est exactement ce que
+         la séance suivante vient réparer. On ne repart jamais de zéro.</p>
+      <ol class="fil__liste">
+        <li><b>v0.1</b> <span>une fiche affichée à l'écran</span></li>
+        <li><b>v0.3</b> <span>un carnet en mémoire… qui oublie tout en fermant</span></li>
+        <li><b>v1</b> <span>une application qui garde ses données</span></li>
+        <li><b>v2</b> <span>la même, refaite en objets, lisible par un autre</span></li>
+        <li><b>v4</b> <span>300 vraies lignes, nettoyées</span></li>
+        <li><b>v5</b> <span>un tableau de bord qu'on peut montrer</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────────────────────────── outils -->
+<section class="bloc" id="outils">
+  <div class="bloc__in">
+    <p class="surtitre">Les outils</p>
+    <h2>Cinq, pas un de plus</h2>
+    <p class="bloc__lede">Un compte Gmail ouvre les trois premiers.
+       VS&nbsp;Code et GitHub n'arrivent qu'à la séance&nbsp;4.</p>
+
+    <div class="outils">
+      <article class="outil"><h3>Google Classroom</h3><p>Le cours : supports, devoirs, corrigés, et les questions entre les séances.</p></article>
+      <article class="outil"><h3>Google Meet</h3><p>La séance en direct, trois heures par semaine. Le lien est dans Classroom et ne change jamais.</p></article>
+      <article class="outil"><h3>Google Colab</h3><p>Écrire et exécuter du code depuis le navigateur, sans rien installer.</p></article>
+      <article class="outil"><h3>VS Code</h3><p>À partir de la séance 4 : de vrais fichiers, de vrais projets.</p></article>
+      <article class="outil"><h3>GitHub</h3><p>Le fil rouge, versionné — et le travail à plusieurs.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── rejoindre -->
+<section class="bloc bloc--alt" id="rejoindre">
+  <div class="bloc__in bloc__in--etroit">
+    <p class="surtitre">Participer</p>
+    <h2>Il suffit d'un compte Gmail</h2>
+    <ol class="etapes">
+      <li><b>Rejoins le cours Classroom</b><span>avec le code reçu par mail, puis dis bonjour dans le flux — ça vaut inscription.</span></li>
+      <li><b>Ouvre Colab une fois</b><span>et exécute un <code>print("Bonjour")</code>. Si ça s'affiche, tu es prêt·e.</span></li>
+      <li><b>Teste ton casque</b><span>micro et son, dans une réunion Meet à vide. Le micro intégré fait de l'écho pour toute la salle.</span></li>
+      <li><b>Remplis le questionnaire</b><span>deux minutes. Il sert à composer les binômes.</span></li>
+    </ol>
+    <div class="hero__actions">
+      <a class="bouton bouton--plein" href="https://colab.research.google.com" target="_blank" rel="noopener">Ouvrir Google Colab</a>
+      <a class="bouton" href="https://github.com/8sylla/python-360" target="_blank" rel="noopener">Le dépôt GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ────────────────────────────────────────────────────────────── pied -->
+<footer class="pied">
+  <div class="pied__in">
+    <div>
+      <p class="pied__marque">Formation Python 360°</p>
+      <p>Commission Scientifique nationale · <b>ASEGUIM</b><br>
+         <small>Association des Stagiaires, Étudiants et Élèves Guinéens au Maroc</small></p>
+    </div>
+    <div class="pied__liens">
+      <a href="https://github.com/8sylla/python-360" target="_blank" rel="noopener">Dépôt GitHub</a>
+      <a href="https://www.linkedin.com/in/8sylla" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#haut">Haut de page</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/seances.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

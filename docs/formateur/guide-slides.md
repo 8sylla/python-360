@@ -17,8 +17,6 @@ slides/
 ├── 06-python-avance.html         19
 ├── 07-numpy-pandas.html          20
 ├── 08-dataviz.html               19
-├── 09-scraping.html              20
-├── 10-fastapi.html               19
 └── 11-production.html            21
 ```
 

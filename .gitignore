@@ -5,7 +5,7 @@ env/
 __pycache__/
 *.py[cod]
 
-# Secrets — NE JAMAIS VERSIONNER (cf. séance 11)
+# Secrets — NE JAMAIS VERSIONNER
 .env
 *.key
 secrets.json

@@ -5,14 +5,14 @@
 - [ ] Dépôt GitHub public, avec un dossier par séance
 - [ ] Notebooks « point de reprise » testés dans Colab (pas seulement en local)
 - [ ] Environnements testés sur **Windows ET macOS** — les écarts se paient en séance
-- [ ] Canal de communication ouvert, salon `#sos-erreurs` créé
+- [ ] Cours Google Classroom créé, un thème par séance, lien Meet généré
 - [ ] Questionnaire de positionnement envoyé (sert à composer les binômes)
 
 ## La veille de chaque séance
 
 - [ ] Régénérer `data/opportunites_brutes.csv` (les deadlines sont relatives à la date du jour)
 - [ ] Exécuter le notebook de reprise **de bout en bout** dans un noyau neuf
-- [ ] Vérifier les versions : `pandas`, `fastapi`, `pydantic` (l'écosystème bouge vite)
+- [ ] Vérifier les versions : `pandas`, `numpy`, `matplotlib`, `seaborn` (l'écosystème bouge vite)
 - [ ] Préparer le plan B hors ligne (corrigés distribués en local)
 
 ## À imprimer et afficher au mur
@@ -20,7 +20,6 @@
 - [ ] S3 — l'arbre de décision des structures de données
 - [ ] S7 — le rituel des 5 commandes d'inspection
 - [ ] S8 — quel graphique pour quelle question
-- [ ] S9 — les 5 règles du scraping
 
 ## Les rituels de chaque séance
 

@@ -49,7 +49,13 @@
 - *Fundamentals of Data Visualization* — https://clauswilke.com/dataviz/
 - From Data to Viz — https://www.data-to-viz.com/
 
-## Collecte (S9)
+# Pour aller plus loin — hors programme
+
+> Ces trois blocs correspondent aux séances retirées du cursus. Les ressources
+> restent ici : ce sont les meilleures portes d'entrée pour qui veut continuer
+> seul, et les guides complets sont dans `_archive-seances-9-11/`.
+
+## Collecter ses propres données
 
 - Requests — https://requests.readthedocs.io/
 - BeautifulSoup — https://www.crummy.com/software/BeautifulSoup/bs4/doc/
@@ -60,7 +66,7 @@
 - Playwright Python — https://playwright.dev/python/
 - Annuaire d'APIs publiques — https://github.com/public-apis/public-apis
 
-## Web (S10)
+## Exposer son code en API
 
 - **FastAPI, tutoriel officiel** — https://fastapi.tiangolo.com/tutorial/
 - FastAPI, notes de version — https://fastapi.tiangolo.com/release-notes/
@@ -69,7 +75,7 @@
 - Pydantic, migration v1 → v2 — https://docs.pydantic.dev/latest/migration/
 - SQLModel — https://sqlmodel.tiangolo.com/
 
-## Production (S11)
+## Livrer : qualité, tests, déploiement
 
 - uv — https://docs.astral.sh/uv/
 - Ruff — https://docs.astral.sh/ruff/

@@ -1,7 +1,7 @@
 # Formation Python 360° — Guide du formateur
 ## ARC 1 : La rampe de lancement (Séances 0 à 4)
 
-**Format** : 11 séances de 3h · **Environnement** : Google Colab (S1→S3) puis VS Code (S4→S11) · **Fil rouge** : `OpportuniTrack`
+**Format** : 8 séances de 3h · **Environnement** : Google Colab (S1→S3) puis VS Code (S4→S8) · **Fil rouge** : `OpportuniTrack`
 **Cible Python** : 3.14.x (dernière stable). 3.13 accepté. Plancher absolu : 3.10 (pour `match-case`).
 
 ---
@@ -27,7 +27,7 @@
 ## Charte anti-décrochage
 
 - Aucun exercice n'exige d'avoir réussi le précédent : le formateur distribue un **notebook « point de reprise »** avec le code de départ déjà écrit.
-- Un canal (Discord/WhatsApp) avec un salon `#sos-erreurs` où l'on colle **le message d'erreur complet**, pas une capture floue.
+- Un cours **Google Classroom** dont le flux sert de fil `SOS erreurs` : on y colle **le message d'erreur complet en texte**, jamais une capture floue.
 - Un dépôt GitHub `formation-python/` avec un dossier par séance : `enonce.ipynb`, `corrige.ipynb`, `slides.pdf`, `ressources.md`.
 
 ---
@@ -69,7 +69,7 @@
 
 ## Idées de slides (support PDF de 7 pages)
 1. **Couverture** — Titre de la formation, nom du formateur, dates, logo de la communauté.
-2. **La promesse** — « En 11 séances, tu passes de "je n'ai jamais codé" à "j'ai déployé une API". » Visuel : la frise des 11 séances.
+2. **La promesse** — « En 8 séances, tu passes de "je n'ai jamais codé" à "je fais parler mes données". » Visuel : la frise des 8 séances.
 3. **Ce dont tu as besoin** — un navigateur, un compte Google. C'est tout (pour les 3 premières séances).
 4. **Les 3 clics** — 3 captures d'écran annotées de Colab.
 5. **Si tu veux prendre de l'avance** — installation locale, captures Windows/macOS.
@@ -652,7 +652,7 @@ Formule à faire répéter : *« `print` parle à l'humain. `return` parle au re
 **Quel format choisir ?**
 - **TXT** : du texte brut, pour des notes.
 - **CSV** : un tableau. S'ouvre dans Excel. Parfait pour échanger avec des non-développeurs.
-- **JSON** : des données **imbriquées** (une liste de dictionnaires !). Le format d'échange du web — on le retrouvera tel quel en S10 avec l'API.
+- **JSON** : des données **imbriquées** (une liste de dictionnaires !). C'est aussi le format d'échange du web : tout ce qui sort d'une API en ligne a cette forme-là.
 
 **`try / except` = la ceinture de sécurité.** « Essaie ceci ; si ça casse pour telle raison, fais plutôt cela. » Règle professionnelle à donner tout de suite : **on n'écrit jamais `except:` tout seul** — on nomme l'erreur qu'on attend (`except ValueError:`), sinon on masque des bugs qu'on ne voulait pas masquer.
 
@@ -870,7 +870,7 @@ Après quatre séances, chaque participant :
 - sait lire un message d'erreur sans paniquer ;
 - travaille dans un environnement de développement professionnel.
 
-**Ce qui change à partir de la S5** : on cesse d'apprendre des instructions, on commence à apprendre à **structurer**. Prévenir explicitement que le rythme monte, et que le palier bonus des séances précédentes devient le socle.
+**Ce qui change à partir de la S5** : on cesse d'apprendre des instructions, on commence à apprendre à **structurer**. Prévenir explicitement que le rythme monte, et que le palier bonus des séances précédentes devient le socle. Il reste alors quatre séances : la moitié du chemin est faite.
 
 ---
-*Suite : Arc 2 — Séances 5 à 8 (POO, Python avancé, NumPy/Pandas, dataviz), puis Séances 9 à 11 (scraping, FastAPI, production).*
+*Suite : Arc 2 — Séances 5 à 8 (POO, Python avancé, NumPy/pandas, dataviz). La séance 8 clôt la formation.*

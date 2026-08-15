@@ -1,124 +1,77 @@
 python-360/
+
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
+│       ├── ci.yml
+│       └── pages.yml
 ├── data/
-│   ├── generer_donnees_sales.py
-│   ├── opportunites_brutes.csv
 │   └── README.md
 ├── docs/
 │   ├── formateur/
 │   │   ├── CHECKLIST-AVANT-LE-JOUR-J.md
-│   │   ├── GRILLE-DEMO-DAY.md
-│   │   └── guide-slides.md
+│   │   ├── DISPOSITIF-EN-LIGNE.md
+│   │   ├── guide-slides.md
+│   │   └── message-accueil.md
 │   ├── guide-arc1-seances-0-a-4.md
 │   ├── guide-arc2-seances-5-a-8.md
-│   ├── guide-arc2-seances-9-a-11.md
+│   ├── programme-detaille.md
 │   ├── README.md
 │   └── ressources.md
 ├── fil-rouge/
 │   ├── v1-cli/
-│   │   ├── stockage.py
-│   │   └── tracker.py
+│   │   └── README.md
 │   ├── v2-poo/
-│   │   ├── carnet.py
-│   │   ├── modeles.py
-│   │   └── tracker.py
+│   │   └── README.md
 │   ├── v3-avance/
-│   │   ├── tests/
-│   │   │   └── test_modeles.py
-│   │   └── decorateurs.py
-│   ├── v6-scraper/
-│   │   └── scraper.py
-│   ├── v7-api/
-│   │   ├── tests/
-│   │   │   └── test_api.py
-│   │   ├── Dockerfile
-│   │   ├── main.py
-│   │   ├── schemas.py
-│   │   └── stockage.py
+│   │   └── README.md
+│   ├── v4-donnees/
+│   │   └── README.md
+│   ├── v5-dashboard/
+│   │   └── README.md
+│   └── README.md
+├── portail/
+│   ├── css/
+│   │   └── style.css
+│   ├── fichiers/
+│   │   └── README.md
+│   ├── js/
+│   │   ├── app.js
+│   │   └── seances.js
+│   ├── .nojekyll
+│   ├── index.html
 │   └── README.md
 ├── seances/
+│   ├── s00-kit-demarrage/
+│   │   ├── corrige/
+│   │   └── README.md
 │   ├── s01-parler-a-la-machine/
 │   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
+│   │   └── README.md
 │   ├── s02-decider-et-repeter/
 │   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
+│   │   └── README.md
 │   ├── s03-ranger-l-information/
 │   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
+│   │   └── README.md
 │   ├── s04-fabriquer-ses-outils/
 │   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
+│   │   └── README.md
 │   ├── s05-poo/
 │   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
+│   │   └── README.md
 │   ├── s06-python-avance/
 │   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
+│   │   └── README.md
 │   ├── s07-numpy-pandas/
 │   │   ├── corrige/
-│   │   │   ├── .gitkeep
-│   │   │   └── nettoyage.py
-│   │   ├── README.md
-│   │   └── reprise.ipynb
-│   ├── s08-dataviz/
-│   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
-│   ├── s09-scraping/
-│   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
-│   ├── s10-fastapi/
-│   │   ├── corrige/
-│   │   │   └── .gitkeep
-│   │   ├── README.md
-│   │   └── reprise.ipynb
-│   └── s11-production/
+│   │   └── README.md
+│   └── s08-dataviz/
 │       ├── corrige/
-│       │   └── .gitkeep
-│       ├── README.md
-│       └── reprise.ipynb
-├── slides/
-│   ├── assets/
-│   │   └── logo-aseguim.jpg
-│   ├── source/
-│   │   ├── contenu.py
-│   │   ├── modele.py
-│   │   └── moteur_slides.py
-│   ├── 00-kit-demarrage.html
-│   ├── 01-parler-a-la-machine.html
-│   ├── 02-decider-et-repeter.html
-│   ├── 03-ranger-l-information.html
-│   ├── 04-fabriquer-ses-outils.html
-│   ├── 05-poo.html
-│   ├── 06-python-avance.html
-│   ├── 07-numpy-pandas.html
-│   ├── 08-dataviz.html
-│   ├── 09-scraping.html
-│   ├── 10-fastapi.html
-│   ├── 11-production.html
-│   ├── modele.html
-│   ├── moteur.js
-│   └── theme.css
+│       └── README.md
 ├── .env.example
 ├── .gitignore
+├── api_donnees.json
+├── ARBORESCENCE.txt
 ├── LICENSE
 ├── pyproject.toml
 ├── README.md

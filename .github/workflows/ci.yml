@@ -1,5 +1,8 @@
 name: CI
 
+# Le dépôt se remplit séance après séance : chaque étape se contente de
+# passer s'il n'y a encore rien à vérifier.
+
 on: [push, pull_request]
 
 jobs:
@@ -21,7 +24,21 @@ jobs:
         run: uv run ruff format --check .
 
       - name: Lancer les tests
-        run: uv run pytest -q
+        run: |
+          if compgen -G "**/test_*.py" > /dev/null || compgen -G "**/tests/*.py" > /dev/null; then
+            uv run pytest -q
+          else
+            echo "Aucun test pour l'instant — le fil rouge se remplit à partir de la séance 4."
+          fi
+        shell: bash
 
       - name: Vérifier que les notebooks s'ouvrent
-        run: uv run python -c "import json,glob;[json.load(open(f,encoding='utf-8')) for f in glob.glob('seances/**/*.ipynb',recursive=True)];print('notebooks OK')"
+        run: |
+          uv run python - <<'PY'
+          import glob, json
+          fichiers = glob.glob("seances/**/*.ipynb", recursive=True)
+          for f in fichiers:
+              json.load(open(f, encoding="utf-8"))
+          print(f"{len(fichiers)} notebook(s) OK")
+          PY
+        shell: bash
