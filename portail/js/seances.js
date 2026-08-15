@@ -17,7 +17,7 @@ const SEANCES = [
     date: "2026-08-15",
     duree: "2 h 30",
     liens: {
-      slides: null,        // ex. "fichiers/00-kit-demarrage.pdf"
+      slides: "https://drive.google.com/file/d/1ipO6zWyvxEawBNsulloAz9OIb9WLsrcr/view?usp=sharing",
     },
   },
   {
@@ -89,10 +89,10 @@ const SEANCES = [
 /* Les ressources possibles, dans l'ordre d'affichage.
    Aucune n'est obligatoire : seules celles qui ont un lien apparaissent. */
 const RESSOURCES = [
-  { cle: "slides", libelle: "Slides", icone: "doc" },
-  { cle: "notebook", libelle: "Notebook", icone: "code" },
+  { cle: "slides", libelle: "Slides", icone: "file-text" },
+  { cle: "notebook", libelle: "Notebook", icone: "notebook" },
   { cle: "corrige", libelle: "Corrigé", icone: "check" },
-  { cle: "video", libelle: "Vidéo", icone: "play" },
+  { cle: "video", libelle: "Vidéo", icone: "video" },
 ];
 
 /* Les outils de la formation. Les logos sont dans assets/logos/ :

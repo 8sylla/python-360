@@ -16,15 +16,26 @@
   const MOIS = ["janv.", "févr.", "mars", "avril", "mai", "juin",
                 "juil.", "août", "sept.", "oct.", "nov.", "déc."];
 
+  /* Les icônes viennent de Lucide (lucide.dev, licence ISC). Les tracés sont
+     recopiés tels quels : viewBox 24, trait de 2, bouts arrondis. Rien n'est
+     chargé depuis un service extérieur. */
   const ICONES = {
-    doc:   '<path d="M4 1.5h5l3 3v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Z"/><path d="M9 1.5v3h3"/>',
-    code:  '<path d="M5.5 4.5 2 8l3.5 3.5"/><path d="M10.5 4.5 14 8l-3.5 3.5"/>',
-    check: '<path d="M2.5 8.5l3.5 3.5 7.5-8"/>',
-    play:  '<path d="M4 2.5v11l9-5.5-9-5.5Z"/>',
+    "file-text":
+      '<path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/>' +
+      '<path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+    notebook:
+      '<path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/>' +
+      '<rect width="16" height="20" x="4" y="2" rx="2"/>' +
+      '<path d="M9.5 8h5"/><path d="M9.5 12H16"/><path d="M9.5 16H14"/>',
+    check:
+      '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+    video:
+      '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/>' +
+      '<rect x="2" y="6" width="14" height="12" rx="2"/>',
   };
 
   const svg = (nom) =>
-    `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONES[nom] || ""}</svg>`;
 
   const echappe = (s) =>
