@@ -26,7 +26,11 @@ const SEANCES = [
     sousTitre: "Variables, types, entrées et sorties",
     date: "2026-08-19",
     duree: "3 h",
-    liens: {},
+    liens: {
+      slides: "https://drive.google.com/file/d/1CclXmyYVgAdM7Cs2Q17RXHFiIJwTdpqO/view?usp=sharing",
+      notebook: "https://colab.research.google.com/github/8sylla/python-360/blob/main/seances/s01-parler-a-la-machine/gestion_depenses_notebook.ipynb",
+      video: "https://www.youtube.com/live/Hp6FCd0wbVc"
+    },
   },
   {
     numero: 2,
