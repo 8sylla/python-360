@@ -38,7 +38,11 @@ const SEANCES = [
     sousTitre: "Booléens, conditions, boucles, lecture d'erreurs",
     date: "2026-08-22",
     duree: "3 h",
-    liens: {},
+    liens: {
+      slides: "https://drive.google.com/file/d/1z5g6gLhQy9_-DNNvQZjniBHWC77k5gtT/view?usp=sharing",
+      video: "https://youtube.com/live/WPeqJ79RjiM",
+      notebook: "https://colab.research.google.com/github/8sylla/python-360/blob/main/seances/s02-decider-et-repeter/gestion_depenses_notebook.ipynb"
+    },
   },
   {
     numero: 3,
