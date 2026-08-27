@@ -5,16 +5,17 @@
 ## Au programme
 
 - Listes : index, index négatif, tranches, méthodes
-- Dictionnaires : `[]` plante, `.get()` protège
-- Tuples et ensembles — quelle structure pour quel besoin
-- La liste de dictionnaires : c'est déjà un DataFrame
-- `sorted()` avec `key=`, et les compréhensions de liste
+- Dictionnaires : accès, mise à jour, et la méthode `.get()`
+- Tuples et ensembles : immuabilité et unicité
+- La liste de dictionnaires : la structure reine (le fil rouge MonBudget v0.3)
+- Compréhensions de liste, lambda, et un aperçu du module `collections`
 
 ## Ce que contient ce dossier
 
 | Fichier | Quand il arrive |
 |---|---|
 | `reprise.ipynb` | la veille de la séance — le code de départ fonctionne déjà |
+| `gestion_depenses_notebook.ipynb` | le devoir final à réaliser après la séance |
 | `corrige/` | après la séance |
 
 Le dossier est vide tant que la séance n'a pas eu lieu. C'est normal.
