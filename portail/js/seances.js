@@ -50,7 +50,12 @@ const SEANCES = [
     sousTitre: "Listes, dictionnaires, tuples, ensembles",
     date: "2026-08-26",
     duree: "3 h",
-    liens: {},
+    liens: {
+      video: "https://youtube.com/live/N2xOFDQhMdU",
+      slides: "https://drive.google.com/file/d/1mF9KEclVesKVhyajs2FnAemcbp15myEH/view?usp=sharing",
+      notebook: "https://colab.research.google.com/github/8sylla/python-360/blob/main/seances/s03-ranger-l-information/gestion_depenses_v3.ipynb",
+      
+    },
   },
   {
     numero: 4,
