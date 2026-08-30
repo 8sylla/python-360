@@ -75,7 +75,7 @@ référencés donnent du code qui ne marche plus.
 
 | Outil | Version | À savoir |
 |---|---|---|
-| Python | 3.12 minimum | numpy 2.5 ne descend pas plus bas |
+| Python | 3.11 minimum | `match/case` (3.10+), large compatibilité frameworks |
 | pandas | 3.0+ | Copy-on-Write : l'affectation chaînée lève une erreur |
 | NumPy | 2.5+ | API 2.x |
 | Matplotlib | 3.10+ | interface orientée objet (`fig, ax`) |

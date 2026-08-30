@@ -1,0 +1,7 @@
+[
+  { "titre": "Loyer", "categorie": "Logement", "montant": 850.0 },
+  { "titre": "Pass Navigo", "categorie": "Transport", "montant": 86.4 },
+  { "titre": "Courses Carrefour", "categorie": "Alimentation", "montant": 54.2 },
+  { "titre": "Netflix", "categorie": "Loisirs", "montant": 13.49 },
+  { "titre": "Boulangerie", "categorie": "Alimentation", "montant": 4.5 }
+]

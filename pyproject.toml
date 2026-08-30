@@ -1,9 +1,9 @@
 [project]
-name = "opportunitrack-formation"
+name = "monbudget-formation"
 version = "1.0.0"
-description = "Formation Python 360 degres - dépôt pédagogique et fil rouge OpportuniTrack"
+description = "Formation Python 360 degres - dépôt pédagogique et fil rouge MonBudget"
 readme = "README.md"
-requires-python = ">=3.12"   # imposé par numpy 2.5
+requires-python = ">=3.11"   # match/case (3.10+) et large compat frameworks
 
 dependencies = [
     "pandas>=3.0,<3.1",
