@@ -35,7 +35,7 @@ def pourboire(addition, pourcentage=10):
     Exemple : pourboire(50) doit rendre 5.0 ; pourboire(50, 15) -> 7.5
     """
     # TODO : calcule et RENVOIE le pourboire (addition * pourcentage / 100).
-    return None  # <- remplace
+    return addition * pourcentage / 100  # <- remplace
 
 
 # Petit test intégré : quand ta fonction est bonne, la ligne dit "OK".
@@ -48,7 +48,7 @@ print("Pourboire(50, 15) =", obtenu, "->", "OK" if obtenu == attendu else "à co
 def celsius_vers_fahrenheit(c):
     """Rend la température en Fahrenheit.  °F = °C * 9/5 + 32"""
     # TODO : renvoie la conversion. 100 °C -> 212.0 °F ; 0 °C -> 32.0 °F
-    return None  # <- remplace
+    return c * 9 / 5 + 32  # <- remplace
 
 
 for temp in (0, 37, 100):
@@ -59,3 +59,9 @@ for temp in (0, 37, 100):
 # Puisque fizzbuzz() RETOURNE (au lieu d'afficher), on peut s'en servir.
 # TODO : compte combien de nombres de 1 à 100 donnent exactement "Fizz".
 #        (indice : une boucle, un compteur, un if fizzbuzz(i) == "Fizz")
+
+count = 0
+for i in range(1, 101):
+    if fizzbuzz(i) == "Fizz":
+        count += 1
+print(f"Nombre de Fizz entre 1 et 100 : {count}")

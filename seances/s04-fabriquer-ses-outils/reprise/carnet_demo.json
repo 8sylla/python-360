@@ -1,0 +1,17 @@
+[
+  {
+    "titre": "Café",
+    "categorie": "Alimentation",
+    "montant": 2.5
+  },
+  {
+    "titre": "Bus",
+    "categorie": "Transport",
+    "montant": 1.9
+  },
+  {
+    "titre": "Pizza",
+    "categorie": "Alimentation",
+    "montant": 12.5
+  }
+]

@@ -63,7 +63,11 @@ const SEANCES = [
     sousTitre: "Fonctions, modules, fichiers, erreurs",
     date: "2026-08-29",
     duree: "3 h",
-    liens: {},
+    liens: {
+      notebook: "https://github.com/8sylla/python-360/tree/main/seances/s04-fabriquer-ses-outils/devoir-monbudget",
+      slides: "https://drive.google.com/file/d/1JxCFiQziDyqxkYYkZwvWw_FoiTZSu5lW/view?usp=sharing",
+      video: "https://youtube.com/live/J7tonCKK3Zc",
+    },
   },
   {
     numero: 5,

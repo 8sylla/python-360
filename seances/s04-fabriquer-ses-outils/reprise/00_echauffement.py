@@ -37,7 +37,7 @@ def prix_ttc(prix_ht):
 print("Piège 3a :", prix_ttc(100))
 # La ligne suivante est en commentaire EXPRÈS. Décommente-la, relance, et
 # lis la dernière ligne de l'erreur. Pourquoi `tva` est-elle introuvable ?
-# print("Piège 3b :", tva)
+print("Piège 3b :", tva)
 
 
 # ── Piège 4 : une fonction sans return ───────────────────────────────────

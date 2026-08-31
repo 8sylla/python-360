@@ -31,10 +31,11 @@ print("Alimentation  :", par_categorie(budget, "Alimentation"))
 # ── À toi de jouer ───────────────────────────────────────────────────────
 # TODO 1 : affiche le total des seules dépenses de "Loisirs".
 #          (indice : combine par_categorie(...) puis total(...))
+print("Loisirs         :", formater_euro(total(par_categorie(budget, "Loisirs"))))
 
 # TODO 2 : affiche le nombre de catégories différentes.
 #          (indice : len(categories(...)))
-
+print("Nombre de catégories :", len(categories(budget)))
 
 # ── Le piège du __main__ (à comprendre) ──────────────────────────────────
 # Quand tu as fait `from outils_budget import ...`, Python a exécuté
