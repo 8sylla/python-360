@@ -1,66 +1,69 @@
 # Sujet 4 — Santé & bien-être (objets connectés)
 
-> Relier **activité physique**, **sommeil** et **calories** à partir de données
-> de montres connectées.
+> À partir de vraies données de montres **Fitbit**, relier **activité**,
+> **sommeil** et **calories** brûlées.
 
 [← Retour au cahier des charges](README.md)
 
-## Contexte & problématique
+## Le vrai jeu de données
 
-Des montres connectées remontent chaque jour le nombre de pas, les heures de
-sommeil, les calories brûlées et le rythme cardiaque. Les capteurs produisent
-des **lignes vides** et des **valeurs extrêmes** (bugs). La question métier :
+**[FitBit Fitness Tracker Data — Kaggle](https://www.kaggle.com/datasets/arashnic/fitbit)**
+(30 utilisateurs, plusieurs fichiers CSV, données quotidiennes et à la minute).
 
-> **Existe-t-il une corrélation entre l'activité physique, le sommeil et les
-> calories brûlées ?**
+Deux fichiers suffisent pour le projet :
 
-## Le jeu de données
+- **`dailyActivity_merged.csv`** — l'activité par jour et par utilisateur ;
+- **`sleepDay_merged.csv`** — le sommeil par jour et par utilisateur.
 
-Exemple fourni : [`ressources/sujet-4-sante-exemple.csv`](ressources/sujet-4-sante-exemple.csv)
-(18 lignes ; le vrai fichier fera **≥ 1 000 lignes**).
+> Le cœur du projet : **fusionner** ces deux fichiers sur `Id` + la date.
 
-| Colonne | Type | Description |
-|---|---|---|
-| `User_ID` | texte | identifiant de l'utilisateur |
-| `Daily_Steps` | entier | pas effectués dans la journée |
-| `Sleep_Hours` | décimal | heures de sommeil |
-| `Calories_Burned` | entier | calories brûlées |
-| `Average_HeartRate` | entier | fréquence cardiaque moyenne (bpm) |
-| `Day_Of_Week` | texte | jour de la semaine |
+### Colonnes principales
 
-**Défauts injectés à nettoyer :** **lignes entièrement vides** et **valeurs
-extrêmes** à filtrer (ex. `150000` pas, `300` bpm, `0` pas).
+| Fichier | Colonnes utiles |
+|---|---|
+| `dailyActivity_merged.csv` | `Id`, `ActivityDate`, `TotalSteps`, `TotalDistance`, `VeryActiveMinutes`, `SedentaryMinutes`, `Calories` |
+| `sleepDay_merged.csv` | `Id`, `SleepDay`, `TotalMinutesAsleep`, `TotalTimeInBed` |
 
-## Les trois livrables, appliqués à ce sujet
+### Les vrais défauts à nettoyer
+
+- **doublons** dans `sleepDay_merged.csv` (à supprimer) ;
+- des jours à **`TotalSteps == 0`** (montre non portée) à filtrer ;
+- tous les jours n'ont **pas de ligne de sommeil** → valeurs manquantes après
+  la fusion ;
+- **formats de date** avec l'heure (`4/12/2016 12:00:00 AM`) à parser.
+
+## Les trois livrables, appliqués à ce dataset
 
 ### v1 — Fondations & NumPy (25 %)
 
-- Lire le CSV **sans pandas**, en **ignorant les lignes vides**.
-- Colonnes numériques → **tableaux NumPy**.
-- **Filtrer les valeurs extrêmes** (ex. garder `0 < Daily_Steps < 40000`,
-  `40 < HeartRate < 200`).
-- Stats NumPy : pas **moyens**, sommeil **médian**, calories **min/max**.
+- Lire `dailyActivity_merged.csv` **sans pandas**.
+- `TotalSteps`, `Calories` → **tableaux NumPy**.
+- **Filtrer** les jours à `TotalSteps == 0` (aberrants).
+- Stats NumPy : pas **moyens**, calories **médianes**, pas **min/max**.
 
 ### v2 — Exploration pandas (35 %)
 
-- **DataFrame**, `dropna()` sur les lignes vides.
-- **Matrice de corrélation** (`.corr()`) entre pas, sommeil, calories, rythme.
-- `groupby("Day_Of_Week")` → **pas moyens et sommeil moyen par jour**.
+- **DataFrame** des deux fichiers, `drop_duplicates`, **`merge`** activité +
+  sommeil sur `Id` et la date.
+- **Matrice de corrélation** (`.corr()`) : pas, minutes actives, calories,
+  minutes de sommeil.
+- `groupby("Id")` → **moyennes par utilisateur** ; jour de la semaine via la
+  date.
 - Export du tableau de corrélation.
 
 ### Finale — Data-viz & appli (40 %)
 
-- **4 graphiques** : **nuage de points Pas × Calories** (corrélation),
-  histogramme des heures de **sommeil**, boxplot du **rythme cardiaque**
-  (repérer les extrêmes), barres des **pas moyens par jour**.
+- **4 graphiques** : **nuage `TotalSteps` × `Calories`** (corrélation),
+  histogramme des **minutes de sommeil**, boxplot des **pas par jour de
+  semaine**, barres des **minutes actives vs sédentaires**.
 - **Appli à menu** : `1. Corrélations` · `2. Sommeil moyen` ·
   `3. Pas par jour` · `4. Exporter` · `5. Quitter`.
 
 ## Pistes d'analyse
 
 - **Plus de pas** = **plus de calories** ? La corrélation est-elle forte ?
-- Le **week-end**, dort-on plus mais bouge-t-on moins ?
-- Un rythme cardiaque élevé va-t-il avec une forte activité ?
+- Ceux qui **bougent** plus **dorment-ils** mieux ?
+- Le **temps sédentaire** est-il lié à un moins bon sommeil ?
 
 ---
 

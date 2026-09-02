@@ -1,69 +1,70 @@
 # Sujet 3 — Campagnes & ventes e-commerce
 
-> Trouver le **canal marketing** le plus rentable et comprendre les acheteurs.
+> À partir des vraies transactions d'un **site de vente en ligne britannique**,
+> comprendre les ventes, les clients et les pays qui rapportent.
 
 [← Retour au cahier des charges](README.md)
 
-## Contexte & problématique
+## Le vrai jeu de données
 
-Un site e-commerce trace ses commandes et le **canal** par lequel le client est
-arrivé. Les dates sont saisies dans **plusieurs formats** incohérents. La
-question métier :
+**[Online Retail — UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail)**
+(≈ **541 909 lignes**, ventes d'un e-commerce UK, déc. 2010 – déc. 2011).
+Miroirs pratiques sur Kaggle :
+[Online Retail (UCI)](https://www.kaggle.com/datasets/jihyeseo/online-retail-data-set-from-uci-ml-repo).
 
-> **Quel canal marketing génère le meilleur retour sur investissement (ROI),
-> et comment se comportent les acheteurs ?**
+> Fichier Excel/CSV. Sur UCI : bouton **Download**.
 
-## Le jeu de données
+### Colonnes principales
 
-Exemple fourni : [`ressources/sujet-3-ecommerce-exemple.csv`](ressources/sujet-3-ecommerce-exemple.csv)
-(18 lignes ; le vrai fichier fera **≥ 1 000 lignes**).
+| Colonne | Description |
+|---|---|
+| `InvoiceNo` | n° de facture (préfixe **`C`** = annulation) |
+| `StockCode`, `Description` | produit |
+| `Quantity` | quantité (peut être **négative** sur annulation) |
+| `InvoiceDate` | date et heure |
+| `UnitPrice` | prix unitaire |
+| `CustomerID` | client (souvent **manquant**) |
+| `Country` | pays du client |
 
-| Colonne | Type | Description |
-|---|---|---|
-| `Order_ID` | texte | identifiant de commande |
-| `Marketing_Channel` | texte | canal (Instagram, Google, Facebook, Email) |
-| `Cart_Value_USD` | décimal | montant du panier, en dollars |
-| `Is_Converted` | 0/1 | la visite a-t-elle abouti à un achat |
-| `Customer_Age` | entier | âge du client |
-| `Purchase_Date` | date | date d'achat, **formats mélangés** |
+### Les vrais défauts à nettoyer
 
-**Défauts injectés à nettoyer :** **formats de dates incohérents**
-(`2026-01-05`, `05/01/2026`, `06-01-2026`, `2026/01/07`), quelques **paniers /
-âges manquants**.
+- ~**25 %** de **`CustomerID` manquants** (achats invités) ;
+- des **annulations** : `InvoiceNo` commençant par **`C`**, avec `Quantity < 0` ;
+- des `UnitPrice` à **0**, quelques `Description` manquantes ;
+- des doublons de lignes.
 
-## Les trois livrables, appliqués à ce sujet
+## Les trois livrables, appliqués à ce dataset
 
 ### v1 — Fondations & NumPy (25 %)
 
-- Lire le CSV **sans pandas**.
-- `Cart_Value_USD`, `Customer_Age` → **tableaux NumPy**.
-- Remplacer les **paniers manquants** par la **moyenne** ; filtrer les âges
-  invalides.
-- Stats NumPy : panier **moyen**, **taux de conversion** global
-  (`mean(Is_Converted)`), âge **médian**.
+- Lire le fichier (convertir en CSV au besoin) **sans pandas**.
+- `Quantity`, `UnitPrice` → **tableaux NumPy** ; créer
+  **`Montant = Quantity * UnitPrice`**.
+- **Filtrer** les annulations (`Quantity < 0`) et les prix ≤ 0.
+- Stats NumPy : panier **moyen**, quantité **médiane**, montant **total**.
 
 ### v2 — Exploration pandas (35 %)
 
-- **DataFrame**, **normaliser `Purchase_Date`** avec
-  `pd.to_datetime(..., errors="coerce")` → un seul format.
-- Segmenter : commandes **converties** (`Is_Converted == 1`).
-- `groupby("Marketing_Channel")` → **panier moyen et taux de conversion par
-  canal** ; `pivot_table` **Canal × tranche d'âge**.
-- Export du classement des canaux par conversion.
+- **DataFrame**, `to_datetime(InvoiceDate)`, retirer les lignes sans
+  `CustomerID`.
+- Segmenter : commandes d'un **pays** donné, montants **> 100**.
+- `groupby("Country")` → **chiffre d'affaires par pays** ;
+  `pivot_table` **Country × mois**.
+- Export du **top 10 des pays** par CA.
 
 ### Finale — Data-viz & appli (40 %)
 
-- **4 graphiques** : barres du **taux de conversion par canal**, boxplot des
-  **paniers par canal**, histogramme des **âges**, courbe des **ventes dans le
-  temps**.
-- **Appli à menu** : `1. ROI par canal` · `2. Paniers par canal` ·
-  `3. Ventes par mois` · `4. Exporter` · `5. Quitter`.
+- **4 graphiques** : barres du **CA par pays** (top 10), courbe du **CA par
+  mois**, histogramme des **montants de commande**, boxplot des paniers par
+  pays.
+- **Appli à menu** : `1. CA par pays` · `2. Ventes par mois` ·
+  `3. Top produits` · `4. Exporter` · `5. Quitter`.
 
 ## Pistes d'analyse
 
-- Le canal qui **convertit** le plus est-il celui au **plus gros panier** ?
-- Les **jeunes** achètent-ils plutôt via **Instagram** ?
-- Y a-t-il une **saisonnalité** des ventes une fois les dates unifiées ?
+- Quel **pays** (hors UK) pèse le plus dans le chiffre d'affaires ?
+- Y a-t-il une **saisonnalité** (pic avant Noël) ?
+- Quels **produits** reviennent le plus souvent ?
 
 ---
 

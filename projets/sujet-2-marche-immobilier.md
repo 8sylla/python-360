@@ -1,66 +1,67 @@
 # Sujet 2 — Marché immobilier régional
 
-> Comprendre ce qui fait le **prix** d'un bien pour guider les acheteurs.
+> À partir de vraies annonces immobilières de **Melbourne**, comprendre ce qui
+> fait le **prix** d'un bien pour guider les acheteurs.
 
 [← Retour au cahier des charges](README.md)
 
-## Contexte & problématique
+## Le vrai jeu de données
 
-Une agence dispose d'annonces immobilières d'une ville. Certaines saisies sont
-**erronées** : prix à `0`, prix négatifs, surfaces manquantes. La question
-métier :
+**[Melbourne Housing Snapshot — Kaggle](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)**
+(≈ **13 500 biens**, fichier `melb_data.csv`). Version plus complète (34 857
+lignes) : *Melbourne Housing Market* du même auteur.
 
-> **Quels facteurs influencent le plus le prix des biens immobiliers ?**
+### Colonnes principales
 
-## Le jeu de données
+| Colonne | Description |
+|---|---|
+| `Suburb`, `Address`, `Regionname`, `CouncilArea` | localisation |
+| `Rooms`, `Bedroom2`, `Bathroom`, `Car` | composition du bien |
+| `Type` | maison / appartement / … |
+| `Price` | **prix de vente** (AUD) |
+| `Landsize`, `BuildingArea` | surfaces (m²) |
+| `YearBuilt` | année de construction |
+| `Distance` | distance au centre-ville |
 
-Exemple fourni : [`ressources/sujet-2-immobilier-exemple.csv`](ressources/sujet-2-immobilier-exemple.csv)
-(18 lignes ; le vrai fichier fera **≥ 1 000 lignes**).
+### Les vrais défauts à nettoyer
 
-| Colonne | Type | Description |
-|---|---|---|
-| `Property_ID` | texte | identifiant du bien |
-| `City_Quarter` | texte | quartier (Gueliz, Hivernage, Agdal…) |
-| `Price_EUR` | entier | prix affiché, en euros |
-| `Surface_M2` | entier | surface, en m² |
-| `Rooms_Count` | entier | nombre de pièces |
-| `Year_Built` | entier | année de construction |
-| `Has_Garden` | texte | jardin : Oui / Non |
+- **beaucoup de valeurs manquantes** — c'est tout l'intérêt : `BuildingArea`
+  (~**60 %** vides), `YearBuilt` (~**55 %**), `Car`, `CouncilArea` ;
+- dans la version complète, ~**22 %** de **`Price` manquants** (lignes à écarter
+  ou à traiter à part) ;
+- des `Landsize` / `BuildingArea` à **0** peu crédibles.
 
-**Défauts injectés à nettoyer :** **prix aberrants** (`0` ou **négatifs**) et
-**surfaces / années manquantes**.
-
-## Les trois livrables, appliqués à ce sujet
+## Les trois livrables, appliqués à ce dataset
 
 ### v1 — Fondations & NumPy (25 %)
 
 - Lire le CSV **sans pandas**.
-- `Price_EUR`, `Surface_M2` → **tableaux NumPy**.
-- **Supprimer les lignes** dont le prix est `≤ 0` (aberrant) ; remplacer les
-  **surfaces manquantes** par la **médiane**.
+- `Price`, `Landsize`, `BuildingArea` → **tableaux NumPy**.
+- **Écarter** les lignes sans `Price` ; remplacer les `BuildingArea` manquantes
+  par la **médiane**.
 - Stats NumPy : prix **moyen/médian**, **écart-type**, **prix au m²** moyen.
 
 ### v2 — Exploration pandas (35 %)
 
-- **DataFrame**, création d'une colonne **`Prix_au_m2 = Price_EUR / Surface_M2`**.
-- Segmenter : biens **> 80 m²**, biens **avec jardin**.
-- `groupby("City_Quarter")` → **prix moyen et prix/m² par quartier** ;
-  `pivot_table` **Quartier × Has_Garden**.
-- Export du classement des quartiers par prix/m².
+- **DataFrame**, colonne **`Prix_au_m2 = Price / BuildingArea`**.
+- Segmenter : biens **> 80 m²**, avec **≥ 3 chambres**.
+- `groupby("Regionname")` → **prix moyen et prix/m² par région** ;
+  `pivot_table` **Type × Rooms**.
+- Export du classement des régions par prix/m².
 
 ### Finale — Data-viz & appli (40 %)
 
-- **4 graphiques** : histogramme des prix, **nuage de points Surface × Prix**
-  (corrélation), **boxplot des prix par quartier** (repérer les extrêmes),
-  barres du **prix/m² par quartier**.
+- **4 graphiques** : histogramme des prix, **nuage `BuildingArea` × `Price`**
+  (corrélation), **boxplot des prix par `Type`** (repérer les extrêmes),
+  barres du **prix moyen par région**.
 - **Appli à menu** : `1. Statistiques prix` · `2. Corrélation surface/prix` ·
-  `3. Prix moyen par quartier` · `4. Exporter` · `5. Quitter`.
+  `3. Prix par région` · `4. Exporter` · `5. Quitter`.
 
 ## Pistes d'analyse
 
-- La **surface** explique-t-elle le prix mieux que le **nombre de pièces** ?
-- Quel **quartier** est le plus cher au m² ?
-- Le **jardin** ajoute-t-il une vraie prime au prix ?
+- La **surface** explique-t-elle le prix mieux que le nombre de **pièces** ?
+- Quelle **région** est la plus chère au m² ?
+- La **distance au centre** fait-elle vraiment baisser le prix ?
 
 ---
 

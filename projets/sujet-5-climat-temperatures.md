@@ -1,69 +1,67 @@
-# Sujet 5 — Climat & anomalies de température
+# Sujet 5 — Climat & évolution des températures
 
-> Visualiser concrètement l'évolution des **températures** sur 20 ans.
+> À partir des relevés **Berkeley Earth**, visualiser l'évolution des
+> **températures** sur plus d'un siècle et comparer les pays.
 
 [← Retour au cahier des charges](README.md)
 
-## Contexte & problématique
+## Le vrai jeu de données
 
-Des relevés météo annuels par ville, sur 20 ans. Les saisies textuelles sont
-**incohérentes** (`Maroc`, `maroc`, `MAROC`) et certaines **années manquent**.
-La question métier :
+**[Climate Change: Earth Surface Temperature Data — Kaggle](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data)**
+(relevés de **1743 à 2013**, plusieurs fichiers CSV).
 
-> **Comment visualiser l'évolution des températures mondiales sur les 20
-> dernières années ?**
+Deux fichiers au choix, selon l'ambition du groupe :
 
-## Le jeu de données
+- **`GlobalLandTemperaturesByCountry.csv`** (le plus simple) — température
+  moyenne par pays et par mois ;
+- **`GlobalLandTemperaturesByCity.csv`** (plus gros) — par ville.
 
-Exemple fourni : [`ressources/sujet-5-climat-exemple.csv`](ressources/sujet-5-climat-exemple.csv)
-(18 lignes ; le vrai fichier fera **≥ 1 000 lignes**).
+### Colonnes principales
 
-| Colonne | Type | Description |
-|---|---|---|
-| `Record_ID` | texte | identifiant du relevé |
-| `Country` | texte | pays (saisie **incohérente** à normaliser) |
-| `City` | texte | ville |
-| `Year` | entier | année du relevé |
-| `Month` | entier | mois (1 à 12) |
-| `Average_Temperature_C` | décimal | température moyenne, en °C |
-| `Anomaly_Indicator` | texte | `Normal` / `Eleve` (casse incohérente) |
+| Colonne | Description |
+|---|---|
+| `dt` | date du relevé (`AAAA-MM-JJ`, en fait le mois) |
+| `AverageTemperature` | température moyenne (°C) — **souvent manquante avant 1850** |
+| `AverageTemperatureUncertainty` | incertitude de la mesure |
+| `Country` (et `City`) | localisation |
 
-**Défauts injectés à nettoyer :** **erreurs de saisie textuelle**
-(`maroc`/`MAROC`/`Maroc`, `Eleve`/`eleve`), **années manquantes**, quelques
-**températures absentes**.
+### Les vrais défauts à nettoyer
 
-## Les trois livrables, appliqués à ce sujet
+- **beaucoup de `AverageTemperature` manquantes** sur les décennies anciennes ;
+- la colonne `dt` est un **texte** : il faut en **extraire l'année** ;
+- des **noms de pays** à harmoniser (entités historiques, doublons) ;
+- des séries **incomplètes** selon les villes.
+
+## Les trois livrables, appliqués à ce dataset
 
 ### v1 — Fondations & NumPy (25 %)
 
-- Lire le CSV **sans pandas**.
-- `Average_Temperature_C` → **tableau NumPy**.
-- Remplacer les **températures manquantes** par la **moyenne** ; écarter les
-  lignes sans `Year`.
+- Lire le CSV **sans pandas** ; extraire l'**année** de `dt` (`dt[:4]`).
+- `AverageTemperature` → **tableau NumPy**, en ignorant les valeurs vides.
 - Stats NumPy : température **moyenne/médiane**, **écart-type**, **min/max**.
 
 ### v2 — Exploration pandas (35 %)
 
-- **DataFrame**, **normaliser `Country`** (`.str.strip().str.title()`) et
-  `Anomaly_Indicator` (`.str.capitalize()`).
-- Segmenter : relevés d'**été** (mois 6–8).
-- `groupby("Year")` → **température moyenne par année** ;
-  `pivot_table` **Country × Year**.
+- **DataFrame**, `to_datetime(dt)`, `dropna(subset="AverageTemperature")`,
+  colonne **`Year`**.
+- Segmenter : un **pays** (ex. le Maroc) et les **20 dernières années**.
+- `groupby("Year")` → **température moyenne annuelle** ;
+  `pivot_table` **Country × décennie**.
 - Export de la série « température moyenne par année ».
 
 ### Finale — Data-viz & appli (40 %)
 
 - **4 graphiques** : **courbe de la température moyenne par année** (la
-  tendance !), barres par **pays**, boxplot par **pays**, histogramme des
-  anomalies `Eleve` vs `Normal`.
-- **Appli à menu** : `1. Tendance annuelle` · `2. Comparer les pays` ·
-  `3. Part d'anomalies` · `4. Exporter` · `5. Quitter`.
+  tendance !), barres **par pays**, boxplot **par décennie**, courbe comparant
+  **2 ou 3 pays**.
+- **Appli à menu** : `1. Tendance annuelle` · `2. Comparer des pays` ·
+  `3. Statistiques d'un pays` · `4. Exporter` · `5. Quitter`.
 
 ## Pistes d'analyse
 
-- La **courbe annuelle** monte-t-elle nettement sur 20 ans ?
+- La **courbe annuelle** monte-t-elle nettement sur le dernier siècle ?
 - Quel **pays** se réchauffe le plus vite ?
-- La part de relevés **`Eleve`** augmente-t-elle avec le temps ?
+- L'**incertitude** des mesures diminue-t-elle avec le temps ?
 
 ---
 

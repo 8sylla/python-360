@@ -136,20 +136,20 @@ const LIVRABLES = [
 /* Les cinq sujets. Un groupe par sujet ; le groupe reste « à constituer »
    tant que les équipes ne sont pas fixées. */
 const PROJETS = [
-  { numero: 1, titre: "Streaming & audience", domaine: "Netflix / Spotify",
-    problematique: "Comprendre les habitudes d'écoute et optimiser les recommandations.",
+  { numero: 1, titre: "Streaming & audience", domaine: "Spotify · 114k titres",
+    problematique: "Ce qui rend un titre populaire, et comparer les genres audio.",
     fichier: "sujet-1-streaming-audience.md" },
-  { numero: 2, titre: "Marché immobilier", domaine: "Prix & tendances",
+  { numero: 2, titre: "Marché immobilier", domaine: "Melbourne · immobilier",
     problematique: "Quels facteurs influencent le plus le prix des biens ?",
     fichier: "sujet-2-marche-immobilier.md" },
-  { numero: 3, titre: "Ventes e-commerce", domaine: "Marketing & ROI",
-    problematique: "Quel canal marketing rapporte le meilleur retour sur investissement ?",
+  { numero: 3, titre: "Ventes e-commerce", domaine: "UCI · 500k ventes",
+    problematique: "Quels pays et quels mois font le chiffre d'affaires ?",
     fichier: "sujet-3-ventes-ecommerce.md" },
-  { numero: 4, titre: "Santé & bien-être", domaine: "Objets connectés",
+  { numero: 4, titre: "Santé & bien-être", domaine: "Fitbit · wearables",
     problematique: "Activité, sommeil et calories brûlées sont-ils corrélés ?",
     fichier: "sujet-4-sante-bien-etre.md" },
-  { numero: 5, titre: "Climat & températures", domaine: "20 ans de relevés",
-    problematique: "Visualiser l'évolution des températures mondiales sur 20 ans.",
+  { numero: 5, titre: "Climat & températures", domaine: "Berkeley Earth",
+    problematique: "Visualiser l'évolution des températures sur plus d'un siècle.",
     fichier: "sujet-5-climat-temperatures.md" },
 ];
 

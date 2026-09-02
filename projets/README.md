@@ -8,12 +8,11 @@ brutes pour répondre à une problématique métier réelle. Il se déroule en
 **trois livrables progressifs**, qui simulent un vrai flux de travail
 professionnel.
 
-- **17 étudiants**, répartis en **5 groupes** de 3 à 4 personnes.
-- **1 sujet par groupe** (5 sujets ci-dessous).
+- **5 groupes**, **un sujet par groupe** (5 sujets ci-dessous).
 - **Stack imposée** : Python (bases) · NumPy · pandas · Matplotlib / seaborn.
-- **Jeu de données** : un CSV d'au moins **1 000 lignes** et **5 à 8 colonnes**,
-  fourni ou validé par le formateur, contenant **volontairement des données
-  sales** (manquantes, doublons, aberrantes) à nettoyer.
+- **Jeu de données** : un **vrai jeu open-source** (Kaggle / UCI), avec ses
+  **vrais défauts** à nettoyer (valeurs manquantes, doublons, valeurs
+  aberrantes, formats incohérents). Chaque sujet indique le sien.
 
 > Les groupes et les dépôts de chaque équipe seront ajoutés ici une fois les
 > équipes constituées.
@@ -73,77 +72,48 @@ puis **démo live + pitch de 5 minutes par équipe** devant la classe.*
 
 ## Les 5 sujets
 
-Chaque sujet a sa **fiche détaillée** (dataset, livrables déclinés, pistes
-d'analyse) et un **jeu de données d'exemple** dans [`ressources/`](ressources/).
+Chaque sujet a sa **fiche détaillée** (dataset réel, livrables déclinés, pistes
+d'analyse) et pointe vers un **vrai jeu de données open-source**.
 
-| # | Sujet | Fiche | Exemple de données |
+| # | Sujet | Fiche | Vrai dataset |
 |---|---|---|---|
-| 1 | Streaming & audience | [fiche →](sujet-1-streaming-audience.md) | [csv](ressources/sujet-1-streaming-exemple.csv) |
-| 2 | Marché immobilier | [fiche →](sujet-2-marche-immobilier.md) | [csv](ressources/sujet-2-immobilier-exemple.csv) |
-| 3 | Ventes e-commerce | [fiche →](sujet-3-ventes-ecommerce.md) | [csv](ressources/sujet-3-ecommerce-exemple.csv) |
-| 4 | Santé & bien-être | [fiche →](sujet-4-sante-bien-etre.md) | [csv](ressources/sujet-4-sante-exemple.csv) |
-| 5 | Climat & températures | [fiche →](sujet-5-climat-temperatures.md) | [csv](ressources/sujet-5-climat-exemple.csv) |
+| 1 | Streaming & audience | [fiche →](sujet-1-streaming-audience.md) | [Spotify Tracks (Kaggle)](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset) |
+| 2 | Marché immobilier | [fiche →](sujet-2-marche-immobilier.md) | [Melbourne Housing (Kaggle)](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot) |
+| 3 | Ventes e-commerce | [fiche →](sujet-3-ventes-ecommerce.md) | [Online Retail (UCI)](https://archive.ics.uci.edu/dataset/352/online+retail) |
+| 4 | Santé & bien-être | [fiche →](sujet-4-sante-bien-etre.md) | [FitBit Fitness Tracker (Kaggle)](https://www.kaggle.com/datasets/arashnic/fitbit) |
+| 5 | Climat & températures | [fiche →](sujet-5-climat-temperatures.md) | [Earth Surface Temperature (Kaggle)](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) |
 
-### Sujet 1 — Streaming & audience (Netflix / Spotify)
+### Sujet 1 — Streaming & audience
 
-**Fiche détaillée : [sujet-1-streaming-audience.md](sujet-1-streaming-audience.md)**
-
-
-**Problématique :** comment optimiser les recommandations et comprendre les
-habitudes d'écoute des utilisateurs ?
-
-**Colonnes du CSV :** `User_ID`, `Track_Movie_Name`, `Genre`,
-`Duration_Minutes`, `Device_Used`, `Date_Watched`, `User_Rating`.
-
-**Défauts injectés :** valeurs manquantes et doublons.
+**Problématique :** comprendre les habitudes d'écoute et optimiser les
+recommandations.
+**Dataset :** [Spotify Tracks — 114 000 titres, 125 genres](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)
+· [fiche détaillée](sujet-1-streaming-audience.md)
 
 ### Sujet 2 — Marché immobilier régional
 
-**Fiche détaillée : [sujet-2-marche-immobilier.md](sujet-2-marche-immobilier.md)**
-
-**Problématique :** quels facteurs influencent le plus le prix des biens, pour
-guider les acheteurs ?
-
-**Colonnes du CSV :** `Property_ID`, `City_Quarter`, `Price_EUR`, `Surface_M2`,
-`Rooms_Count`, `Year_Built`, `Has_Garden`.
-
-**Défauts injectés :** prix aberrants (`0` ou négatifs).
+**Problématique :** quels facteurs influencent le plus le prix des biens ?
+**Dataset :** [Melbourne Housing](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)
+· [fiche détaillée](sujet-2-marche-immobilier.md)
 
 ### Sujet 3 — Campagnes & ventes e-commerce
 
-**Fiche détaillée : [sujet-3-ventes-ecommerce.md](sujet-3-ventes-ecommerce.md)**
-
-**Problématique :** quel canal marketing génère le meilleur ROI, et comment se
-comportent les acheteurs ?
-
-**Colonnes du CSV :** `Order_ID`, `Marketing_Channel`, `Cart_Value_USD`,
-`Is_Converted` (0/1), `Customer_Age`, `Purchase_Date`.
-
-**Défauts injectés :** formats de dates incohérents.
+**Problématique :** quel canal génère le meilleur ROI, et comment achètent les
+clients ?
+**Dataset :** [Online Retail — UCI, 500 000+ transactions](https://archive.ics.uci.edu/dataset/352/online+retail)
+· [fiche détaillée](sujet-3-ventes-ecommerce.md)
 
 ### Sujet 4 — Santé & bien-être (objets connectés)
 
-**Fiche détaillée : [sujet-4-sante-bien-etre.md](sujet-4-sante-bien-etre.md)**
-
-**Problématique :** existe-t-il une corrélation entre activité physique,
-sommeil et calories brûlées ?
-
-**Colonnes du CSV :** `User_ID`, `Daily_Steps`, `Sleep_Hours`,
-`Calories_Burned`, `Average_HeartRate`, `Day_Of_Week`.
-
-**Défauts injectés :** lignes vides et valeurs extrêmes à filtrer.
+**Problématique :** activité physique, sommeil et calories sont-ils corrélés ?
+**Dataset :** [FitBit Fitness Tracker](https://www.kaggle.com/datasets/arashnic/fitbit)
+· [fiche détaillée](sujet-4-sante-bien-etre.md)
 
 ### Sujet 5 — Climat & anomalies de température
 
-**Fiche détaillée : [sujet-5-climat-temperatures.md](sujet-5-climat-temperatures.md)**
-
-**Problématique :** comment visualiser concrètement l'évolution des températures
-mondiales sur 20 ans ?
-
-**Colonnes du CSV :** `Record_ID`, `Country`, `City`, `Year`, `Month`,
-`Average_Temperature_C`, `Anomaly_Indicator`.
-
-**Défauts injectés :** erreurs de saisie textuelle et années manquantes.
+**Problématique :** visualiser l'évolution des températures sur plus d'un siècle.
+**Dataset :** [Earth Surface Temperature — Berkeley Earth](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data)
+· [fiche détaillée](sujet-5-climat-temperatures.md)
 
 ---
 
