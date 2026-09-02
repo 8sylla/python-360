@@ -7,7 +7,7 @@ requires-python = ">=3.11"   # match/case (3.10+) et large compat frameworks
 
 dependencies = [
     "pandas>=3.0,<3.1",
-    "numpy>=2.5,<3",
+    "numpy>=2.2,<2.5",   # 2.4.x : dernier numpy compatible Python 3.11 (2.5 exige 3.12)
     "matplotlib>=3.10",
     "seaborn>=0.13",
 ]
@@ -29,7 +29,7 @@ target-version = "py311"
 # Les notebooks, les slides et les guides contiennent volontairement du code
 # à trous, tronqué ou pédagogiquement dénormalisé : ce n'est pas du code de
 # production, on ne l'analyse pas.
-extend-exclude = ["*.ipynb", "slides/", "docs/"]
+extend-exclude = ["*.ipynb", "slides/", "docs/", "seances/", "fil-rouge/"]
 
 [tool.ruff.lint]
 # E/F = erreurs et pyflakes · I = imports triés · UP = syntaxe modernisée

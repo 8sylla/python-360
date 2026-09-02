@@ -77,7 +77,7 @@ référencés donnent du code qui ne marche plus.
 |---|---|---|
 | Python | 3.11 minimum | `match/case` (3.10+), large compatibilité frameworks |
 | pandas | 3.0+ | Copy-on-Write : l'affectation chaînée lève une erreur |
-| NumPy | 2.5+ | API 2.x |
+| NumPy | 2.2–2.4 | API 2.x (numpy 2.5 exige Python 3.12) |
 | Matplotlib | 3.10+ | interface orientée objet (`fig, ax`) |
 | seaborn | 0.13+ | `hue=` requis pour colorier par catégorie |
 
