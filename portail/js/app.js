@@ -98,6 +98,48 @@
     liste.appendChild(li);
   });
 
+  /* ── le projet fil rouge ────────────────────────────────────────────── */
+  //  Les trois livrables, puis les cinq sujets. Le groupe et le dépôt de
+  //  chaque équipe restent masqués (« à constituer ») tant qu'ils ne sont
+  //  pas fixés : seul le lien vers le cahier des charges est publié.
+  const livrables = document.getElementById("livrables");
+  if (livrables && typeof LIVRABLES !== "undefined") {
+    LIVRABLES.forEach((l) => {
+      const li = document.createElement("li");
+      li.className = "livrable";
+      li.innerHTML = `
+        <div class="livrable__tete">
+          <span class="livrable__tag">${echappe(l.tag)}</span>
+          <span class="livrable__poids">${echappe(l.poids)}</span>
+        </div>
+        <b class="livrable__titre">${echappe(l.titre)}</b>
+        <span class="livrable__detail">${echappe(l.detail)}</span>`;
+      livrables.appendChild(li);
+    });
+  }
+
+  const projets = document.getElementById("projets-liste");
+  if (projets && typeof PROJETS !== "undefined") {
+    const url = typeof PROJETS_URL !== "undefined" ? PROJETS_URL : "#";
+    PROJETS.forEach((p) => {
+      const li = document.createElement("li");
+      li.className = "projet";
+      li.innerHTML = `
+        <div class="projet__tete">
+          <span class="projet__num">P${p.numero}</span>
+          <span class="projet__domaine">${echappe(p.domaine)}</span>
+        </div>
+        <h3 class="projet__titre">${echappe(p.titre)}</h3>
+        <p class="projet__pb">${echappe(p.problematique)}</p>
+        <div class="projet__pied">
+          <span class="projet__groupe">Groupe · à constituer</span>
+          <a class="ressource" href="${echappe(url)}" target="_blank" rel="noopener">
+            ${svg("file-text")}Voir le sujet</a>
+        </div>`;
+      projets.appendChild(li);
+    });
+  }
+
   /* ── menu sur petit écran ───────────────────────────────────────────── */
   const burger = document.querySelector(".burger");
   const nav = document.getElementById("nav");

@@ -112,6 +112,39 @@ const RESSOURCES = [
   { cle: "video", libelle: "Vidéo", icone: "video" },
 ];
 
+/* ── Le projet fil rouge ───────────────────────────────────────────────
+   Tous les détails (sujets, livrables, critères) vivent dans le README du
+   dépôt : le portail ne fait que présenter et pointer dessus. Les groupes
+   et leurs dépôts ne sont pas encore constitués — ils seront ajoutés au
+   README, pas ici. */
+const PROJETS_URL =
+  "https://github.com/8sylla/python-360/blob/main/projets/README.md";
+
+/* Les trois livrables progressifs, communs aux cinq sujets. */
+const LIVRABLES = [
+  { tag: "v1", titre: "Fondations & NumPy", poids: "25 %",
+    detail: "Lecture brute du CSV, nettoyage et statistiques avec NumPy." },
+  { tag: "v2", titre: "Exploration pandas", poids: "35 %",
+    detail: "DataFrame, filtrage, groupby / pivot, export propre." },
+  { tag: "finale", titre: "Data-viz & démo", poids: "40 %",
+    detail: "4 graphiques, une appli à menu, et un pitch de 5 min par équipe." },
+];
+
+/* Les cinq sujets. Un groupe par sujet ; le groupe reste « à constituer »
+   tant que les équipes ne sont pas fixées. */
+const PROJETS = [
+  { numero: 1, titre: "Streaming & audience", domaine: "Netflix / Spotify",
+    problematique: "Comprendre les habitudes d'écoute et optimiser les recommandations." },
+  { numero: 2, titre: "Marché immobilier", domaine: "Prix & tendances",
+    problematique: "Quels facteurs influencent le plus le prix des biens ?" },
+  { numero: 3, titre: "Ventes e-commerce", domaine: "Marketing & ROI",
+    problematique: "Quel canal marketing rapporte le meilleur retour sur investissement ?" },
+  { numero: 4, titre: "Santé & bien-être", domaine: "Objets connectés",
+    problematique: "Activité, sommeil et calories brûlées sont-ils corrélés ?" },
+  { numero: 5, titre: "Climat & températures", domaine: "20 ans de relevés",
+    problematique: "Visualiser l'évolution des températures mondiales sur 20 ans." },
+];
+
 /* Les outils de la formation. Les logos sont dans assets/logos/ :
    rien n'est chargé depuis un service extérieur. */
 const OUTILS = [
