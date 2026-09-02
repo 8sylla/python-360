@@ -1,0 +1,19 @@
+Property_ID,City_Quarter,Price_EUR,Surface_M2,Rooms_Count,Year_Built,Has_Garden
+P001,Gueliz,145000,72,3,2005,Non
+P002,Hivernage,320000,120,5,2012,Oui
+P003,Centre,0,55,2,1998,Non
+P004,Agdal,210000,88,4,2008,Oui
+P005,Gueliz,-50000,60,2,2001,Non
+P006,Sidi Ghanem,98000,45,2,,Non
+P007,Hivernage,410000,150,6,2015,Oui
+P008,Centre,132000,,3,1995,Non
+P009,Agdal,225000,95,4,2010,Oui
+P010,Gueliz,0,70,3,2003,Non
+P011,Sidi Ghanem,87000,40,1,2000,Non
+P012,Hivernage,295000,110,5,2011,Oui
+P013,Centre,168000,80,3,1990,Non
+P014,Agdal,-12000,85,4,2009,Oui
+P015,Gueliz,152000,75,3,2006,Non
+P016,Sidi Ghanem,105000,50,2,2002,Non
+P017,Hivernage,380000,,6,2014,Oui
+P018,Centre,140000,68,3,1997,Non

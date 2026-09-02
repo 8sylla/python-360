@@ -119,6 +119,9 @@ const RESSOURCES = [
    README, pas ici. */
 const PROJETS_URL =
   "https://github.com/8sylla/python-360/blob/main/projets/README.md";
+//  Base des fiches détaillées (une par sujet) dans le dépôt.
+const PROJETS_BASE =
+  "https://github.com/8sylla/python-360/blob/main/projets/";
 
 /* Les trois livrables progressifs, communs aux cinq sujets. */
 const LIVRABLES = [
@@ -134,15 +137,20 @@ const LIVRABLES = [
    tant que les équipes ne sont pas fixées. */
 const PROJETS = [
   { numero: 1, titre: "Streaming & audience", domaine: "Netflix / Spotify",
-    problematique: "Comprendre les habitudes d'écoute et optimiser les recommandations." },
+    problematique: "Comprendre les habitudes d'écoute et optimiser les recommandations.",
+    fichier: "sujet-1-streaming-audience.md" },
   { numero: 2, titre: "Marché immobilier", domaine: "Prix & tendances",
-    problematique: "Quels facteurs influencent le plus le prix des biens ?" },
+    problematique: "Quels facteurs influencent le plus le prix des biens ?",
+    fichier: "sujet-2-marche-immobilier.md" },
   { numero: 3, titre: "Ventes e-commerce", domaine: "Marketing & ROI",
-    problematique: "Quel canal marketing rapporte le meilleur retour sur investissement ?" },
+    problematique: "Quel canal marketing rapporte le meilleur retour sur investissement ?",
+    fichier: "sujet-3-ventes-ecommerce.md" },
   { numero: 4, titre: "Santé & bien-être", domaine: "Objets connectés",
-    problematique: "Activité, sommeil et calories brûlées sont-ils corrélés ?" },
+    problematique: "Activité, sommeil et calories brûlées sont-ils corrélés ?",
+    fichier: "sujet-4-sante-bien-etre.md" },
   { numero: 5, titre: "Climat & températures", domaine: "20 ans de relevés",
-    problematique: "Visualiser l'évolution des températures mondiales sur 20 ans." },
+    problematique: "Visualiser l'évolution des températures mondiales sur 20 ans.",
+    fichier: "sujet-5-climat-temperatures.md" },
 ];
 
 /* Les outils de la formation. Les logos sont dans assets/logos/ :

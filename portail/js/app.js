@@ -120,8 +120,11 @@
 
   const projets = document.getElementById("projets-liste");
   if (projets && typeof PROJETS !== "undefined") {
-    const url = typeof PROJETS_URL !== "undefined" ? PROJETS_URL : "#";
+    const base = typeof PROJETS_BASE !== "undefined" ? PROJETS_BASE : "";
+    const fallback = typeof PROJETS_URL !== "undefined" ? PROJETS_URL : "#";
     PROJETS.forEach((p) => {
+      // Chaque carte mène à SA fiche détaillée ; à défaut, au cahier des charges.
+      const href = p.fichier ? base + p.fichier : fallback;
       const li = document.createElement("li");
       li.className = "projet";
       li.innerHTML = `
@@ -133,7 +136,7 @@
         <p class="projet__pb">${echappe(p.problematique)}</p>
         <div class="projet__pied">
           <span class="projet__groupe">Groupe · à constituer</span>
-          <a class="ressource" href="${echappe(url)}" target="_blank" rel="noopener">
+          <a class="ressource" href="${echappe(href)}" target="_blank" rel="noopener">
             ${svg("file-text")}Voir le sujet</a>
         </div>`;
       projets.appendChild(li);

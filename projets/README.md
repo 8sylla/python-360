@@ -73,7 +73,21 @@ puis **démo live + pitch de 5 minutes par équipe** devant la classe.*
 
 ## Les 5 sujets
 
+Chaque sujet a sa **fiche détaillée** (dataset, livrables déclinés, pistes
+d'analyse) et un **jeu de données d'exemple** dans [`ressources/`](ressources/).
+
+| # | Sujet | Fiche | Exemple de données |
+|---|---|---|---|
+| 1 | Streaming & audience | [fiche →](sujet-1-streaming-audience.md) | [csv](ressources/sujet-1-streaming-exemple.csv) |
+| 2 | Marché immobilier | [fiche →](sujet-2-marche-immobilier.md) | [csv](ressources/sujet-2-immobilier-exemple.csv) |
+| 3 | Ventes e-commerce | [fiche →](sujet-3-ventes-ecommerce.md) | [csv](ressources/sujet-3-ecommerce-exemple.csv) |
+| 4 | Santé & bien-être | [fiche →](sujet-4-sante-bien-etre.md) | [csv](ressources/sujet-4-sante-exemple.csv) |
+| 5 | Climat & températures | [fiche →](sujet-5-climat-temperatures.md) | [csv](ressources/sujet-5-climat-exemple.csv) |
+
 ### Sujet 1 — Streaming & audience (Netflix / Spotify)
+
+**Fiche détaillée : [sujet-1-streaming-audience.md](sujet-1-streaming-audience.md)**
+
 
 **Problématique :** comment optimiser les recommandations et comprendre les
 habitudes d'écoute des utilisateurs ?
@@ -85,6 +99,8 @@ habitudes d'écoute des utilisateurs ?
 
 ### Sujet 2 — Marché immobilier régional
 
+**Fiche détaillée : [sujet-2-marche-immobilier.md](sujet-2-marche-immobilier.md)**
+
 **Problématique :** quels facteurs influencent le plus le prix des biens, pour
 guider les acheteurs ?
 
@@ -94,6 +110,8 @@ guider les acheteurs ?
 **Défauts injectés :** prix aberrants (`0` ou négatifs).
 
 ### Sujet 3 — Campagnes & ventes e-commerce
+
+**Fiche détaillée : [sujet-3-ventes-ecommerce.md](sujet-3-ventes-ecommerce.md)**
 
 **Problématique :** quel canal marketing génère le meilleur ROI, et comment se
 comportent les acheteurs ?
@@ -105,6 +123,8 @@ comportent les acheteurs ?
 
 ### Sujet 4 — Santé & bien-être (objets connectés)
 
+**Fiche détaillée : [sujet-4-sante-bien-etre.md](sujet-4-sante-bien-etre.md)**
+
 **Problématique :** existe-t-il une corrélation entre activité physique,
 sommeil et calories brûlées ?
 
@@ -114,6 +134,8 @@ sommeil et calories brûlées ?
 **Défauts injectés :** lignes vides et valeurs extrêmes à filtrer.
 
 ### Sujet 5 — Climat & anomalies de température
+
+**Fiche détaillée : [sujet-5-climat-temperatures.md](sujet-5-climat-temperatures.md)**
 
 **Problématique :** comment visualiser concrètement l'évolution des températures
 mondiales sur 20 ans ?
