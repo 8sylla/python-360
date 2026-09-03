@@ -75,7 +75,11 @@ const SEANCES = [
     sousTitre: "Classes, objets, dataclasses, composition",
     date: "2026-09-02",
     duree: "3 h",
-    liens: {},
+    liens: {
+      slides: "https://drive.google.com/file/d/1Uf2OppyoO7N8Vr9m_hRLcmDTZsLhS1V1/view?usp=sharing",
+      video: "https://youtube.com/live/PHky5p2Zgmc",
+      notebook: "https://github.com/8sylla/python-360/tree/main/seances/s05-poo/devoir-monbudget-v2"
+    },
   },
   {
     numero: 6,

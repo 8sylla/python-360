@@ -35,6 +35,11 @@ class Depense:
     def est_grosse(self):
         """Un attribut qui se CALCULE : depense.est_grosse (sans parenthèses)."""
         return self.montant >= 100
+    
+    @property
+    def resume(self):
+        """Rend une phrase décrivant la dépense."""
+        return f"{self.titre} — {self.categorie.value} — {self.montant:.2f} EUR"
 
 
 loyer = Depense("Loyer", 850, Categorie.LOGEMENT)
@@ -45,9 +50,13 @@ print("est_grosse :", loyer.est_grosse)
 # ── À toi de jouer ───────────────────────────────────────────────────────
 # TODO 1 : crée une Depense "Café" de 2.50 en catégorie ALIMENTATION.
 #          Affiche-la, puis affiche son est_grosse (doit être False).
+cafe = Depense("Café", 2.50, Categorie.ALIMENTATION)
+print(cafe)
+print("est_grosse :", cafe.est_grosse)
 
 # TODO 2 : ajoute à la dataclass Depense une @property `resume` qui rend une
 #          phrase comme "Loyer — Logement — 850.00 EUR". Teste sur loyer.
+print("Résumé :", cafe.resume)
 
 # TODO 3 (le piège) : crée deux Depense sans préciser tags. Ajoute un tag à la
 #          première (depense_a.tags.append("perso")) et vérifie que la seconde
