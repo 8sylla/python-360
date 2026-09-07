@@ -16,6 +16,7 @@ secrets.json
 depenses.json
 depenses_propres.csv
 dashboard.png
+journal.log
 
 # Outils
 .pytest_cache/

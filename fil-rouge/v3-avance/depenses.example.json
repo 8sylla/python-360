@@ -1,0 +1,9 @@
+[
+  { "titre": "Loyer", "montant": 850.0, "categorie": "Logement", "tags": ["fixe"] },
+  { "titre": "Pass Navigo", "montant": 86.4, "categorie": "Transport", "tags": ["fixe"] },
+  { "titre": "Courses Carrefour", "montant": 120.5, "categorie": "Alimentation", "tags": [] },
+  { "titre": "Netflix", "montant": 13.49, "categorie": "Loisirs", "tags": ["abonnement"] },
+  { "titre": "Boulangerie", "montant": 4.5, "categorie": "Alimentation", "tags": [] },
+  { "titre": "Pharmacie", "montant": 32.9, "categorie": "Santé", "tags": [] },
+  { "titre": "Loyer", "montant": 850.0, "categorie": "Logement", "tags": [] }
+]

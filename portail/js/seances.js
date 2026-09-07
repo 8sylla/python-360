@@ -87,7 +87,11 @@ const SEANCES = [
     sousTitre: "Méthodes spéciales, générateurs, décorateurs",
     date: "2026-09-05",
     duree: "3 h",
-    liens: {},
+    liens: {
+      slides: "https://drive.google.com/file/d/1HmnLC31Iyg32Xjz8uNjxJEjOi8aIQFjK/view?usp=sharing",
+      video: "https://youtube.com/live/2AfaEiM-Wbk",
+      notebook: "https://docs.google.com/forms/d/e/1FAIpQLSeY9kMxexqRdsENYH3YkxGve0Bc3XXybgHYbMImLQtSBLHthA/viewform?usp=publish-editor"
+    },
   },
   {
     numero: 7,

@@ -42,5 +42,8 @@ ignore = ["E501"]
 "seances/**" = ["F821", "E402"]     # les corrigés importent parfois hors du haut de fichier
 
 [tool.pytest.ini_options]
-testpaths = ["fil-rouge"]
-pythonpath = ["fil-rouge/v2-poo"]
+# On ne vise que les tests de la version courante du fil rouge : v2 et v3
+# définissent tous deux `modeles` et `budget`, et pytest importerait le
+# premier trouvé.
+testpaths = ["fil-rouge/v3-avance/tests"]
+pythonpath = ["fil-rouge/v3-avance"]
