@@ -99,7 +99,9 @@ const SEANCES = [
     sousTitre: "Du tableau en mémoire au DataFrame",
     date: "2026-09-09",
     duree: "3 h",
-    liens: {},
+    liens: {
+      notebook: "https://github.com/8sylla/python-360/tree/main/seances/s07-numpy-pandas/devoir-monbudget-v4",
+    },
   },
   {
     numero: 8,
@@ -107,7 +109,9 @@ const SEANCES = [
     sousTitre: "Agrégation, jointures, Matplotlib, seaborn",
     date: "2026-09-12",
     duree: "3 h",
-    liens: {},
+    liens: {
+      notebook: "https://github.com/8sylla/python-360/tree/main/seances/s08-dataviz/devoir-monbudget-v5",
+    },
   },
 ];
 

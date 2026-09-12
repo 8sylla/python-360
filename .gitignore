@@ -15,8 +15,13 @@ secrets.json
 *.sqlite3
 depenses.json
 depenses_propres.csv
+totaux_par_categorie.csv
+# releve_propre.csv EST versionne : c'est l'entree de la seance 8.
+# Mais pas la copie que produit le notebook de reprise :
+seances/**/releve_propre.csv
 dashboard.png
 journal.log
+seances/**/figures/
 
 # Outils
 .pytest_cache/

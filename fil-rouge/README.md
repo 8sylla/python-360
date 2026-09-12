@@ -10,8 +10,8 @@ notion.
 | **v1-cli** | S4 | Application en ligne de commande, dépenses écrites en JSON |
 | **v2-poo** | S5 | Refactorisation en classes `Depense` et `Budget` |
 | **v3-avance** | S6 | Méthodes spéciales, générateurs, décorateurs, premiers tests |
-| **v4-donnees** | S7 | Un relevé bancaire de 300 lignes, nettoyé avec pandas |
-| **v5-dashboard** | S8 | Le tableau de bord du mois, en quatre graphiques |
+| **v4-donnees** | S7 | Un relevé bancaire de 418 lignes très sales, nettoyé avec pandas |
+| **v5-dashboard** | S8 | Le tableau de bord : quatre graphiques, et une jointure avec le budget prévu |
 
 ## Le principe
 

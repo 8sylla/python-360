@@ -1,7 +1,7 @@
 # Pour les apprenants qui préfèrent pip (ou pour Google Colab).
 # Les versions sont bornées : ne pas les desserrer sans prévenir le groupe.
 pandas>=3.0,<3.1
-numpy>=2.5,<3
+numpy>=2.2,<2.5   # 2.5 exige Python 3.12 ; la formation cible 3.11
 matplotlib>=3.10
 seaborn>=0.13
 pytest>=8.0

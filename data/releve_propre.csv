@@ -1,0 +1,334 @@
+date_operation,libelle,categorie,montant,moyen_paiement,note,mois,jour_semaine
+2026-05-20,Edf,Logement,894.56,CB,,2026-05,Wednesday
+2026-02-09,Sncf Connect,Transport,40.37,CB,cadeau,2026-02,Monday
+2026-06-01,Assurance Habitation,Logement,814.78,CB,a verifier,2026-06,Monday
+2026-03-04,Assurance Habitation,Logement,759.81,PRELEVEMENT,,2026-03,Wednesday
+2026-06-19,Total Energies,Transport,77.76,PRELEVEMENT,pro,2026-06,Friday
+2026-06-25,Sncf Connect,Autre,18.04,CB,,2026-06,Thursday
+2026-05-10,Orange Fibre,Logement,338.39,CB,,2026-05,Sunday
+2026-06-01,Edf,Logement,739.4,CB,,2026-06,Monday
+2026-02-17,Mutuelle,Sante,52.77,CB,,2026-02,Tuesday
+2026-03-22,Cinema Pathe,Loisirs,71.53,CB,,2026-03,Sunday
+2026-03-12,Marjane,Alimentation,87.67,CB,,2026-03,Thursday
+2026-06-18,Edf,Logement,467.32,PRELEVEMENT,,2026-06,Thursday
+2026-05-21,Lidl,Alimentation,120.76,CB,,2026-05,Thursday
+2026-04-09,Lidl,Alimentation,138.75,CB,,2026-04,Thursday
+2026-03-24,Netflix,Autre,84.99,CB,,2026-03,Tuesday
+2026-02-21,Uber,Transport,36.86,CB,,2026-02,Saturday
+2026-02-01,Dr Diallo,Sante,89.75,CB,cadeau,2026-02,Sunday
+2026-04-09,Loyer Appartement,Logement,658.03,CB,,2026-04,Thursday
+2026-05-19,Lidl,Alimentation,21.47,CB,,2026-05,Tuesday
+2026-04-27,Boulangerie Paul,Alimentation,2.12,CB,,2026-04,Monday
+2026-05-02,Mutuelle,Sante,42.08,CB,,2026-05,Saturday
+2026-02-18,Cinema Pathe,Loisirs,103.57,VIREMENT,pro,2026-02,Wednesday
+2026-05-28,Pass Navigo,Transport,95.82,CB,,2026-05,Thursday
+2026-06-01,Cinema Pathe,Loisirs,68.33,CB,,2026-06,Monday
+2026-02-10,Sncf Connect,Transport,100.37,CB,,2026-02,Tuesday
+2026-03-15,Pharmacie Centrale,Sante,25.62,CB,,2026-03,Sunday
+2026-05-04,Mutuelle,Sante,61.39,CB,,2026-05,Monday
+2026-06-16,Cinema Pathe,Loisirs,73.02,VIREMENT,,2026-06,Tuesday
+2026-03-24,Pharmacie Centrale,Sante,81.68,PRELEVEMENT,,2026-03,Tuesday
+2026-05-27,Sncf Connect,Transport,136.87,CB,urgent,2026-05,Wednesday
+2026-05-18,Lidl,Alimentation,131.39,CB,,2026-05,Monday
+2026-05-28,Pass Navigo,Transport,50.79,PRELEVEMENT,urgent,2026-05,Thursday
+2026-06-26,Uber,Transport,138.44,PRELEVEMENT,,2026-06,Friday
+2026-05-04,Total Energies,Transport,68.94,CB,,2026-05,Monday
+2026-04-13,Sncf Connect,Transport,144.79,CB,,2026-04,Monday
+2026-02-13,Spotify,Loisirs,120.37,CB,,2026-02,Friday
+2026-01-23,Loyer Appartement,Logement,663.8,VIREMENT,,2026-01,Friday
+2026-06-19,Carrefour Market,Alimentation,84.97,CB,,2026-06,Friday
+2026-04-12,Loyer Appartement,Logement,584.62,CB,,2026-04,Sunday
+2026-05-10,Loyer Appartement,Logement,464.54,CB,,2026-05,Sunday
+2026-04-15,Marjane,Alimentation,77.51,CB,,2026-04,Wednesday
+2026-03-05,Pass Navigo,Transport,11.75,VIREMENT,,2026-03,Thursday
+2026-04-11,Lidl,Alimentation,102.04,PRELEVEMENT,,2026-04,Saturday
+2026-05-27,Boulangerie Paul,Alimentation,84.17,CB,urgent,2026-05,Wednesday
+2026-01-18,Uber,Autre,90.93,CB,,2026-01,Sunday
+2026-01-07,Sncf Connect,Transport,79.13,PRELEVEMENT,,2026-01,Wednesday
+2026-01-17,Assurance Habitation,Logement,821.64,CB,,2026-01,Saturday
+2026-03-21,Fnac,Loisirs,109.47,CB,,2026-03,Saturday
+2026-03-12,Marjane,Alimentation,105.89,CB,,2026-03,Thursday
+2026-01-08,Dr Diallo,Sante,31.92,VIREMENT,,2026-01,Thursday
+2026-02-16,Sncf Connect,Transport,107.24,PRELEVEMENT,a verifier,2026-02,Monday
+2026-02-04,Marjane,Alimentation,23.18,PRELEVEMENT,,2026-02,Wednesday
+2026-06-08,Loyer Appartement,Logement,639.81,CB,,2026-06,Monday
+2026-03-04,Dr Diallo,Sante,82.33,CB,,2026-03,Wednesday
+2026-03-05,Mutuelle,Sante,24.64,VIREMENT,,2026-03,Thursday
+2026-04-19,Assurance Habitation,Logement,792.42,VIREMENT,,2026-04,Sunday
+2026-03-27,Loyer Appartement,Logement,746.01,CB,pro,2026-03,Friday
+2026-02-18,Total Energies,Transport,83.4,CB,,2026-02,Wednesday
+2026-04-08,Fnac,Loisirs,100.46,VIREMENT,,2026-04,Wednesday
+2026-02-04,Marjane,Alimentation,119.5,CB,,2026-02,Wednesday
+2026-05-16,Orange Fibre,Logement,379.78,VIREMENT,urgent,2026-05,Saturday
+2026-01-23,Edf,Logement,677.05,CB,,2026-01,Friday
+2026-01-12,Assurance Habitation,Logement,779.5,VIREMENT,,2026-01,Monday
+2026-02-24,Edf,Logement,326.75,CB,,2026-02,Tuesday
+2026-01-18,Netflix,Autre,80.29,PRELEVEMENT,urgent,2026-01,Sunday
+2026-04-09,Pharmacie Centrale,Sante,110.68,VIREMENT,,2026-04,Thursday
+2026-03-08,Sncf Connect,Autre,137.67,CB,urgent,2026-03,Sunday
+2026-04-19,Pass Navigo,Transport,138.33,CB,,2026-04,Sunday
+2026-06-12,Netflix,Loisirs,104.62,CB,pro,2026-06,Friday
+2026-04-25,Assurance Habitation,Logement,346.71,CB,,2026-04,Saturday
+2026-05-25,Edf,Logement,777.31,CB,pro,2026-05,Monday
+2026-02-09,Total Energies,Transport,71.7,CB,,2026-02,Monday
+2026-03-23,Carrefour Market,Autre,31.16,CB,,2026-03,Monday
+2026-01-12,Assurance Habitation,Logement,559.82,CB,urgent,2026-01,Monday
+2026-05-23,Edf,Logement,475.58,CB,,2026-05,Saturday
+2026-05-20,Boulangerie Paul,Alimentation,103.48,VIREMENT,,2026-05,Wednesday
+2026-03-12,Sncf Connect,Transport,102.0,VIREMENT,a verifier,2026-03,Thursday
+2026-05-21,Pass Navigo,Transport,55.46,CB,cadeau,2026-05,Thursday
+2026-06-13,Marjane,Alimentation,130.29,PRELEVEMENT,,2026-06,Saturday
+2026-04-07,Sncf Connect,Transport,73.04,VIREMENT,,2026-04,Tuesday
+2026-05-17,Loyer Appartement,Logement,705.5,CB,,2026-05,Sunday
+2026-03-07,Assurance Habitation,Logement,394.41,CB,,2026-03,Saturday
+2026-02-26,Edf,Logement,315.76,CB,a verifier,2026-02,Thursday
+2026-03-01,Uber,Transport,74.61,CB,,2026-03,Sunday
+2026-06-18,Uber,Transport,85.14,CB,,2026-06,Thursday
+2026-01-22,Cinema Pathe,Autre,28.19,CB,,2026-01,Thursday
+2026-01-07,Orange Fibre,Logement,685.56,CB,pro,2026-01,Wednesday
+2026-06-24,Cinema Pathe,Loisirs,117.58,CB,,2026-06,Wednesday
+2026-01-10,Carrefour Market,Alimentation,16.09,CB,,2026-01,Saturday
+2026-02-16,Edf,Logement,399.17,CB,,2026-02,Monday
+2026-05-19,Spotify,Loisirs,132.09,VIREMENT,cadeau,2026-05,Tuesday
+2026-01-08,Lidl,Alimentation,112.36,VIREMENT,pro,2026-01,Thursday
+2026-06-19,Cinema Pathe,Loisirs,116.22,VIREMENT,a verifier,2026-06,Friday
+2026-02-13,Pharmacie Centrale,Sante,51.95,CB,,2026-02,Friday
+2026-06-15,Orange Fibre,Logement,416.66,CB,,2026-06,Monday
+2026-02-27,Mutuelle,Sante,58.85,CB,,2026-02,Friday
+2026-05-09,Fnac,Loisirs,112.12,CB,,2026-05,Saturday
+2026-04-11,Lidl,Alimentation,97.62,PRELEVEMENT,urgent,2026-04,Saturday
+2026-02-21,Edf,Logement,451.5,PRELEVEMENT,urgent,2026-02,Saturday
+2026-03-02,Uber,Transport,98.33,CB,,2026-03,Monday
+2026-02-26,Netflix,Loisirs,64.11,VIREMENT,cadeau,2026-02,Thursday
+2026-01-28,Sncf Connect,Transport,139.52,PRELEVEMENT,,2026-01,Wednesday
+2026-02-01,Netflix,Loisirs,48.19,CB,,2026-02,Sunday
+2026-01-22,Fnac,Loisirs,84.23,VIREMENT,,2026-01,Thursday
+2026-04-02,Netflix,Loisirs,9.37,CB,a verifier,2026-04,Thursday
+2026-03-13,Netflix,Loisirs,137.03,CB,,2026-03,Friday
+2026-02-04,Assurance Habitation,Logement,549.91,VIREMENT,,2026-02,Wednesday
+2026-02-20,Loyer Appartement,Logement,653.62,CB,,2026-02,Friday
+2026-06-17,Pass Navigo,Autre,122.35,CB,,2026-06,Wednesday
+2026-01-28,Carrefour Market,Alimentation,32.48,VIREMENT,,2026-01,Wednesday
+2026-02-07,Orange Fibre,Logement,676.59,CB,,2026-02,Saturday
+2026-02-07,Assurance Habitation,Logement,542.9,VIREMENT,,2026-02,Saturday
+2026-04-21,Total Energies,Transport,12.79,CB,,2026-04,Tuesday
+2026-05-14,Pass Navigo,Transport,117.37,CB,,2026-05,Thursday
+2026-02-26,Sncf Connect,Transport,54.75,CB,,2026-02,Thursday
+2026-04-10,Edf,Logement,709.04,CB,,2026-04,Friday
+2026-03-16,Dr Diallo,Sante,68.96,CB,a verifier,2026-03,Monday
+2026-01-22,Orange Fibre,Logement,632.04,VIREMENT,,2026-01,Thursday
+2026-06-27,Sncf Connect,Transport,70.82,CB,urgent,2026-06,Saturday
+2026-03-07,Total Energies,Transport,28.91,CB,,2026-03,Saturday
+2026-03-12,Lidl,Autre,123.94,CB,pro,2026-03,Thursday
+2026-04-27,Assurance Habitation,Logement,675.72,PRELEVEMENT,,2026-04,Monday
+2026-01-19,Pharmacie Centrale,Sante,84.91,PRELEVEMENT,a verifier,2026-01,Monday
+2026-05-27,Sncf Connect,Transport,47.73,CB,,2026-05,Wednesday
+2026-04-27,Spotify,Autre,99.62,CB,,2026-04,Monday
+2026-04-01,Loyer Appartement,Autre,671.14,CB,,2026-04,Wednesday
+2026-03-27,Netflix,Loisirs,26.42,VIREMENT,,2026-03,Friday
+2026-04-05,Orange Fibre,Logement,409.04,VIREMENT,,2026-04,Sunday
+2026-01-22,Orange Fibre,Logement,817.43,CB,cadeau,2026-01,Thursday
+2026-03-20,Marjane,Alimentation,115.76,CB,,2026-03,Friday
+2026-01-22,Lidl,Alimentation,137.25,CB,,2026-01,Thursday
+2026-03-17,Orange Fibre,Logement,505.23,VIREMENT,,2026-03,Tuesday
+2026-06-03,Netflix,Loisirs,28.83,CB,urgent,2026-06,Wednesday
+2026-02-13,Netflix,Loisirs,41.27,CB,,2026-02,Friday
+2026-03-05,Uber,Transport,88.12,CB,,2026-03,Thursday
+2026-06-24,Edf,Logement,675.31,CB,a verifier,2026-06,Wednesday
+2026-04-23,Carrefour Market,Alimentation,98.02,CB,pro,2026-04,Thursday
+2026-04-13,Cinema Pathe,Loisirs,59.24,VIREMENT,,2026-04,Monday
+2026-06-23,Fnac,Loisirs,90.94,CB,pro,2026-06,Tuesday
+2026-02-24,Carrefour Market,Alimentation,105.03,CB,,2026-02,Tuesday
+2026-01-24,Marjane,Alimentation,117.93,VIREMENT,,2026-01,Saturday
+2026-06-08,Pharmacie Centrale,Autre,23.71,PRELEVEMENT,,2026-06,Monday
+2026-06-03,Netflix,Loisirs,126.88,CB,,2026-06,Wednesday
+2026-03-06,Assurance Habitation,Logement,864.34,VIREMENT,,2026-03,Friday
+2026-03-25,Carrefour Market,Alimentation,47.92,CB,,2026-03,Wednesday
+2026-06-05,Carrefour Market,Alimentation,149.13,CB,,2026-06,Friday
+2026-03-12,Marjane,Autre,11.99,CB,pro,2026-03,Thursday
+2026-03-16,Boulangerie Paul,Alimentation,23.62,CB,,2026-03,Monday
+2026-04-28,Pass Navigo,Transport,146.95,CB,,2026-04,Tuesday
+2026-03-15,Marjane,Alimentation,22.24,CB,,2026-03,Sunday
+2026-03-21,Loyer Appartement,Logement,391.83,VIREMENT,,2026-03,Saturday
+2026-02-05,Lidl,Alimentation,110.19,CB,,2026-02,Thursday
+2026-03-04,Dr Diallo,Autre,102.89,CB,,2026-03,Wednesday
+2026-04-25,Uber,Transport,111.27,VIREMENT,,2026-04,Saturday
+2026-05-28,Mutuelle,Autre,92.03,CB,,2026-05,Thursday
+2026-06-11,Total Energies,Transport,147.65,CB,pro,2026-06,Thursday
+2026-02-23,Fnac,Loisirs,134.47,VIREMENT,,2026-02,Monday
+2026-04-26,Sncf Connect,Autre,69.68,CB,,2026-04,Sunday
+2026-01-16,Sncf Connect,Transport,9.35,VIREMENT,urgent,2026-01,Friday
+2026-05-24,Netflix,Loisirs,98.55,VIREMENT,,2026-05,Sunday
+2026-03-05,Sncf Connect,Transport,6.37,CB,,2026-03,Thursday
+2026-01-22,Sncf Connect,Transport,126.26,VIREMENT,,2026-01,Thursday
+2026-06-03,Orange Fibre,Logement,746.7,VIREMENT,,2026-06,Wednesday
+2026-04-18,Carrefour Market,Alimentation,18.79,PRELEVEMENT,urgent,2026-04,Saturday
+2026-05-10,Pass Navigo,Autre,90.18,VIREMENT,,2026-05,Sunday
+2026-03-01,Dr Diallo,Sante,104.9,PRELEVEMENT,,2026-03,Sunday
+2026-01-19,Sncf Connect,Transport,8.17,VIREMENT,,2026-01,Monday
+2026-01-16,Fnac,Loisirs,53.57,CB,,2026-01,Friday
+2026-04-26,Mutuelle,Autre,107.09,CB,,2026-04,Sunday
+2026-06-18,Cinema Pathe,Loisirs,53.59,CB,,2026-06,Thursday
+2026-03-02,Pass Navigo,Transport,138.81,CB,,2026-03,Monday
+2026-04-16,Spotify,Loisirs,71.57,VIREMENT,,2026-04,Thursday
+2026-01-21,Marjane,Alimentation,22.15,CB,urgent,2026-01,Wednesday
+2026-04-13,Uber,Transport,105.29,PRELEVEMENT,cadeau,2026-04,Monday
+2026-02-17,Dr Diallo,Sante,87.15,CB,,2026-02,Tuesday
+2026-02-10,Edf,Logement,412.24,CB,cadeau,2026-02,Tuesday
+2026-04-25,Orange Fibre,Logement,494.8,VIREMENT,,2026-04,Saturday
+2026-06-16,Carrefour Market,Alimentation,124.58,CB,pro,2026-06,Tuesday
+2026-03-07,Total Energies,Autre,64.09,CB,,2026-03,Saturday
+2026-06-24,Edf,Logement,756.71,CB,,2026-06,Wednesday
+2026-04-12,Pharmacie Centrale,Sante,45.53,CB,,2026-04,Sunday
+2026-06-14,Mutuelle,Sante,90.45,CB,,2026-06,Sunday
+2026-02-11,Edf,Autre,671.27,CB,,2026-02,Wednesday
+2026-05-18,Pharmacie Centrale,Sante,21.62,PRELEVEMENT,pro,2026-05,Monday
+2026-02-07,Netflix,Loisirs,83.91,CB,pro,2026-02,Saturday
+2026-03-26,Carrefour Market,Alimentation,145.67,CB,,2026-03,Thursday
+2026-01-01,Pharmacie Centrale,Sante,100.33,CB,,2026-01,Thursday
+2026-05-18,Spotify,Loisirs,32.61,CB,,2026-05,Monday
+2026-05-11,Cinema Pathe,Loisirs,28.81,CB,cadeau,2026-05,Monday
+2026-05-05,Cinema Pathe,Loisirs,13.3,CB,,2026-05,Tuesday
+2026-06-14,Spotify,Autre,80.65,CB,,2026-06,Sunday
+2026-01-16,Spotify,Loisirs,31.98,CB,pro,2026-01,Friday
+2026-06-01,Spotify,Loisirs,96.05,VIREMENT,,2026-06,Monday
+2026-06-22,Lidl,Alimentation,135.93,CB,,2026-06,Monday
+2026-05-05,Carrefour Market,Alimentation,70.23,VIREMENT,a verifier,2026-05,Tuesday
+2026-03-14,Dr Diallo,Sante,35.49,CB,,2026-03,Saturday
+2026-02-23,Marjane,Alimentation,33.16,CB,urgent,2026-02,Monday
+2026-01-20,Total Energies,Transport,3.25,CB,,2026-01,Tuesday
+2026-04-26,Assurance Habitation,Logement,784.84,PRELEVEMENT,,2026-04,Sunday
+2026-06-19,Marjane,Alimentation,112.82,CB,,2026-06,Friday
+2026-01-18,Spotify,Loisirs,144.18,VIREMENT,pro,2026-01,Sunday
+2026-06-01,Marjane,Alimentation,135.6,CB,,2026-06,Monday
+2026-05-10,Pharmacie Centrale,Sante,55.9,CB,,2026-05,Sunday
+2026-04-21,Boulangerie Paul,Alimentation,91.26,CB,,2026-04,Tuesday
+2026-03-11,Sncf Connect,Transport,141.02,CB,,2026-03,Wednesday
+2026-03-23,Marjane,Alimentation,9.75,VIREMENT,urgent,2026-03,Monday
+2026-02-17,Mutuelle,Autre,20.62,CB,pro,2026-02,Tuesday
+2026-04-12,Fnac,Loisirs,19.36,CB,,2026-04,Sunday
+2026-06-26,Edf,Logement,697.25,PRELEVEMENT,a verifier,2026-06,Friday
+2026-04-19,Loyer Appartement,Autre,803.21,PRELEVEMENT,,2026-04,Sunday
+2026-02-23,Netflix,Loisirs,100.29,CB,,2026-02,Monday
+2026-02-16,Mutuelle,Sante,88.23,CB,,2026-02,Monday
+2026-06-28,Dr Diallo,Sante,102.57,CB,pro,2026-06,Sunday
+2026-02-10,Boulangerie Paul,Alimentation,43.3,CB,urgent,2026-02,Tuesday
+2026-05-07,Assurance Habitation,Logement,576.07,VIREMENT,a verifier,2026-05,Thursday
+2026-03-15,Spotify,Loisirs,111.57,VIREMENT,,2026-03,Sunday
+2026-02-17,Total Energies,Transport,52.94,CB,,2026-02,Tuesday
+2026-01-24,Pass Navigo,Transport,140.74,VIREMENT,,2026-01,Saturday
+2026-01-11,Mutuelle,Sante,47.85,VIREMENT,cadeau,2026-01,Sunday
+2026-04-11,Assurance Habitation,Logement,439.18,CB,urgent,2026-04,Saturday
+2026-03-09,Cinema Pathe,Loisirs,43.13,PRELEVEMENT,,2026-03,Monday
+2026-02-10,Fnac,Autre,40.05,CB,,2026-02,Tuesday
+2026-04-07,Uber,Transport,33.03,CB,urgent,2026-04,Tuesday
+2026-05-21,Carrefour Market,Alimentation,18.82,CB,a verifier,2026-05,Thursday
+2026-05-23,Lidl,Alimentation,107.4,VIREMENT,urgent,2026-05,Saturday
+2026-04-23,Marjane,Alimentation,110.63,CB,urgent,2026-04,Thursday
+2026-02-08,Lidl,Alimentation,47.8,CB,,2026-02,Sunday
+2026-01-06,Netflix,Loisirs,91.11,CB,,2026-01,Tuesday
+2026-03-15,Edf,Logement,411.1,CB,,2026-03,Sunday
+2026-05-14,Fnac,Loisirs,64.25,VIREMENT,,2026-05,Thursday
+2026-06-14,Total Energies,Transport,47.47,CB,,2026-06,Sunday
+2026-01-15,Pharmacie Centrale,Sante,26.39,PRELEVEMENT,,2026-01,Thursday
+2026-02-20,Carrefour Market,Autre,101.58,CB,cadeau,2026-02,Friday
+2026-05-25,Pass Navigo,Transport,101.72,VIREMENT,,2026-05,Monday
+2026-06-16,Pharmacie Centrale,Sante,52.87,CB,,2026-06,Tuesday
+2026-04-28,Netflix,Loisirs,135.76,CB,,2026-04,Tuesday
+2026-05-10,Sncf Connect,Transport,102.78,CB,,2026-05,Sunday
+2026-02-24,Carrefour Market,Alimentation,7.21,CB,cadeau,2026-02,Tuesday
+2026-06-03,Boulangerie Paul,Alimentation,148.98,VIREMENT,pro,2026-06,Wednesday
+2026-02-17,Uber,Transport,5.35,VIREMENT,,2026-02,Tuesday
+2026-06-01,Pharmacie Centrale,Sante,95.82,PRELEVEMENT,,2026-06,Monday
+2026-05-24,Mutuelle,Sante,38.31,CB,,2026-05,Sunday
+2026-05-28,Uber,Transport,4.5,CB,,2026-05,Thursday
+2026-02-17,Cinema Pathe,Loisirs,119.09,CB,pro,2026-02,Tuesday
+2026-03-27,Orange Fibre,Logement,535.85,CB,cadeau,2026-03,Friday
+2026-03-02,Fnac,Autre,40.17,CB,,2026-03,Monday
+2026-03-27,Pass Navigo,Transport,116.39,CB,pro,2026-03,Friday
+2026-05-05,Cinema Pathe,Loisirs,128.17,VIREMENT,,2026-05,Tuesday
+2026-02-21,Marjane,Alimentation,88.24,VIREMENT,a verifier,2026-02,Saturday
+2026-03-15,Spotify,Loisirs,4.11,CB,,2026-03,Sunday
+2026-06-10,Uber,Transport,97.59,CB,,2026-06,Wednesday
+2026-01-03,Total Energies,Transport,81.77,CB,,2026-01,Saturday
+2026-06-20,Boulangerie Paul,Alimentation,115.42,CB,,2026-06,Saturday
+2026-03-26,Carrefour Market,Alimentation,21.65,CB,urgent,2026-03,Thursday
+2026-01-13,Total Energies,Transport,80.71,VIREMENT,pro,2026-01,Tuesday
+2026-03-22,Dr Diallo,Sante,47.03,CB,urgent,2026-03,Sunday
+2026-02-17,Orange Fibre,Logement,354.41,CB,,2026-02,Tuesday
+2026-03-26,Carrefour Market,Alimentation,116.36,CB,pro,2026-03,Thursday
+2026-01-12,Dr Diallo,Sante,26.12,VIREMENT,a verifier,2026-01,Monday
+2026-01-25,Lidl,Alimentation,12.69,PRELEVEMENT,,2026-01,Sunday
+2026-01-27,Dr Diallo,Sante,20.62,CB,urgent,2026-01,Tuesday
+2026-04-11,Carrefour Market,Alimentation,62.86,CB,,2026-04,Saturday
+2026-03-11,Total Energies,Transport,81.64,CB,,2026-03,Wednesday
+2026-06-19,Marjane,Alimentation,38.29,CB,,2026-06,Friday
+2026-01-25,Uber,Transport,94.73,VIREMENT,,2026-01,Sunday
+2026-06-13,Boulangerie Paul,Alimentation,21.27,PRELEVEMENT,,2026-06,Saturday
+2026-05-02,Cinema Pathe,Loisirs,43.83,CB,pro,2026-05,Saturday
+2026-04-19,Assurance Habitation,Autre,362.28,CB,,2026-04,Sunday
+2026-01-11,Dr Diallo,Sante,35.01,CB,,2026-01,Sunday
+2026-02-27,Total Energies,Transport,60.05,CB,pro,2026-02,Friday
+2026-02-23,Mutuelle,Sante,88.07,VIREMENT,,2026-02,Monday
+2026-05-25,Sncf Connect,Transport,73.81,CB,urgent,2026-05,Monday
+2026-05-14,Mutuelle,Sante,94.16,CB,cadeau,2026-05,Thursday
+2026-06-24,Spotify,Loisirs,139.37,VIREMENT,,2026-06,Wednesday
+2026-03-15,Fnac,Loisirs,7.66,CB,urgent,2026-03,Sunday
+2026-06-28,Pharmacie Centrale,Sante,107.2,VIREMENT,urgent,2026-06,Sunday
+2026-03-20,Carrefour Market,Alimentation,69.46,CB,,2026-03,Friday
+2026-04-16,Dr Diallo,Sante,55.25,CB,,2026-04,Thursday
+2026-05-24,Pass Navigo,Autre,5.02,VIREMENT,,2026-05,Sunday
+2026-02-03,Netflix,Loisirs,101.29,CB,,2026-02,Tuesday
+2026-06-02,Orange Fibre,Logement,652.19,CB,,2026-06,Tuesday
+2026-03-26,Orange Fibre,Logement,767.14,CB,,2026-03,Thursday
+2026-03-11,Uber,Autre,65.7,PRELEVEMENT,a verifier,2026-03,Wednesday
+2026-01-28,Uber,Transport,13.92,VIREMENT,,2026-01,Wednesday
+2026-02-07,Boulangerie Paul,Alimentation,112.78,CB,,2026-02,Saturday
+2026-01-28,Netflix,Loisirs,116.79,CB,,2026-01,Wednesday
+2026-01-20,Mutuelle,Autre,16.75,PRELEVEMENT,a verifier,2026-01,Tuesday
+2026-01-11,Assurance Habitation,Logement,729.69,CB,,2026-01,Sunday
+2026-03-01,Sncf Connect,Transport,145.26,CB,pro,2026-03,Sunday
+2026-03-24,Fnac,Loisirs,30.14,CB,,2026-03,Tuesday
+2026-04-18,Pharmacie Centrale,Sante,27.64,VIREMENT,,2026-04,Saturday
+2026-04-17,Total Energies,Transport,73.62,CB,a verifier,2026-04,Friday
+2026-03-15,Total Energies,Transport,147.51,CB,a verifier,2026-03,Sunday
+2026-03-27,Loyer Appartement,Logement,529.32,CB,,2026-03,Friday
+2026-06-02,Edf,Logement,545.3,CB,a verifier,2026-06,Tuesday
+2026-06-25,Netflix,Loisirs,141.59,PRELEVEMENT,,2026-06,Thursday
+2026-05-11,Pharmacie Centrale,Sante,68.23,VIREMENT,cadeau,2026-05,Monday
+2026-05-16,Dr Diallo,Autre,40.0,CB,,2026-05,Saturday
+2026-05-05,Netflix,Loisirs,63.64,CB,,2026-05,Tuesday
+2026-02-23,Carrefour Market,Alimentation,54.11,VIREMENT,,2026-02,Monday
+2026-06-04,Assurance Habitation,Logement,380.58,CB,pro,2026-06,Thursday
+2026-01-13,Assurance Habitation,Autre,353.03,CB,urgent,2026-01,Tuesday
+2026-05-17,Marjane,Alimentation,105.18,VIREMENT,,2026-05,Sunday
+2026-03-22,Boulangerie Paul,Alimentation,90.11,VIREMENT,,2026-03,Sunday
+2026-06-19,Total Energies,Transport,70.49,VIREMENT,,2026-06,Friday
+2026-03-12,Dr Diallo,Sante,109.51,CB,,2026-03,Thursday
+2026-04-06,Sncf Connect,Transport,99.71,CB,cadeau,2026-04,Monday
+2026-04-08,Orange Fibre,Logement,837.81,CB,pro,2026-04,Wednesday
+2026-02-07,Boulangerie Paul,Alimentation,120.13,CB,,2026-02,Saturday
+2026-05-11,Carrefour Market,Alimentation,35.47,CB,pro,2026-05,Monday
+2026-06-16,Marjane,Alimentation,134.94,PRELEVEMENT,,2026-06,Tuesday
+2026-01-03,Lidl,Alimentation,57.58,CB,,2026-01,Saturday
+2026-03-20,Dr Diallo,Sante,115.23,VIREMENT,cadeau,2026-03,Friday
+2026-01-01,Marjane,Alimentation,97.2,CB,,2026-01,Thursday
+2026-05-28,Pharmacie Centrale,Sante,64.94,VIREMENT,,2026-05,Thursday
+2026-05-14,Marjane,Alimentation,76.76,CB,pro,2026-05,Thursday
+2026-03-15,Edf,Logement,420.87,VIREMENT,,2026-03,Sunday
+2026-04-13,Pass Navigo,Transport,143.16,CB,urgent,2026-04,Monday
+2026-01-12,Cinema Pathe,Loisirs,143.57,CB,urgent,2026-01,Monday
+2026-04-19,Pharmacie Centrale,Autre,13.84,CB,cadeau,2026-04,Sunday
+2026-02-24,Dr Diallo,Sante,97.57,CB,cadeau,2026-02,Tuesday
+2026-06-14,Dr Diallo,Autre,114.7,VIREMENT,pro,2026-06,Sunday
+2026-05-26,Cinema Pathe,Loisirs,144.89,PRELEVEMENT,urgent,2026-05,Tuesday
+2026-04-11,Netflix,Loisirs,11.85,CB,,2026-04,Saturday
+2026-06-23,Dr Diallo,Sante,22.32,VIREMENT,,2026-06,Tuesday
+2026-03-26,Pass Navigo,Transport,129.39,CB,,2026-03,Thursday
+2026-04-11,Uber,Transport,23.25,PRELEVEMENT,pro,2026-04,Saturday
+2026-04-14,Dr Diallo,Sante,85.05,CB,,2026-04,Tuesday
+2026-06-07,Lidl,Alimentation,98.17,PRELEVEMENT,,2026-06,Sunday
+2026-02-27,Sncf Connect,Transport,130.42,VIREMENT,,2026-02,Friday
+2026-04-27,Uber,Transport,7.69,CB,,2026-04,Monday
+2026-05-10,Cinema Pathe,Loisirs,21.85,CB,,2026-05,Sunday
+2026-03-19,Cinema Pathe,Loisirs,28.09,CB,,2026-03,Thursday
