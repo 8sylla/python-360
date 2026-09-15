@@ -19,9 +19,10 @@
 
 ## Ce que contient ce dossier
 
-| Dossier | Ce que c'est | Quand |
+| Fichier ou dossier | Ce que c'est | Quand |
 |---|---|---|
-| [`reprise/`](reprise/) | le **TD** : 6 fichiers `.py` à ouvrir dans VS Code | la veille |
+| [`reprise.ipynb`](reprise.ipynb) | le **notebook** : tout le TD en un seul fichier, exécutable dans Colab | la veille |
+| [`reprise/`](reprise/) | le **même TD** en 6 fichiers `.py`, pour VS Code | la veille |
 | [`devoir-monbudget-v5/`](devoir-monbudget-v5/) | le **devoir** : le tableau de bord | en séance |
 | [`corrige/`](corrige/) | les **corrigés** du TD | après la séance |
 
@@ -30,8 +31,16 @@ Le corrigé de référence du projet est publié dans
 
 ## Démarrer
 
-**VS Code ▸ Fichier ▸ Ouvrir le dossier…** → [`reprise/`](reprise/),
-interpréteur **Python 3.11**, puis :
+Deux façons de faire le TD, au choix — le contenu est le même.
+
+**Dans le navigateur, sans rien installer** — ouvre
+[`reprise.ipynb`](reprise.ipynb) dans Colab, puis
+**Fichier ▸ Enregistrer une copie dans Drive**. Le notebook télécharge les
+deux tables tout seul. Il se lit de haut en bas : chaque cellule suppose que
+les précédentes ont été exécutées.
+
+**Dans VS Code** — **Fichier ▸ Ouvrir le dossier…** →
+[`reprise/`](reprise/), interpréteur **Python 3.11**, puis :
 
 ```bash
 python 00_echauffement.py
